@@ -1,0 +1,226 @@
+{
+  "startedAt": "2026-03-07T15:15:07.586Z",
+  "pages": [
+    {
+      "name": "Home",
+      "vp": "Mobile",
+      "url": "/",
+      "status": 200
+    },
+    {
+      "name": "Home",
+      "vp": "Desktop",
+      "url": "/",
+      "status": 200
+    },
+    {
+      "name": "Lab",
+      "vp": "Mobile",
+      "url": "/lab",
+      "status": 200
+    },
+    {
+      "name": "Lab",
+      "vp": "Desktop",
+      "url": "/lab",
+      "status": 200
+    },
+    {
+      "name": "Automations",
+      "vp": "Mobile",
+      "url": "/automations",
+      "status": 200
+    },
+    {
+      "name": "Automations",
+      "vp": "Desktop",
+      "url": "/automations",
+      "status": 200
+    },
+    {
+      "name": "Project_Ecommerce",
+      "vp": "Mobile",
+      "url": "/projects/ecommerce-automation",
+      "status": 200
+    },
+    {
+      "name": "Project_Ecommerce",
+      "vp": "Desktop",
+      "url": "/projects/ecommerce-automation",
+      "status": 200
+    },
+    {
+      "name": "Project_Fintech",
+      "vp": "Mobile",
+      "url": "/projects/fintech-cro-landing",
+      "status": 200
+    },
+    {
+      "name": "Project_Fintech",
+      "vp": "Desktop",
+      "url": "/projects/fintech-cro-landing",
+      "status": 200
+    },
+    {
+      "name": "HowItWasMade_Ecommerce",
+      "vp": "Mobile",
+      "url": "/projects/ecommerce-automation/how-it-was-made",
+      "status": 200
+    },
+    {
+      "name": "HowItWasMade_Ecommerce",
+      "vp": "Desktop",
+      "url": "/projects/ecommerce-automation/how-it-was-made",
+      "status": 200
+    },
+    {
+      "name": "HowItWasMade_Fintech",
+      "vp": "Mobile",
+      "url": "/projects/fintech-cro-landing/how-it-was-made",
+      "status": 200
+    },
+    {
+      "name": "HowItWasMade_Fintech",
+      "vp": "Desktop",
+      "url": "/projects/fintech-cro-landing/how-it-was-made",
+      "status": 200
+    },
+    {
+      "name": "Demo_Fintech",
+      "vp": "Mobile",
+      "url": "/demo/fintech-cro-landing",
+      "status": 200
+    },
+    {
+      "name": "Demo_Fintech",
+      "vp": "Desktop",
+      "url": "/demo/fintech-cro-landing",
+      "status": 200
+    },
+    {
+      "name": "Demo_B2B",
+      "vp": "Mobile",
+      "url": "/demo/b2b-saas-platform",
+      "status": 200
+    },
+    {
+      "name": "Demo_B2B",
+      "vp": "Desktop",
+      "url": "/demo/b2b-saas-platform",
+      "status": 200
+    }
+  ],
+  "consoleErrors": [
+    {
+      "page": "Home",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Home",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Lab",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Lab",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Automations",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Automations",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Project_Ecommerce",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Project_Ecommerce",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Project_Fintech",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Project_Fintech",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "HowItWasMade_Ecommerce",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "HowItWasMade_Ecommerce",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "HowItWasMade_Fintech",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "HowItWasMade_Fintech",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Demo_Fintech",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Demo_Fintech",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Demo_B2B",
+      "vp": "Mobile",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    },
+    {
+      "page": "Demo_B2B",
+      "vp": "Desktop",
+      "type": "warning",
+      "text": "⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition."
+    }
+  ],
+  "networkErrors": [],
+  "brokenLinks": [],
+  "overflows": []
+}
