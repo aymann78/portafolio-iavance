@@ -17,7 +17,7 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: 'px-8 py-4 text-lg',
 };
 
-const baseStyles = 'inline-flex items-center justify-center gap-2 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500/50 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] hover:-translate-y-0.5';
+const baseStyles = 'inline-flex items-center justify-center gap-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-500/50 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] hover:-translate-y-0.5';
 
 interface BaseProps {
   variant?: ButtonVariant;

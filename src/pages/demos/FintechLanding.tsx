@@ -14,8 +14,8 @@ export function FintechLanding() {
       a: "Sí. Cumplimos con PCI-DSS Nivel 1, SOC2 Tipo II y encriptación AES-256 end-to-end por defecto."
     },
     {
-      q: "¿Cuáles son las comisiones operativas?",
-      a: "Cero comisiones ocultas. Tarifa plana del 0.8% por transacción para cuentas Pro y Enterprise."
+      q: "¿Cómo se decide si una landing necesita rediseño completo?",
+      a: "Primero revisamos claridad de propuesta, estructura, velocidad, prueba y llamadas a la acción. A veces basta con ordenar el mensaje; otras hace falta reconstruir."
     }
   ];
 
@@ -31,15 +31,15 @@ export function FintechLanding() {
            <span className="font-bold text-xl tracking-tight">VaultPay</span>
         </div>
         <div className="hidden md:flex gap-8 font-medium text-slate-600 text-sm">
-          <button className="hover:text-blue-600 transition-colors">Producto</button>
-          <button className="hover:text-blue-600 transition-colors">Desarrolladores</button>
-          <button className="hover:text-blue-600 transition-colors">Precios</button>
+          <a href="#product" className="hover:text-blue-600 transition-colors">Producto</a>
+          <a href="#docs" className="hover:text-blue-600 transition-colors">Documentacion</a>
+          <a href="#contact" className="hover:text-blue-600 transition-colors">Contacto</a>
         </div>
         <div className="flex gap-4">
-          <button className="hidden sm:block text-slate-600 font-medium text-sm hover:text-slate-900">Sign In</button>
-          <button className="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-600 transition-all shadow-sm hover:shadow-md">
-            Start Free Trial
-          </button>
+          <a href="#product" className="hidden sm:block text-slate-600 font-medium text-sm hover:text-slate-900">Ver demo</a>
+          <a href="/contacto?service=webs-de-conversion&problem=Mi%20web%20no%20convierte" className="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-600 transition-all shadow-sm hover:shadow-md">
+            Solicitar diagnóstico
+          </a>
         </div>
       </nav>
 
@@ -61,12 +61,12 @@ export function FintechLanding() {
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 active:scale-95 flex items-center justify-center gap-2">
-            Crear Cuenta Gratis <Zap className="w-5 h-5" />
-          </button>
-          <button className="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all active:scale-95">
+          <a href="#product" className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 active:scale-95 flex items-center justify-center gap-2">
+            Ver estructura de conversión <Zap className="w-5 h-5" />
+          </a>
+          <a href="#docs" className="bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all active:scale-95">
             Leer Documentación
-          </button>
+          </a>
         </div>
 
         <p className="mt-6 text-sm text-slate-500 font-medium flex gap-4 items-center justify-center">
@@ -76,7 +76,7 @@ export function FintechLanding() {
       </section>
 
       {/* Social Proof (Simulated) */}
-      <section className="py-12 border-y border-slate-200 bg-white">
+      <section id="product" className="py-12 border-y border-slate-200 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Procesando millones diarios para los mejores</p>
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
@@ -90,7 +90,7 @@ export function FintechLanding() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+      <section id="docs" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-28">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">¿Por qué cambiar a VaultPay?</h2>
           <p className="text-slate-600 text-lg">Tu antigua pasarela de pagos te está costando un 2% más en abandonos de checkout.</p>
@@ -149,15 +149,15 @@ export function FintechLanding() {
       </section>
 
       {/* CTA Bottom */}
-      <section className="py-32 px-6">
+      <section id="contact" className="py-32 px-6 scroll-mt-28">
         <div className="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-blue-600/10" />
           <div className="relative z-10 flex flex-col items-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Lista para procesar en producción.</h2>
             <p className="text-slate-400 text-xl mb-10 max-w-2xl">Únete a las mejores startups que confían su flujo de capital en VaultPay hoy mismo.</p>
-            <button className="bg-blue-600 text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-blue-500 transition-all active:scale-95 w-full sm:w-auto">
-              Obtener API Keys
-            </button>
+            <a href="/contacto?service=webs-de-conversion&problem=Quiero%20mejorar%20mi%20landing%20o%20web%20comercial" className="bg-blue-600 text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-blue-500 transition-all active:scale-95 w-full sm:w-auto">
+              Solicitar diagnóstico
+            </a>
           </div>
         </div>
       </section>

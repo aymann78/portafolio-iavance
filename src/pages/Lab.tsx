@@ -1,85 +1,143 @@
-import { Link } from 'react-router-dom';
-import { projects } from '../data/projects';
-import { Container, Section, Heading, Eyebrow, Card, CardContent, Tag, Button, Reveal } from '../components/ui';
+import { ArrowRight, FlaskConical, MonitorSmartphone, Radar, Sparkles } from 'lucide-react';
+import { ProofBadge } from '../components/ProofBadge';
+import { capabilityBuilds } from '../data/projects';
+import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
+
+const labNotes = [
+  'Prototipamos ideas antes de convertirlas en una propuesta formal.',
+  'El laboratorio sirve para explorar interaccion, visualizacion y arquitectura.',
+  'No todo lo que aparece aqui es una pieza comercial; si es concepto, lo decimos.'
+];
 
 export function Lab() {
+  const interactiveBuilds = capabilityBuilds.filter((build) => build.demoUrl);
+  const experimentalBuilds = capabilityBuilds.filter((build) => !build.demoUrl);
+
   return (
-    <div className="flex flex-col w-full">
-      <Section spacing="xl" className="border-b border-zinc-900 bg-black">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black opacity-50 pointer-events-none" />
-        <Container className="relative z-10 flex flex-col gap-6 max-w-4xl">
+    <div className="flex w-full flex-col">
+      <Section spacing="lg" className="border-b border-zinc-900 bg-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.08),transparent_24%)]" />
+        <Container className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.9fr]">
           <Reveal>
-            <Eyebrow>Repositorio Abierto</Eyebrow>
-            <Heading as="h1" size="2xl">
-              Sistemas <span className="text-zinc-600">en Producción</span>
-            </Heading>
-            <p className="text-zinc-400 text-xl md:text-2xl leading-relaxed max-w-2xl mt-4">
-              Cero humo. Explora la arquitectura interna, decisiones de stack y el impacto operativo de las máquinas digitales que construimos.
-            </p>
+            <div className="max-w-3xl">
+              <Eyebrow>Lab</Eyebrow>
+              <Heading as="h1" size="2xl" className="mt-5">
+                Espacio experimental para demos, interacciones y pruebas de concepto.
+              </Heading>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
+                El laboratorio no sustituye al trabajo comercial. Nos sirve para enseñar capacidad, validar decisiones de producto y explorar ideas antes de convertirlas en una solucion para negocio.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay="md" direction="left">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { title: 'Demos interactivas', icon: MonitorSmartphone, text: 'Piezas navegables con foco en experiencia y mensaje.' },
+                { title: 'Pipelines y simulaciones', icon: Radar, text: 'Representaciones de procesos, integraciones y flujos.' },
+                { title: 'Builds estrategicos', icon: Sparkles, text: 'Artefactos pensados para enseñar una arquitectura.' },
+                { title: 'Pruebas de interfaz', icon: FlaskConical, text: 'Exploracion visual sin venderla como caso real.' }
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="rounded-[1.75rem] border border-zinc-800 bg-zinc-950/60 p-5">
+                    <div className="inline-flex rounded-2xl border border-zinc-800 bg-black p-3 text-brand-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <p className="mt-4 text-lg font-semibold text-white">{item.title}</p>
+                    <p className="mt-2 text-sm text-zinc-400">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
           </Reveal>
         </Container>
       </Section>
 
-      <Section spacing="lg">
+      <Section spacing="md">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {projects.map((project, idx) => (
-              <Reveal key={project.id} delay={idx % 2 === 0 ? 'sm' : 'md'}>
-                <div className="flex flex-col gap-4">
-                  <Link to={`/projects/${project.slug}`} className="group block focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg">
-                    <Card hoverable className="h-full bg-black border-zinc-800">
-                      <div className="aspect-video bg-zinc-900 border-b border-zinc-800 flex flex-col justify-between p-6 relative overflow-hidden group-hover:border-brand-500/50 transition-colors">
-                        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
-                        
-                        <div className="relative z-10 flex justify-between items-start w-full">
-                          <Tag variant="solid" className={project.status === 'Live' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/20' : ''}>
-                            {project.status.toUpperCase()}
-                          </Tag>
-                          <Tag variant="ghost" className="bg-black/50 backdrop-blur-md uppercase tracking-widest">{project.category}</Tag>
-                        </div>
+          <Reveal>
+            <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <Eyebrow>Demos navegables</Eyebrow>
+                <Heading as="h2" size="lg" className="mt-4">
+                  Experiencias listas para explorar
+                </Heading>
+              </div>
+              <Button as="Link" to="/casos" variant="ghost">
+                Ver todos los builds
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </Reveal>
 
-                        <div className="relative z-10 mt-auto">
-                          <span className="text-4xl md:text-5xl font-black text-white/90 tracking-tighter mix-blend-overlay">
-                            {project.title.substring(0, 10)}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <CardContent className="pt-8 flex flex-col gap-6">
-                        <div className="flex flex-col gap-3">
-                          <Heading as="h3" size="md" className="group-hover:text-brand-400 transition-colors">
-                            {project.title}
-                          </Heading>
-                          <p className="text-zinc-400 text-lg leading-relaxed line-clamp-3">
-                            {project.shortDescription}
-                          </p>
-                        </div>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {interactiveBuilds.map((build, index) => (
+              <Reveal key={build.slug} delay={index === 0 ? 'sm' : 'md'}>
+                <Card className="h-full rounded-[1.75rem] border-zinc-800 bg-black">
+                  <CardContent className="pt-8">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <ProofBadge type={build.proofType} />
+                      <Tag variant="ghost" className="text-zinc-500">
+                        {build.category}
+                      </Tag>
+                    </div>
+                    <Heading as="h3" size="md" className="mt-5">
+                      {build.title}
+                    </Heading>
+                    <p className="mt-4 text-zinc-400">{build.shortDescription}</p>
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                      <Button as="a" href={build.demoUrl} target="_blank" rel="noreferrer">
+                        Abrir demo
+                      </Button>
+                      <Button as="Link" to={`/casos/${build.slug}`} variant="outline">
+                        Ver anatomia
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
-                        <div className="mt-2 border-t border-zinc-900 pt-6">
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.slice(0, 3).map(tag => (
-                              <Tag key={tag} variant="outline" className="opacity-80 group-hover:opacity-100 transition-opacity">
-                                {tag}
-                              </Tag>
-                            ))}
-                            {project.tags.length > 3 && (
-                              <Tag variant="ghost">+{project.tags.length - 3}</Tag>
-                            )}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-
-                  <div className="flex gap-4 mt-2 mb-12 lg:mb-0">
-                     <Button as="Link" to={`/projects/${project.slug}`} size="sm" variant="secondary" className="flex-1">
-                       Ver Despliegue
-                     </Button>
-                     <Button as="Link" to={`/projects/${project.slug}/how-it-was-made`} size="sm" variant="outline" className="flex-1">
-                       Anatomía del Sistema
-                     </Button>
+      <Section spacing="md" className="border-y border-zinc-900 bg-zinc-950/40">
+        <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <Reveal>
+            <div>
+              <Eyebrow>Notas del laboratorio</Eyebrow>
+              <Heading as="h2" size="lg" className="mt-4">
+                Lo que entra aqui todavia esta en exploracion
+              </Heading>
+              <div className="mt-8 space-y-4">
+                {labNotes.map((note) => (
+                  <div key={note} className="rounded-2xl border border-zinc-800 bg-black/60 p-5 text-zinc-300">
+                    {note}
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {experimentalBuilds.map((build, index) => (
+              <Reveal key={build.slug} delay={index % 2 === 0 ? 'sm' : 'md'}>
+                <Card className="h-full rounded-[1.75rem] border-zinc-800 bg-black/80">
+                  <CardContent className="pt-8">
+                    <ProofBadge type={build.proofType} />
+                    <Heading as="h3" size="md" className="mt-5">
+                      {build.title}
+                    </Heading>
+                    <p className="mt-3 text-sm uppercase tracking-[0.2em] text-zinc-500">{build.category}</p>
+                    <p className="mt-4 text-zinc-400">{build.problem}</p>
+                    <div className="mt-6">
+                      <Button as="Link" to={`/casos/${build.slug}`} variant="outline" fullWidth>
+                        Ver enfoque
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </Reveal>
             ))}
           </div>

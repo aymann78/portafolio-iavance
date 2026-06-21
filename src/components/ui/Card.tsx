@@ -12,7 +12,7 @@ export function Card({ children, className = '', hoverable = false }: CardProps)
     : '';
 
   return (
-    <div className={`bg-black border border-zinc-800 rounded-lg overflow-hidden flex flex-col relative ${hoverStyles} ${className}`}>
+    <div className={`bg-black border border-zinc-800 rounded-[1.5rem] overflow-hidden flex flex-col relative ${hoverStyles} ${className}`}>
       {children}
     </div>
   );

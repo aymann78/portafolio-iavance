@@ -20,7 +20,7 @@ const sizeClasses = {
 
 export function Heading({ as: Component = 'h2', children, className = '', size = 'md' }: HeadingProps) {
   return (
-    <Component className={`text-white text-balance ${sizeClasses[size]} ${className}`}>
+    <Component className={`font-display text-white text-balance ${sizeClasses[size]} ${className}`}>
       {children}
     </Component>
   );

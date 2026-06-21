@@ -15,7 +15,7 @@ export function DemoLayout() {
           <ArrowLeft className="w-3 h-3" /> VOLVER A IAVANCE.ES
         </button>
         <span className="text-zinc-600 text-[10px] font-mono uppercase tracking-widest hidden sm:inline-block">
-          Preview Mode // Construido por iavance.es
+          Preview Mode // Capability Build Preview
         </span>
       </div>
 

@@ -34,7 +34,7 @@ export function CtaBlock({ title, description, primaryAction, eyebrow }: CtaBloc
               {primaryAction.label}
             </Button>
           )}
-          <Button as="a" href="mailto:hello@iavance.es" variant="outline" size="lg">
+          <Button as="a" href="mailto:iavance@gmail.com" variant="outline" size="lg">
             Contactar por mail
           </Button>
         </div>
