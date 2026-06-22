@@ -2,12 +2,14 @@ import { FormEvent, useMemo, useState } from 'react';
 import { ArrowRight, CheckCircle2, Instagram, LoaderCircle, Mail } from 'lucide-react';
 import { siteMeta } from '../data/site';
 import { Button } from './ui';
+import { trackEvent } from '../lib/analytics';
 
 type FormState = {
   nombre: string;
   empresa: string;
   email: string;
   tipoProyecto: string;
+  tipoNecesidad: string;
   problemaPrincipal: string;
   mensaje: string;
   website: string;
@@ -18,6 +20,7 @@ const initialState: FormState = {
   empresa: '',
   email: '',
   tipoProyecto: '',
+  tipoNecesidad: '',
   problemaPrincipal: '',
   mensaje: '',
   website: ''
@@ -27,8 +30,10 @@ interface DiagnosticFormProps {
   title?: string;
   description?: string;
   compact?: boolean;
+  streamlined?: boolean;
   initialProblem?: string;
   initialProjectType?: string;
+  initialNeedType?: string;
 }
 
 function normalizeProjectType(value: string) {
@@ -36,6 +41,9 @@ function normalizeProjectType(value: string) {
     'webs-de-conversion': 'Webs de conversion',
     'automatizaciones-e-ia': 'Automatizaciones e IA aplicada',
     'software-e-integraciones': 'Software e integraciones',
+    'automatizacion': 'Automatizaciones e IA aplicada',
+    'integraciones': 'Software e integraciones',
+    'software-interno': 'Software e integraciones',
     'no-lo-tengo-claro': 'No lo tengo claro todavia'
   };
 
@@ -46,25 +54,33 @@ export function DiagnosticForm({
   title = 'Solicita un diagnostico digital',
   description = 'Cuéntanos el cuello de botella principal y te responderemos con el siguiente paso más razonable para tu caso.',
   compact = false,
+  streamlined = false,
   initialProblem = '',
-  initialProjectType = ''
+  initialProjectType = '',
+  initialNeedType = ''
 }: DiagnosticFormProps) {
   const normalizedProjectType = normalizeProjectType(initialProjectType);
   const [form, setForm] = useState<FormState>({
     ...initialState,
     problemaPrincipal: initialProblem,
-    tipoProyecto: normalizedProjectType
+    tipoProyecto: normalizedProjectType,
+    tipoNecesidad: initialNeedType
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
 
   const projectOptions = useMemo(
     () => [
-      'Webs de conversion',
       'Automatizaciones e IA aplicada',
       'Software e integraciones',
+      'Webs de conversion',
       'No lo tengo claro todavia'
     ],
+    []
+  );
+
+  const needOptions = useMemo(
+    () => ['Automatizacion', 'Integraciones', 'Software interno', 'No lo tengo claro'],
     []
   );
 
@@ -81,6 +97,10 @@ export function DiagnosticForm({
 
     setStatus('submitting');
     setFeedback('');
+    trackEvent('diagnostic_submit_attempt', {
+      project_type: form.tipoProyecto,
+      need_type: form.tipoNecesidad,
+    });
 
     try {
       const response = await fetch(siteMeta.formEndpoint, {
@@ -94,6 +114,7 @@ export function DiagnosticForm({
           company: form.empresa,
           email: form.email,
           project_type: form.tipoProyecto,
+          need_type: form.tipoNecesidad,
           main_problem: form.problemaPrincipal,
           message: form.mensaje,
           _subject: `Nuevo diagnostico desde ${siteMeta.name}`,
@@ -109,23 +130,32 @@ export function DiagnosticForm({
       }
 
       setStatus('success');
+      trackEvent('diagnostic_submit_success', {
+        project_type: form.tipoProyecto,
+        need_type: form.tipoNecesidad,
+      });
       setFeedback('Mensaje enviado. Si es la primera vez que usas este formulario, revisaremos tambien la activacion del buzón.');
       setForm({
         ...initialState,
         problemaPrincipal: initialProblem,
-        tipoProyecto: normalizedProjectType
+        tipoProyecto: normalizedProjectType,
+        tipoNecesidad: initialNeedType
       });
     } catch {
       setStatus('error');
+      trackEvent('diagnostic_submit_error', {
+        project_type: form.tipoProyecto,
+        need_type: form.tipoNecesidad,
+      });
       setFeedback('No hemos podido enviar el mensaje ahora mismo. Puedes escribirnos por Instagram o correo sin perder el contexto.');
     }
   }
 
   return (
-    <div className="rounded-[2rem] border border-zinc-800 bg-black/90 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-8">
+    <div className="rounded-lg border border-zinc-800 bg-black/90 p-5 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-7">
       <div className="mb-6">
         <p className="text-xs font-mono uppercase tracking-[0.24em] text-brand-400">Diagnostico digital</p>
-        <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">{title}</h3>
+        <h3 className="mt-3 text-2xl font-semibold tracking-normal text-white">{title}</h3>
         <p className="mt-3 max-w-xl text-zinc-400">{description}</p>
       </div>
 
@@ -166,15 +196,20 @@ export function DiagnosticForm({
             placeholder="tu@empresa.com"
           />
           <label className="flex flex-col gap-2">
-            <span className="text-sm font-medium text-zinc-300">Tipo de proyecto</span>
+            <span className="text-sm font-medium text-zinc-300">Tipo de necesidad</span>
             <select
-              value={form.tipoProyecto}
-              onChange={(event) => handleChange('tipoProyecto', event.target.value)}
+              value={form.tipoNecesidad}
+              onChange={(event) => {
+                handleChange('tipoNecesidad', event.target.value);
+                if (!form.tipoProyecto) {
+                  handleChange('tipoProyecto', event.target.value === 'Software interno' ? 'Software e integraciones' : 'Automatizaciones e IA aplicada');
+                }
+              }}
               required
               className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
             >
               <option value="">Selecciona una opcion</option>
-              {projectOptions.map((option) => (
+              {needOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
@@ -191,17 +226,38 @@ export function DiagnosticForm({
           placeholder="Que esta frenando ahora mismo al negocio"
         />
 
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-zinc-300">Mensaje</span>
-          <textarea
-            required
-            rows={compact ? 4 : 6}
-            value={form.mensaje}
-            onChange={(event) => handleChange('mensaje', event.target.value)}
-            placeholder="Contexto, objetivos, herramientas actuales o cualquier dato util"
-            className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
-          />
-        </label>
+        {!streamlined && (
+          <>
+            <label className="flex flex-col gap-2">
+              <span className="text-sm font-medium text-zinc-300">Linea de trabajo</span>
+              <select
+                value={form.tipoProyecto}
+                onChange={(event) => handleChange('tipoProyecto', event.target.value)}
+                required
+                className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+              >
+                <option value="">Selecciona una opcion</option>
+                {projectOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="flex flex-col gap-2">
+              <span className="text-sm font-medium text-zinc-300">Mensaje</span>
+              <textarea
+                required
+                rows={compact ? 4 : 6}
+                value={form.mensaje}
+                onChange={(event) => handleChange('mensaje', event.target.value)}
+                placeholder="Contexto, objetivos, herramientas actuales o cualquier dato util"
+                className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+              />
+            </label>
+          </>
+        )}
 
         <div className="flex flex-col gap-4 pt-2 md:flex-row md:items-center md:justify-between">
           <div className="space-y-2 text-sm text-zinc-500">

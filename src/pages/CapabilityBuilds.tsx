@@ -1,6 +1,6 @@
 import { ArrowRight, MousePointer2, PlayCircle } from 'lucide-react';
 import { ProofBadge } from '../components/ProofBadge';
-import { capabilityBuilds } from '../data/projects';
+import { publicCapabilityBuilds } from '../data/projects';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Tag, Reveal } from '../components/ui';
 
 export function CapabilityBuilds() {
@@ -10,12 +10,12 @@ export function CapabilityBuilds() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
             <Reveal>
-              <Eyebrow>Capability builds</Eyebrow>
+              <Eyebrow>Demos</Eyebrow>
               <Heading as="h1" size="xl" className="mt-4 max-w-4xl">
-                Demos y builds para ver qué podemos construir antes de hablar.
+                Demos y casos de uso para ver que podemos construir antes de hablar.
               </Heading>
               <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-400 md:text-lg">
-                No enseñamos clientes inventados. Aquí tienes piezas interactivas, conceptos y builds estratégicos para entender rápido nuestro criterio en webs, automatizaciones y software interno.
+                No enseñamos clientes inventados. Aqui tienes demos interactivas y casos de uso para entender rapido nuestro criterio en automatizacion, operaciones y software interno.
               </p>
             </Reveal>
 
@@ -32,7 +32,7 @@ export function CapabilityBuilds() {
                       Solicitar diagnóstico
                     </Button>
                     <Button as="Link" to="/lab" variant="outline" size="sm">
-                      Ver demos interactivas
+                      Ver demos navegables
                     </Button>
                   </div>
                 </CardContent>
@@ -57,8 +57,8 @@ export function CapabilityBuilds() {
             </div>
           </Reveal>
 
-          <div className="mt-7 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
-            {capabilityBuilds.map((build, index) => (
+          <div className="mt-7 grid gap-4 lg:grid-cols-2">
+            {publicCapabilityBuilds.map((build, index) => (
               <Reveal key={build.slug} delay={index === 0 ? 'sm' : index === 1 ? 'md' : 'lg'}>
                 <Card hoverable className="h-full rounded-2xl border-zinc-800 bg-zinc-950/70">
                   <CardContent className="pt-5">
@@ -119,7 +119,7 @@ export function CapabilityBuilds() {
                     <MousePointer2 className="h-5 w-5 text-brand-400" />
                     <p className="mt-4 font-semibold text-white">Puedes tocar y probar</p>
                     <p className="mt-2 text-sm leading-6 text-zinc-400">
-                      Las demos muestran flujos útiles: pedido B2B, landing CRO, chatbot operativo y clasificación de CSV.
+                      Las demos muestran flujos útiles: mini-ERP operativo y automatización de entradas, clasificación y acción.
                     </p>
                   </CardContent>
                 </Card>
@@ -150,7 +150,7 @@ export function CapabilityBuilds() {
                       Si algo te encaja, lo aterrizamos a tu negocio.
                     </Heading>
                     <p className="mt-3 max-w-3xl text-zinc-400">
-                      Sin precios públicos y sin vender humo: empezamos con una puerta de entrada clara para detectar fricción, priorizar y decidir qué merece construirse.
+                      Respuesta clara, primer mapa de oportunidad y una puerta de entrada proporcionada para detectar fricción, priorizar y decidir qué merece construirse.
                     </p>
                   </div>
                   <div className="flex flex-col gap-3">

@@ -1,5 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { capabilityBuilds } from '../data/projects';
+import { publicCapabilityBuilds } from '../data/projects';
 import { services } from '../data/services';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
 
@@ -10,9 +10,9 @@ export function Services() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.14),transparent_36%),linear-gradient(to_bottom,rgba(255,255,255,0.03),transparent)]" />
         <Container className="relative z-10 max-w-5xl">
           <Reveal>
-            <Eyebrow>Servicios</Eyebrow>
+            <Eyebrow>Soluciones</Eyebrow>
             <Heading as="h1" size="2xl" className="mt-5">
-              Tres lineas de trabajo para ordenar captacion, operaciones y producto.
+              Tres formas de quitar friccion a captacion, operaciones y producto.
             </Heading>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
               La propuesta no gira alrededor de vender horas. Gira alrededor de detectar que pieza hace falta y ponerla en marcha con un plan asumible.
@@ -22,7 +22,7 @@ export function Services() {
       </Section>
 
       {services.map((service, index) => {
-        const relatedBuilds = capabilityBuilds.filter((build) => service.relatedBuilds.includes(build.slug));
+        const relatedBuilds = publicCapabilityBuilds.filter((build) => service.relatedBuilds.includes(build.slug));
 
         return (
           <Section
@@ -107,11 +107,11 @@ export function Services() {
                     <div className="rounded-[1.75rem] border border-zinc-800 bg-black/70 p-6">
                       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Capability build relacionado</p>
+                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Demo relacionada</p>
                           <p className="mt-2 text-lg font-semibold text-white">{relatedBuilds[0].title}</p>
                         </div>
                         <Button as="Link" to={`/casos/${relatedBuilds[0].slug}`} variant="outline">
-                          Ver build
+                          Ver demo
                         </Button>
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export function Services() {
                     Solicitar diagnostico
                   </Button>
                   <Button as="Link" to="/casos" variant="outline">
-                    Ver capability builds
+                    Ver demos
                   </Button>
                 </div>
               </CardContent>

@@ -13,10 +13,10 @@ export function ProjectDetail() {
       <Section spacing="xl">
         <Container className="flex flex-col items-center gap-6 text-center">
           <Heading as="h1" size="xl">
-            Build no encontrado
+            Demo no encontrada
           </Heading>
           <Button as="Link" to="/casos">
-            Volver a capability builds
+            Volver a demos
           </Button>
         </Container>
       </Section>
@@ -31,7 +31,7 @@ export function ProjectDetail() {
             <div className="max-w-3xl">
               <Link to="/casos" className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-white">
                 <ArrowLeft className="h-4 w-4" />
-                Volver a capability builds
+                Volver a demos
               </Link>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -137,7 +137,7 @@ export function ProjectDetail() {
               <CardContent className="pt-8">
                 <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Siguiente paso recomendado</p>
                 <p className="mt-4 text-zinc-300">
-                  Si tu situacion se parece a este build, el siguiente paso util es un diagnostico que nos permita aterrizar alcance, prioridades y orden de ejecucion.
+                  Si tu situacion se parece a esta demo o caso de uso, el siguiente paso util es un diagnostico que nos permita aterrizar alcance, prioridades y orden de ejecucion.
                 </p>
                 <div className="mt-8 flex flex-col gap-3">
                   <Button as="Link" to={build.ctaHref ?? '/contacto'}>

@@ -4,13 +4,13 @@ import { Outlet, Link, NavLink, useLocation } from 'react-router-dom';
 import { Container } from '../components/ui';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 import { siteMeta } from '../data/site';
+import { trackEvent } from '../lib/analytics';
 
 const navigation = [
   { to: '/', label: 'Inicio' },
-  { to: '/servicios', label: 'Servicios' },
-  { to: '/casos', label: 'Capability Builds' },
-  { to: '/lab', label: 'Lab' },
-  { to: '/proceso', label: 'Proceso' },
+  { to: '/soluciones', label: 'Soluciones' },
+  { to: '/demos', label: 'Demos' },
+  { to: '/como-trabajamos', label: 'Proceso' },
   { to: '/contacto', label: 'Contacto' }
 ];
 
@@ -21,6 +21,31 @@ export function RootLayout() {
 
   useEffect(() => {
     setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const reached = new Set<number>();
+    const depths = [25, 50, 75, 100];
+
+    function handleScroll() {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll <= 0) {
+        return;
+      }
+
+      const currentDepth = Math.min(100, Math.round((window.scrollY / maxScroll) * 100));
+      depths.forEach((depth) => {
+        if (currentDepth >= depth && !reached.has(depth)) {
+          reached.add(depth);
+          trackEvent('scroll_depth', { path: pathname, depth });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
 
   return (
@@ -48,9 +73,10 @@ export function RootLayout() {
           <div className="hidden lg:block">
             <NavLink
               to="/contacto"
+              onClick={() => trackEvent('cta_click', { location: 'header', label: 'Pedir diagnostico gratuito' })}
               className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200"
             >
-              Solicitar diagnostico
+              Pedir diagnostico gratuito
             </NavLink>
           </div>
 
@@ -125,7 +151,7 @@ export function RootLayout() {
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Entrada</p>
               <NavLink to="/contacto" className="mt-4 inline-flex text-sm text-white transition hover:text-brand-300">
-                Solicitar diagnostico
+                Pedir diagnostico gratuito
               </NavLink>
             </div>
           </div>

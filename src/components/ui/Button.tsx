@@ -45,15 +45,18 @@ export function Button({
 
   if (props.as === 'Link') {
     const { as, ...linkProps } = props;
+    void as;
     return <Link className={compClasses} {...linkProps}>{children}</Link>;
   }
 
   if (props.as === 'a') {
     const { as, ...aProps } = props;
+    void as;
     return <a className={compClasses} {...aProps}>{children}</a>;
   }
 
   const { as, ...buttonProps } = props as ButtonAsButton;
+  void as;
   return (
     <button className={compClasses} {...buttonProps}>
       {children}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="iavance.es automatizacion operativa B2B">
+  <rect width="1200" height="630" fill="#020617"/>
+  <path d="M0 0h1200v630H0z" fill="url(#grid)"/>
+  <rect x="80" y="82" width="1040" height="466" rx="28" fill="#050914" stroke="#1f2937" stroke-width="2"/>
+  <rect x="126" y="134" width="300" height="42" rx="21" fill="#0ea5e9" fill-opacity=".16"/>
+  <text x="152" y="162" fill="#7dd3fc" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="700">Automatizacion operativa B2B</text>
+  <text x="126" y="250" fill="#f8fafc" font-family="Sora, Arial, sans-serif" font-size="68" font-weight="800">Menos tareas manuales.</text>
+  <text x="126" y="328" fill="#f8fafc" font-family="Sora, Arial, sans-serif" font-size="68" font-weight="800">Mas operaciones claras.</text>
+  <text x="126" y="388" fill="#94a3b8" font-family="Manrope, Arial, sans-serif" font-size="28">Automatizaciones, integraciones y software interno.</text>
+  <rect x="740" y="155" width="300" height="64" rx="14" fill="#0f172a" stroke="#334155"/>
+  <rect x="740" y="247" width="300" height="64" rx="14" fill="#0f172a" stroke="#334155"/>
+  <rect x="740" y="339" width="300" height="64" rx="14" fill="#0f172a" stroke="#334155"/>
+  <text x="768" y="195" fill="#f8fafc" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">18 h/sem recuperables</text>
+  <text x="768" y="287" fill="#f8fafc" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">Datos conectados</text>
+  <text x="768" y="379" fill="#f8fafc" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">Primer mapa claro</text>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#0f172a" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>

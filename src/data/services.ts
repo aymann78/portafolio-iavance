@@ -19,7 +19,7 @@ export const services: ServiceLine[] = [
     summary:
       'Webs, landings y experiencias comerciales pensadas para aclarar la propuesta, reducir friccion y convertir interes en conversaciones.',
     problem:
-      'Tu web recibe visitas, pero no deja clara la propuesta, no transmite confianza o no empuja a la siguiente accion.',
+      'No se entiende rapido que vendes, para quien es y por que alguien deberia contactar ahora.',
     solution:
       'Construimos paginas ligeras, bien ordenadas y enfocadas en negocio: mensaje, estructura, prueba y CTA trabajando juntos.',
     outcomes: [
@@ -40,7 +40,7 @@ export const services: ServiceLine[] = [
       'Necesitas una landing para captacion',
       'Quieres una presencia premium sin humo'
     ],
-    relatedBuilds: ['vaultpay-cro']
+    relatedBuilds: []
   },
   {
     slug: 'automatizaciones-e-ia',
@@ -49,7 +49,7 @@ export const services: ServiceLine[] = [
     summary:
       'Diseñamos flujos que eliminan tareas manuales, conectan herramientas y usan IA solo cuando mejora una decision o un proceso.',
     problem:
-      'Tu equipo dedica tiempo a copiar datos, revisar correos, mover informacion entre herramientas o perseguir tareas repetitivas.',
+      'Pierdes horas copiando datos, revisando correos, moviendo informacion entre herramientas o persiguiendo tareas repetitivas.',
     solution:
       'Mapeamos el proceso, detectamos cuellos de botella y construimos automatizaciones que conectan captura, clasificacion, accion y seguimiento.',
     outcomes: [
@@ -70,7 +70,7 @@ export const services: ServiceLine[] = [
       'Necesitas clasificar o enrutar datos',
       'Quieres reducir dependencia de tareas manuales'
     ],
-    relatedBuilds: ['market-signal-engine']
+    relatedBuilds: ['lead-to-ops']
   },
   {
     slug: 'software-e-integraciones',
@@ -79,7 +79,7 @@ export const services: ServiceLine[] = [
     summary:
       'Portales, dashboards y herramientas internas para empresas que ya no pueden sostener su operativa con parches.',
     problem:
-      'La operativa ha crecido, pero tus sistemas siguen partidos entre hojas, correos, herramientas externas y trabajo manual.',
+      'Tu equipo trabaja en hojas, correos y herramientas separadas, y nadie ve con claridad que esta pasando en operaciones.',
     solution:
       'Diseñamos interfaces y capas de integracion que centralizan tareas criticas, ordenan informacion y facilitan escalar con control.',
     outcomes: [

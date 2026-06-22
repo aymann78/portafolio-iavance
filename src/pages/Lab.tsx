@@ -1,16 +1,16 @@
 import { ArrowRight, FlaskConical, MonitorSmartphone, Radar, Sparkles } from 'lucide-react';
 import { ProofBadge } from '../components/ProofBadge';
-import { capabilityBuilds } from '../data/projects';
+import { capabilityBuilds, publicCapabilityBuilds } from '../data/projects';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
 
 const labNotes = [
   'Prototipamos ideas antes de convertirlas en una propuesta formal.',
-  'El laboratorio sirve para explorar interaccion, visualizacion y arquitectura.',
+  'Las demos sirven para explorar interaccion, visualizacion y arquitectura.',
   'No todo lo que aparece aqui es una pieza comercial; si es concepto, lo decimos.'
 ];
 
 export function Lab() {
-  const interactiveBuilds = capabilityBuilds.filter((build) => build.demoUrl);
+  const interactiveBuilds = publicCapabilityBuilds.filter((build) => build.demoUrl);
   const experimentalBuilds = capabilityBuilds.filter((build) => !build.demoUrl);
 
   return (
@@ -20,12 +20,12 @@ export function Lab() {
         <Container className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.9fr]">
           <Reveal>
             <div className="max-w-3xl">
-              <Eyebrow>Lab</Eyebrow>
+              <Eyebrow>Demos</Eyebrow>
               <Heading as="h1" size="2xl" className="mt-5">
-                Espacio experimental para demos, interacciones y pruebas de concepto.
+                Demos navegables, interacciones y pruebas de concepto.
               </Heading>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-                El laboratorio no sustituye al trabajo comercial. Nos sirve para enseñar capacidad, validar decisiones de producto y explorar ideas antes de convertirlas en una solucion para negocio.
+                Esta zona no sustituye al diagnostico. Sirve para enseñar criterio, validar decisiones de producto y explorar ideas antes de convertirlas en una solucion para negocio.
               </p>
             </div>
           </Reveal>
@@ -65,7 +65,7 @@ export function Lab() {
                 </Heading>
               </div>
               <Button as="Link" to="/casos" variant="ghost">
-                Ver todos los builds
+                Ver todas las demos
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
@@ -106,9 +106,9 @@ export function Lab() {
         <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
             <div>
-              <Eyebrow>Notas del laboratorio</Eyebrow>
+              <Eyebrow>Como leer las demos</Eyebrow>
               <Heading as="h2" size="lg" className="mt-4">
-                Lo que entra aqui todavia esta en exploracion
+                Lo que entra aqui puede ser demo, concepto o caso de uso
               </Heading>
               <div className="mt-8 space-y-4">
                 {labNotes.map((note) => (

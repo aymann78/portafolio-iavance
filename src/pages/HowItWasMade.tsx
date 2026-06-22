@@ -12,10 +12,10 @@ export function HowItWasMade() {
       <Section spacing="xl">
         <Container className="flex flex-col items-center gap-6 text-center">
           <Heading as="h1" size="xl">
-            Build no encontrado
+            Demo no encontrada
           </Heading>
           <Button as="Link" to="/casos">
-            Volver a capability builds
+            Volver a demos
           </Button>
         </Container>
       </Section>
@@ -35,7 +35,7 @@ export function HowItWasMade() {
             Este build aun no tiene la documentacion detallada publicada, aunque el enfoque general ya esta explicado en su ficha principal.
           </p>
           <Button as="Link" to={`/casos/${build.slug}`}>
-            Volver al build
+            Volver a la demo
           </Button>
         </Container>
       </Section>
@@ -49,11 +49,11 @@ export function HowItWasMade() {
           <Reveal>
             <Link to={`/casos/${build.slug}`} className="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-white">
               <ArrowLeft className="h-4 w-4" />
-              Volver al build
+              Volver a la demo
             </Link>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Code2 className="h-5 w-5 text-brand-400" />
-              <Eyebrow>Anatomia del build</Eyebrow>
+              <Eyebrow>Anatomia de la demo</Eyebrow>
               <Tag variant="ghost" className="text-zinc-500">
                 {build.title}
               </Tag>
@@ -122,7 +122,7 @@ export function HowItWasMade() {
                 <p className="mt-4 text-lg leading-8 text-zinc-300">{details.technicalChallenges}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button as="Link" to={`/casos/${build.slug}`}>
-                    Volver al build
+                    Volver a la demo
                   </Button>
                   <Button as="Link" to={build.ctaHref ?? '/contacto'} variant="outline">
                     Llevar este enfoque a mi caso

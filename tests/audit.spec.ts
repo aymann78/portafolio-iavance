@@ -1,15 +1,13 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import * as fs from 'fs';
 
 const pagesToTest = [
   { name: 'Home', url: '/' },
-  { name: 'Lab', url: '/lab' },
-  { name: 'Automations', url: '/automations' },
-  { name: 'Project_Ecommerce', url: '/projects/ecommerce-automation' },
-  { name: 'Project_Fintech', url: '/projects/fintech-cro-landing' },
-  { name: 'HowItWasMade_Ecommerce', url: '/projects/ecommerce-automation/how-it-was-made' },
-  { name: 'HowItWasMade_Fintech', url: '/projects/fintech-cro-landing/how-it-was-made' },
-  { name: 'Demo_Fintech', url: '/demo/fintech-cro-landing' },
+  { name: 'Soluciones', url: '/servicios' },
+  { name: 'Demos', url: '/casos' },
+  { name: 'Proceso', url: '/proceso' },
+  { name: 'Contacto', url: '/contacto' },
+  { name: 'Demo_Automation', url: '/demo/lead-to-ops' },
   { name: 'Demo_B2B', url: '/demo/b2b-saas-platform' },
 ];
 

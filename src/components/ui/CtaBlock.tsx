@@ -1,6 +1,7 @@
 import { Button } from './Button';
 import { Heading } from './Heading';
 import { Eyebrow } from './Eyebrow';
+import { siteMeta } from '../../data/site';
 
 interface CtaBlockProps {
   title: string;
@@ -34,7 +35,7 @@ export function CtaBlock({ title, description, primaryAction, eyebrow }: CtaBloc
               {primaryAction.label}
             </Button>
           )}
-          <Button as="a" href="mailto:iavance@gmail.com" variant="outline" size="lg">
+          <Button as="a" href={`mailto:${siteMeta.email}`} variant="outline" size="lg">
             Contactar por mail
           </Button>
         </div>

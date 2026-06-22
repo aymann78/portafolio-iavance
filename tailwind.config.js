@@ -40,8 +40,8 @@ export default {
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       letterSpacing: {
-        tighter: '-0.04em',
-        tight: '-0.02em',
+        tighter: '0',
+        tight: '0',
         normal: '0',
         wide: '0.02em',
         wider: '0.04em',

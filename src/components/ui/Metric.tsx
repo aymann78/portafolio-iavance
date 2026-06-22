@@ -9,7 +9,7 @@ interface MetricProps {
 export function Metric({ value, label, trend, trendUp = true, className = '' }: MetricProps) {
   return (
     <div className={`flex flex-col gap-1 border-l-2 border-brand-500/30 pl-4 py-1 ${className}`}>
-      <span className="text-3xl md:text-4xl font-extrabold tracking-tighter text-white">
+      <span className="text-3xl md:text-4xl font-extrabold tracking-normal text-white">
         {value}
       </span>
       <div className="flex items-center gap-2">

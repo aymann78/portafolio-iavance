@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Tag } from './ui';
 import { ProofType } from '../data/projects';
 
@@ -11,7 +12,7 @@ const proofCopy: Record<ProofType, { label: string; className: string }> = {
     className: 'bg-amber-500/12 text-amber-200 border-amber-500/25'
   },
   'strategic-build': {
-    label: 'Build estrategico',
+    label: 'Caso de uso estrategico',
     className: 'bg-brand-500/12 text-brand-200 border-brand-500/25'
   }
 };

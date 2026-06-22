@@ -37,7 +37,7 @@ export function Process() {
       <Section spacing="lg" className="border-b border-zinc-900">
         <Container className="max-w-5xl">
           <Reveal>
-            <Eyebrow>Proceso</Eyebrow>
+            <Eyebrow>Como trabajamos</Eyebrow>
             <Heading as="h1" size="2xl" className="mt-5">
               Un metodo sencillo para no perderse entre ideas, herramientas y urgencias.
             </Heading>

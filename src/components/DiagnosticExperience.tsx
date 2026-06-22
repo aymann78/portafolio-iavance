@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { ArrowRight, BarChart3, Cpu, Gauge, Network, Sparkles } from 'lucide-react';
-import { capabilityBuilds } from '../data/projects';
+import { publicCapabilityBuilds } from '../data/projects';
 import { Button, Card, CardContent, Eyebrow, Heading, Tag } from './ui';
 import { ProofBadge } from './ProofBadge';
 
@@ -14,7 +14,7 @@ const options = [
       'Tu propuesta necesita claridad, jerarquia y una experiencia que convierta visitas en conversaciones.',
     recommendation:
       'Empezariamos por un diagnostico de mensajes, estructura y friccion en captacion para decidir si hace falta una landing, una web comercial o un ajuste del funnel.',
-    buildSlug: 'vaultpay-cro',
+      buildSlug: 'b2b-autoflow',
     href: '/contacto?service=webs-de-conversion&problem=Mi%20web%20no%20convierte'
   },
   {
@@ -26,7 +26,7 @@ const options = [
       'Hay tiempo y margen que se escapan en tareas repetitivas, seguimiento manual y movimientos de datos.',
     recommendation:
       'Mapeariamos el flujo actual, priorizariamos los puntos mas costosos y planteariamos automatizaciones con reglas claras y una capa de IA solo donde mejore la operacion.',
-    buildSlug: 'market-signal-engine',
+      buildSlug: 'lead-to-ops',
     href: '/contacto?service=automatizaciones-e-ia&problem=Mi%20equipo%20pierde%20tiempo%20en%20tareas%20manuales'
   },
   {
@@ -63,7 +63,7 @@ export function DiagnosticExperience() {
     [activeId]
   );
 
-  const relatedBuild = capabilityBuilds.find((build) => build.slug === activeItem.buildSlug);
+  const relatedBuild = publicCapabilityBuilds.find((build) => build.slug === activeItem.buildSlug);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
@@ -146,7 +146,7 @@ export function DiagnosticExperience() {
               <div className="flex flex-wrap items-center gap-3">
                 <ProofBadge type={relatedBuild.proofType} />
                 <Tag variant="ghost" className="text-zinc-500">
-                  Build relacionado
+                  Demo relacionada
                 </Tag>
               </div>
               <div className="mt-4 flex flex-col gap-3">
@@ -155,7 +155,7 @@ export function DiagnosticExperience() {
               </div>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <Button as="Link" to={`/casos/${relatedBuild.slug}`} variant="outline">
-                  Ver capability build
+                  Ver demo
                 </Button>
                 <Button as="Link" to={activeItem.href}>
                   Solicitar diagnostico <ArrowRight className="h-4 w-4" />

@@ -7,8 +7,7 @@ import { HowItWasMade } from '../pages/HowItWasMade';
 import { DemoLayout } from '../layouts/DemoLayout';
 import { FintechLanding } from '../pages/demos/FintechLanding';
 import { B2bSaasLanding } from '../pages/demos/B2bSaasLanding';
-import { AutomationChatbot } from '../pages/demos/AutomationChatbot';
-import { CsvOpsClassifier } from '../pages/demos/CsvOpsClassifier';
+import { LeadToOpsCommandCenter } from '../pages/demos/LeadToOpsCommandCenter';
 import { Services } from '../pages/Services';
 import { CapabilityBuilds } from '../pages/CapabilityBuilds';
 import { Process } from '../pages/Process';
@@ -29,7 +28,15 @@ export const router = createBrowserRouter([
         element: <Services />
       },
       {
+        path: 'soluciones',
+        element: <Services />
+      },
+      {
         path: 'casos',
+        element: <CapabilityBuilds />
+      },
+      {
+        path: 'demos',
         element: <CapabilityBuilds />
       },
       {
@@ -46,6 +53,10 @@ export const router = createBrowserRouter([
       },
       {
         path: 'proceso',
+        element: <Process />
+      },
+      {
+        path: 'como-trabajamos',
         element: <Process />
       },
       {
@@ -79,16 +90,20 @@ export const router = createBrowserRouter([
         element: <B2bSaasLanding />
       },
       {
+        path: 'lead-to-ops',
+        element: <LeadToOpsCommandCenter />
+      },
+      {
         path: 'market-signal-engine',
-        element: <AutomationChatbot />
+        element: <LeadToOpsCommandCenter />
       },
       {
         path: 'automation-chatbot',
-        element: <AutomationChatbot />
+        element: <LeadToOpsCommandCenter />
       },
       {
         path: 'csv-ops-classifier',
-        element: <CsvOpsClassifier />
+        element: <LeadToOpsCommandCenter />
       }
     ]
   }

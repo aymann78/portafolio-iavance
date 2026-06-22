@@ -269,9 +269,9 @@ export function CsvOpsClassifier() {
   }
 
   return (
-    <div className="min-h-screen bg-[#070707] text-zinc-100">
-      <main className="mx-auto grid min-h-screen w-full max-w-7xl gap-5 px-4 py-5 xl:grid-cols-[390px_1fr_340px]">
-        <aside className="flex min-h-[620px] flex-col rounded-lg border border-zinc-800 bg-black">
+    <div className="min-h-screen overflow-x-hidden bg-[#070707] text-zinc-100">
+      <main className="mx-auto grid min-h-screen w-full max-w-7xl gap-5 px-4 py-5 xl:grid-cols-[minmax(0,390px)_minmax(0,1fr)_minmax(0,340px)]">
+        <aside className="min-w-0 flex min-h-[620px] flex-col rounded-lg border border-zinc-800 bg-black">
           <div className="border-b border-zinc-800 p-4">
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -316,7 +316,7 @@ export function CsvOpsClassifier() {
           </div>
         </aside>
 
-        <section className="grid gap-5">
+        <section className="min-w-0 grid gap-5">
           <div className="grid gap-4 md:grid-cols-3">
             <Metric label="Filas procesadas" value={String(records.length)} />
             <Metric label="Prioridad alta" value={String(stats.urgent)} tone={stats.urgent > 0 ? 'warning' : 'default'} />
@@ -338,7 +338,7 @@ export function CsvOpsClassifier() {
               </a>
             </div>
 
-            <div className="overflow-x-auto">
+            <div className="max-w-full overflow-x-auto">
               <table className="w-full min-w-[820px] text-left text-sm">
                 <thead className="border-b border-zinc-800 text-xs uppercase tracking-[0.14em] text-zinc-500">
                   <tr>
@@ -395,7 +395,7 @@ export function CsvOpsClassifier() {
           </div>
         </section>
 
-        <aside className="grid gap-5">
+        <aside className="min-w-0 grid gap-5">
           <div className="rounded-lg border border-zinc-800 bg-black p-4">
             <div className="flex items-center gap-2">
               <Bot className="h-4 w-4 text-cyan-300" />
