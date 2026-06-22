@@ -34,7 +34,7 @@ const engagement = [
 export function Process() {
   return (
     <div className="flex w-full flex-col">
-      <Section spacing="lg" className="border-b border-zinc-900">
+      <Section spacing="sm" className="border-b border-zinc-900">
         <Container className="max-w-5xl">
           <Reveal>
             <Eyebrow>Como trabajamos</Eyebrow>

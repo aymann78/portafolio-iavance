@@ -132,7 +132,7 @@ export function Home() {
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_24%_8%,rgba(14,165,233,0.2),transparent_34%),radial-gradient(circle_at_76%_18%,rgba(34,197,94,0.12),transparent_28%)]" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
 
-        <Container className="relative z-10 grid min-h-[calc(100svh-4rem)] gap-6 py-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:py-7">
+        <Container className="relative z-10 grid gap-6 py-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:py-10">
           <Reveal direction="none">
             <div className="max-w-3xl">
               <Eyebrow>Automatizacion operativa B2B</Eyebrow>

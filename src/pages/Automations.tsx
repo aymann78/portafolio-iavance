@@ -43,7 +43,7 @@ export function Automations() {
     <div className="flex flex-col w-full">
 
       {/* Header */}
-      <Section spacing="lg" className="border-b border-zinc-900 bg-black overflow-hidden relative">
+      <Section spacing="sm" className="border-b border-zinc-900 bg-black overflow-hidden relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500/10 rounded-full blur-[100px] pointer-events-none" />
         <Container className="relative z-10 flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
@@ -65,7 +65,7 @@ export function Automations() {
       </Section>
 
       {/* Visual Simulation: Pipeline */}
-      <Section spacing="lg">
+      <Section spacing="md">
         <Container>
           <Reveal>
             <div className="mb-10">
@@ -185,7 +185,7 @@ export function Automations() {
       </Section>
 
       {/* Dashboard Panel */}
-      <Section spacing="lg" className="border-t border-zinc-900 bg-zinc-950/30">
+      <Section spacing="md" className="border-t border-zinc-900 bg-zinc-950/30">
         <Container>
           <Reveal>
             <div className="mb-10">
@@ -266,7 +266,7 @@ export function Automations() {
       </Section>
 
       {/* Final CTA */}
-      <Section spacing="lg" className="pb-32 border-t border-zinc-900">
+      <Section spacing="md" className="border-t border-zinc-900">
         <Container className="text-center max-w-2xl">
           <Reveal>
             <MessageSquare className="w-10 h-10 text-zinc-700 mx-auto mb-5" />

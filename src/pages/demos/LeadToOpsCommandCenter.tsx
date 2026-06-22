@@ -427,7 +427,7 @@ export function LeadToOpsCommandCenter() {
                 <button
                   type="button"
                   onClick={runAutomation}
-                  className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#061014] transition hover:bg-cyan-200"
+                  className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#061014] shadow-[0_0_24px_rgba(0,245,255,0.35)] transition hover:bg-cyan-200 hover:shadow-[0_0_32px_rgba(0,245,255,0.5)]"
                 >
                   <Play className="h-4 w-4" />
                   Procesar flujo
@@ -461,7 +461,7 @@ export function LeadToOpsCommandCenter() {
 
           <div className="grid gap-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(320px,0.82fr)]">
             <div className="min-w-0 space-y-4">
-              <div className={`grid gap-4 ${scenario.id === 'csv' ? 'grid-cols-1' : 'xl:grid-cols-[minmax(0,1.02fr)_minmax(320px,0.98fr)]'}`}>
+              <div className={`grid gap-4 ${scenario.id === 'csv' ? 'grid-cols-1' : 'xl:grid-cols-2'}`}>
                 <Panel title="Pipeline interactivo" eyebrow="Proceso visible">
                   {scenario.id === 'csv' ? (
                     <CsvAutomationFlow
@@ -472,7 +472,7 @@ export function LeadToOpsCommandCenter() {
                       runStatus={runStatus}
                     />
                   ) : (
-                    <div className="grid gap-3 lg:grid-cols-2">
+                    <div className="grid gap-3">
                       {stageCopy.map((stage, index) => {
                         const Icon = stage.icon;
                         const active = index === activeStageIndex;
@@ -481,7 +481,7 @@ export function LeadToOpsCommandCenter() {
                         return (
                           <div
                             key={stage.key}
-                            className={`min-w-0 rounded-2xl border p-4 transition ${
+                            className={`min-w-0 rounded-2xl border p-3 transition ${
                               active
                                 ? 'border-cyan-300/30 bg-cyan-400/10 motion-safe:animate-pulse'
                                 : complete
@@ -489,20 +489,27 @@ export function LeadToOpsCommandCenter() {
                                   : 'border-white/8 bg-[#0b1013]'
                             }`}
                           >
-                            <div className="flex items-center justify-between gap-3">
-                              <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{stage.label}</p>
-                              <Icon className={`h-4 w-4 shrink-0 ${active ? 'text-cyan-200' : complete ? 'text-emerald-100' : 'text-[#7a9094]'}`} />
+                            <div className="flex items-start gap-3">
+                              <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${active ? 'bg-cyan-400/20' : complete ? 'bg-emerald-400/15' : 'bg-white/5'}`}>
+                                <Icon className={`h-4 w-4 ${active ? 'text-cyan-200' : complete ? 'text-emerald-100' : 'text-[#7a9094]'}`} />
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <div className="flex items-center gap-2">
+                                  <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{stage.label}</p>
+                                  <span className="text-xs text-white/60">—</span>
+                                  <p className="break-words whitespace-normal text-xs font-semibold text-white">{stage.description}</p>
+                                </div>
+                                <p className="mt-1 text-xs leading-5 text-[#9ab0b4]" style={{ overflowWrap: 'anywhere' }}>
+                                  {stage.key === 'ingest'
+                                    ? scenario.inputLabel
+                                    : stage.key === 'interpret'
+                                      ? selectedItem.intent
+                                      : stage.key === 'route'
+                                        ? `Ruta recomendada: ${selectedItem.destination}`
+                                        : selectedItem.action}
+                                </p>
+                              </div>
                             </div>
-                            <p className="mt-3 text-lg font-semibold text-white">{stage.description}</p>
-                            <p className="mt-3 break-words text-sm leading-6 text-[#9ab0b4]">
-                              {stage.key === 'ingest'
-                                ? scenario.inputLabel
-                                : stage.key === 'interpret'
-                                  ? selectedItem.intent
-                                  : stage.key === 'route'
-                                    ? `Ruta recomendada: ${selectedItem.destination}`
-                                    : selectedItem.action}
-                            </p>
                           </div>
                         );
                       })}
@@ -838,7 +845,7 @@ function Panel({
   return (
     <section className="min-w-0 overflow-hidden rounded-[28px] border border-white/8 bg-[#101518] p-5">
       <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#708488]">{eyebrow}</p>
-      <h2 className="mt-2 text-[1.65rem] font-semibold leading-tight text-white">{title}</h2>
+      <h2 className="mt-2 text-xl font-semibold leading-tight text-white">{title}</h2>
       <div className="mt-4 min-w-0">{children}</div>
     </section>
   );
@@ -868,7 +875,7 @@ function DecisionRow({
         <Icon className="h-4 w-4 shrink-0 text-cyan-300" />
         <span className="text-sm">{label}</span>
       </div>
-      <p className="max-w-[58%] text-right text-sm leading-6 text-white">{value}</p>
+      <p className="min-w-0 flex-1 text-right text-sm leading-6 text-white" style={{ overflowWrap: 'anywhere' }}>{value}</p>
     </div>
   );
 }

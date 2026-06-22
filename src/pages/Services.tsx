@@ -6,7 +6,7 @@ import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, R
 export function Services() {
   return (
     <div className="flex w-full flex-col">
-      <Section spacing="lg" className="border-b border-zinc-900">
+      <Section spacing="sm" className="border-b border-zinc-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.14),transparent_36%),linear-gradient(to_bottom,rgba(255,255,255,0.03),transparent)]" />
         <Container className="relative z-10 max-w-5xl">
           <Reveal>
