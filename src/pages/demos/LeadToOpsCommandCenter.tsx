@@ -411,7 +411,7 @@ export function LeadToOpsCommandCenter() {
         </aside>
 
         <section className="min-w-0 space-y-4">
-          <header className="overflow-hidden rounded-[32px] border border-white/8 bg-[#101518]">
+          <header className="relative overflow-hidden rounded-[32px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
             <div className="flex flex-col gap-4 border-b border-white/8 p-5 xl:flex-row xl:items-start xl:justify-between">
               <div className="max-w-3xl">
                 <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">Entrada → criterio → accion</p>
@@ -462,7 +462,7 @@ export function LeadToOpsCommandCenter() {
           <div className="grid gap-4 xl:grid-cols-[minmax(0,1.18fr)_minmax(320px,0.82fr)]">
             <div className="min-w-0 space-y-4">
               <div className={`grid gap-4 ${scenario.id === 'csv' ? 'grid-cols-1' : 'xl:grid-cols-2'}`}>
-                <Panel title="Pipeline interactivo" eyebrow="Proceso visible">
+                <Panel title="Flujo de Operación" eyebrow="Operación en curso">
                   {scenario.id === 'csv' ? (
                     <CsvAutomationFlow
                       items={scenario.items}
@@ -494,12 +494,9 @@ export function LeadToOpsCommandCenter() {
                                 <Icon className={`h-4 w-4 ${active ? 'text-cyan-200' : complete ? 'text-emerald-100' : 'text-[#7a9094]'}`} />
                               </div>
                               <div className="min-w-0 flex-1">
-                                <div className="flex items-center gap-2">
-                                  <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{stage.label}</p>
-                                  <span className="text-xs text-white/60">—</span>
-                                  <p className="break-words whitespace-normal text-xs font-semibold text-white">{stage.description}</p>
-                                </div>
-                                <p className="mt-1 text-xs leading-5 text-[#9ab0b4]" style={{ overflowWrap: 'anywhere' }}>
+                                <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{stage.label}</p>
+                                <p className="mt-1 break-words whitespace-normal text-sm font-semibold text-white">{stage.description}</p>
+                                <p className="mt-2 text-xs leading-5 text-[#9ab0b4]" style={{ overflowWrap: 'anywhere' }}>
                                   {stage.key === 'ingest'
                                     ? scenario.inputLabel
                                     : stage.key === 'interpret'
@@ -542,7 +539,7 @@ export function LeadToOpsCommandCenter() {
                   </div>
                 </Panel>
 
-                <Panel title="Decision engine" eyebrow="Que criterio aplica">
+                <Panel title="Criterio de Negocio" eyebrow="Reglas de procesamiento">
                   <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
                     <div className="flex items-center gap-2 text-cyan-200">
                       <Bot className="h-4 w-4" />
@@ -551,7 +548,7 @@ export function LeadToOpsCommandCenter() {
                     <p className="mt-3 text-sm leading-7 text-cyan-50">{scenario.assistantPrompt}</p>
                   </div>
 
-                  <div className="mt-4 space-y-3 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+                  <div className="mt-4 space-y-3 rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
                     <DecisionRow icon={MessageSquareText} label="Entrada elegida" value={selectedItem.source} />
                     <DecisionRow icon={ScanSearch} label="Lectura" value={selectedItem.intent} />
                     <DecisionRow icon={ShieldAlert} label="Prioridad" value={selectedItem.priority} />
@@ -607,7 +604,7 @@ export function LeadToOpsCommandCenter() {
               </Panel>
             </div>
 
-            <aside className="min-w-0 space-y-4">
+            <aside className={`min-w-0 space-y-4 transition-all duration-1000 ${runStatus === 'idle' ? 'opacity-30 blur-sm grayscale pointer-events-none' : 'opacity-100 blur-none grayscale-0'}`}>
               <Panel title="Resumen de negocio" eyebrow="Lo que ve el equipo">
                 <div className="grid gap-3 sm:grid-cols-2">
                   <MiniMetric label="Entradas" value={String(metrics.incoming)} />
@@ -625,7 +622,7 @@ export function LeadToOpsCommandCenter() {
                     'Tarea creada con contexto, prioridad y responsable.',
                     'Actividad guardada para seguimiento y auditoria.',
                   ].map((item) => (
-                    <div key={item} className="rounded-2xl border border-white/8 bg-[#0b1013] px-4 py-3 text-sm leading-6 text-[#d8e4e6]">
+                    <div key={item} className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md px-4 py-3 text-sm leading-6 text-[#d8e4e6]">
                       {item}
                     </div>
                   ))}
@@ -708,8 +705,8 @@ function CsvAutomationFlow({
   );
 
   return (
-    <div className="grid gap-4 xl:grid-cols-[minmax(0,1.08fr)_minmax(240px,0.72fr)_minmax(0,0.92fr)]">
-      <div className="min-w-0 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+    <div className="flex flex-col gap-4">
+      <div className="min-w-0 rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">CSV de entrada</p>
@@ -752,7 +749,7 @@ function CsvAutomationFlow({
         </div>
       </div>
 
-      <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+      <div className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
         <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Motor</p>
         <p className="mt-2 text-lg font-semibold text-white">Como se procesa</p>
         <div className="mt-4 space-y-3">
@@ -786,12 +783,12 @@ function CsvAutomationFlow({
         </div>
       </div>
 
-      <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+      <div className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
         <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Salida por destino</p>
         <p className="mt-2 text-lg font-semibold text-white">Resultado del lote</p>
         <div className="mt-4 space-y-3">
           {(Object.entries(grouped) as Array<[Destination, number]>).map(([destination, total]) => (
-            <div key={destination} className="rounded-2xl border border-white/8 bg-black/10 p-3">
+            <div key={destination} className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-sm p-3">
               <div className="flex items-center justify-between gap-3">
                 <RouteBadge destination={destination} />
                 <span className="text-sm font-semibold text-white">{total}</span>
@@ -823,7 +820,7 @@ function InsightCard({
   icon: ComponentType<{ className?: string }>;
 }) {
   return (
-    <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+    <div className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
       <div className="flex items-center justify-between gap-3">
         <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{label}</p>
         <Icon className="h-4 w-4 text-cyan-300" />
@@ -843,7 +840,7 @@ function Panel({
   children: ReactNode;
 }) {
   return (
-    <section className="min-w-0 overflow-hidden rounded-[28px] border border-white/8 bg-[#101518] p-5">
+    <section className="min-w-0 overflow-hidden rounded-[28px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-5 shadow-2xl">
       <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#708488]">{eyebrow}</p>
       <h2 className="mt-2 text-xl font-semibold leading-tight text-white">{title}</h2>
       <div className="mt-4 min-w-0">{children}</div>
@@ -853,7 +850,7 @@ function Panel({
 
 function MiniMetric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+    <div className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
       <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{label}</p>
       <p className="mt-3 text-2xl font-semibold text-white">{value}</p>
     </div>
@@ -870,12 +867,12 @@ function DecisionRow({
   value: string;
 }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-white/8 pb-3 last:border-0 last:pb-0">
-      <div className="flex min-w-0 items-center gap-2 text-[#8ea3a7]">
+    <div className="flex flex-col gap-1.5 border-b border-white/8 pb-3 last:border-0 last:pb-0">
+      <div className="flex items-center gap-2 text-[#8ea3a7]">
         <Icon className="h-4 w-4 shrink-0 text-cyan-300" />
-        <span className="text-sm">{label}</span>
+        <span className="text-xs font-mono uppercase tracking-[0.1em]">{label}</span>
       </div>
-      <p className="min-w-0 flex-1 text-right text-sm leading-6 text-white" style={{ overflowWrap: 'anywhere' }}>{value}</p>
+      <p className="text-sm leading-6 text-white" style={{ overflowWrap: 'anywhere' }}>{value}</p>
     </div>
   );
 }
@@ -890,7 +887,7 @@ function RuleCard({
   icon: ComponentType<{ className?: string }>;
 }) {
   return (
-    <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+    <div className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md p-4">
       <div className="flex items-center gap-2 text-cyan-200">
         <Icon className="h-4 w-4" />
         <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#8adfeb]">{label}</p>
@@ -904,7 +901,7 @@ function ActivityFeed({ items }: { items: ActivityItem[] }) {
   return (
     <div className="space-y-3">
       {items.map((item) => (
-        <div key={item.id} className="rounded-2xl border border-white/8 bg-[#0b1013] px-4 py-3">
+        <div key={item.id} className="rounded-2xl border border-white/[0.05] bg-white/[0.01] backdrop-blur-md px-4 py-3">
           <div className="flex items-start gap-3">
             <span className={`mt-1 h-2.5 w-2.5 rounded-full ${item.tone === 'success' ? 'bg-emerald-400' : item.tone === 'info' ? 'bg-cyan-300' : 'bg-white/35'}`} />
             <div className="min-w-0">
