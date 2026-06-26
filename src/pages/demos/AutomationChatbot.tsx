@@ -287,7 +287,7 @@ export function AutomationChatbot() {
                   <CrmRow label="Origen" value="Instagram + web" />
                   <CrmRow label="Necesidad" value="Responder antes y agendar visitas" />
                   <CrmRow label="Prioridad" value={leadScore >= 70 ? 'Alta' : 'Media'} />
-                  <CrmRow label="Siguiente accion" value={stage === 'agendado' ? 'Crear cita comercial' : 'Enviar resumen al equipo'} />
+                  <CrmRow label="Siguiente acción" value={stage === 'agendado' ? 'Crear cita comercial' : 'Enviar resumen al equipo'} />
                 </div>
               </div>
 

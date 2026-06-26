@@ -56,7 +56,7 @@ export const capabilityBuilds: CapabilityBuild[] = [
     stack: ['React', 'TypeScript', 'TailwindCSS', 'Vite'],
     tags: ['B2B', 'Portal', 'Integraciones', 'Operaciones'],
     demoUrl: '/demo/b2b-saas-platform',
-    ctaLabel: 'Pedir diagnostico para operaciones',
+    ctaLabel: 'Pedir diagnóstico para operaciones',
     ctaHref: '/contacto?service=software-e-integraciones&problem=Necesito%20ordenar%20mi%20operativa%20B2B',
     howItWasMade: {
       businessGoal:
@@ -75,7 +75,7 @@ export const capabilityBuilds: CapabilityBuild[] = [
     id: '2',
     slug: 'lead-to-ops',
     title: 'Lead-to-Ops Command Center',
-    category: 'Automatizacion operativa',
+    category: 'Automatización operativa',
     proofType: 'demo',
     shortDescription:
       'Demo unificada donde entran leads, correos, incidencias y CSVs, y el sistema clasifica, enruta y genera acciones visibles.',
@@ -94,9 +94,9 @@ export const capabilityBuilds: CapabilityBuild[] = [
     clientLabel: 'Demo interactiva',
     year: '2026',
     stack: ['React', 'TypeScript', 'Rules Engine', 'UI State'],
-    tags: ['Automatizacion', 'Clasificacion', 'CRM', 'Operaciones'],
+    tags: ['Automatización', 'Clasificación', 'CRM', 'Operaciones'],
     demoUrl: '/demo/lead-to-ops',
-    ctaLabel: 'Pedir mapa de automatizacion',
+    ctaLabel: 'Pedir mapa de automatización',
     ctaHref: '/contacto?service=automatizaciones-e-ia&problem=Mi%20equipo%20pierde%20tiempo%20ordenando%20entradas%20y%20datos',
     howItWasMade: {
       businessGoal:
@@ -115,7 +115,7 @@ export const capabilityBuilds: CapabilityBuild[] = [
     id: 'legacy-vaultpay',
     slug: 'vaultpay-cro',
     title: 'VaultPay CRO Landing',
-    category: 'Webs de conversion',
+    category: 'Webs de conversión',
     visibility: 'legacy',
     proofType: 'demo',
     shortDescription:
@@ -137,11 +137,11 @@ export const capabilityBuilds: CapabilityBuild[] = [
     stack: ['React', 'TypeScript', 'TailwindCSS', 'CSS nativo'],
     tags: ['CRO', 'Landing', 'Legacy'],
     demoUrl: '/demo/fintech-cro-landing',
-    ctaLabel: 'Hablar de conversion',
+    ctaLabel: 'Hablar de conversión',
     ctaHref: '/contacto?service=webs-de-conversion&problem=Mi%20web%20no%20convierte',
     howItWasMade: {
       businessGoal:
-        'Demostrar una landing de conversion como experimento anterior dentro del portfolio.',
+        'Demostrar una landing de conversión como experimento anterior dentro del portfolio.',
       strategicFocus:
         'Cada bloque responde a una duda del visitante: qué es, por qué importa, si puedo confiar y qué tengo que hacer ahora.',
       frontendDecisions:

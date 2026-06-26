@@ -2,9 +2,9 @@ export const siteMeta = {
   name: 'iavance.es',
   domain: 'https://iavance.es',
   description:
-    'Automatizacion operativa B2B para empresas que pierden horas entre hojas, correos, datos dispersos y procesos manuales.',
+    'Automatización operativa B2B para empresas que pierden horas entre hojas, correos, datos dispersos y procesos manuales.',
   email: 'iavance@gmail.com',
-  contactEmailRecommendation: 'Recomendado: cambiar a hola@iavance.es o diagnostico@iavance.es para aumentar confianza B2B.',
+  contactEmailRecommendation: 'Recomendado: cambiar a hola@iavance.es o diagnóstico@iavance.es para aumentar confianza B2B.',
   instagram: 'https://instagram.com/iavance.es',
   formEndpoint: 'https://formsubmit.co/ajax/iavance@gmail.com',
   ogImage: '/og-image.svg',
@@ -18,7 +18,7 @@ export const siteMeta = {
     },
     service: {
       '@type': 'Service',
-      name: 'Automatizacion operativa B2B',
+      name: 'Automatización operativa B2B',
       serviceType: 'Automatizaciones, integraciones y software interno B2B',
       areaServed: 'España',
       audience: 'Empresas B2B con procesos manuales y datos dispersos',

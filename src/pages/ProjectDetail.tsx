@@ -73,7 +73,7 @@ export function ProjectDetail() {
               <CardContent className="pt-8">
                 <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Lectura correcta</p>
                 <p className="mt-4 text-zinc-300">
-                  {getProofLabel(build.proofType)} orientada a enseñar capacidad, criterio y tipo de solucion. No se presenta como caso real de cliente.
+                  {getProofLabel(build.proofType)} orientada a enseñar capacidad, criterio y tipo de solución. No se presenta como caso real de cliente.
                 </p>
                 <div className="mt-8 space-y-6">
                   <div>
@@ -105,7 +105,7 @@ export function ProjectDetail() {
         <Container className="grid gap-8 lg:grid-cols-3">
           {[
             { label: 'Problema', value: build.problem },
-            { label: 'Solucion', value: build.solution },
+            { label: 'Solución', value: build.solution },
             { label: 'Impacto esperado', value: build.expectedImpact }
           ].map((item, index) => (
             <Reveal key={item.label} delay={index === 0 ? 'sm' : index === 1 ? 'md' : 'lg'}>
@@ -137,11 +137,11 @@ export function ProjectDetail() {
               <CardContent className="pt-8">
                 <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Siguiente paso recomendado</p>
                 <p className="mt-4 text-zinc-300">
-                  Si tu situacion se parece a esta demo o caso de uso, el siguiente paso util es un diagnostico que nos permita aterrizar alcance, prioridades y orden de ejecucion.
+                  Si tu situacion se parece a esta demo o caso de uso, el siguiente paso útil es un diagnóstico que nos permita aterrizar alcance, prioridades y orden de ejecucion.
                 </p>
                 <div className="mt-8 flex flex-col gap-3">
                   <Button as="Link" to={build.ctaHref ?? '/contacto'}>
-                    {build.ctaLabel ?? 'Solicitar diagnostico'}
+                    {build.ctaLabel ?? 'Solicitar diagnóstico'}
                   </Button>
                   <Button as="Link" to={`/casos/${build.slug}/como-se-hizo`} variant="outline">
                     Ver como se penso

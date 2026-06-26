@@ -6,14 +6,14 @@ import { ProofBadge } from './ProofBadge';
 
 const options = [
   {
-    id: 'conversion',
+    id: 'conversión',
     label: 'Mi web no convierte',
     icon: Gauge,
-    service: 'Webs de conversion',
+    service: 'Webs de conversión',
     summary:
       'Tu propuesta necesita claridad, jerarquia y una experiencia que convierta visitas en conversaciones.',
     recommendation:
-      'Empezariamos por un diagnostico de mensajes, estructura y friccion en captacion para decidir si hace falta una landing, una web comercial o un ajuste del funnel.',
+      'Empezariamos por un diagnóstico de mensajes, estructura y fricción en captación para decidir si hace falta una landing, una web comercial o un ajuste del funnel.',
       buildSlug: 'b2b-autoflow',
     href: '/contacto?service=webs-de-conversion&problem=Mi%20web%20no%20convierte'
   },
@@ -25,7 +25,7 @@ const options = [
     summary:
       'Hay tiempo y margen que se escapan en tareas repetitivas, seguimiento manual y movimientos de datos.',
     recommendation:
-      'Mapeariamos el flujo actual, priorizariamos los puntos mas costosos y planteariamos automatizaciones con reglas claras y una capa de IA solo donde mejore la operacion.',
+      'Mapeariamos el flujo actual, priorizariamos los puntos mas costosos y planteariamos automatizaciones con reglas claras y una capa de IA solo donde mejore la operación.',
       buildSlug: 'lead-to-ops',
     href: '/contacto?service=automatizaciones-e-ia&problem=Mi%20equipo%20pierde%20tiempo%20en%20tareas%20manuales'
   },
@@ -37,7 +37,7 @@ const options = [
     summary:
       'Tus datos viven en varios sitios, los equipos trabajan con versiones distintas y cada paso depende de alguien.',
     recommendation:
-      'La prioridad seria definir una capa comun de integracion y una interfaz que ordene estados, datos y acciones sin añadir mas herramientas por encima.',
+      'La prioridad seria definir una capa comun de integración y una interfaz que ordene estados, datos y acciones sin añadir mas herramientas por encima.',
     buildSlug: 'b2b-autoflow',
     href: '/contacto?service=software-e-integraciones&problem=Tengo%20herramientas%20desconectadas'
   },
@@ -49,14 +49,14 @@ const options = [
     summary:
       'Hay una parte del negocio que ya no cabe bien en software generalista y necesita una herramienta propia.',
     recommendation:
-      'Definiriamos un MVP con el minimo de complejidad util: roles, estados, flujos y conexiones con las herramientas que ya usas.',
+      'Definiriamos un MVP con el minimo de complejidad útil: roles, estados, flujos y conexiones con las herramientas que ya usas.',
     buildSlug: 'b2b-autoflow',
     href: '/contacto?service=software-e-integraciones&problem=Necesito%20una%20herramienta%20interna'
   }
 ] as const;
 
 export function DiagnosticExperience() {
-  const [activeId, setActiveId] = useState<(typeof options)[number]['id']>('conversion');
+  const [activeId, setActiveId] = useState<(typeof options)[number]['id']>('conversión');
 
   const activeItem = useMemo(
     () => options.find((option) => option.id === activeId) ?? options[0],
@@ -71,7 +71,7 @@ export function DiagnosticExperience() {
         <CardContent className="pt-8">
           <div className="mb-8 flex items-start justify-between gap-4">
             <div className="max-w-md">
-              <Eyebrow>Diagnostico interactivo</Eyebrow>
+              <Eyebrow>Diagnóstico interactivo</Eyebrow>
               <Heading as="h3" size="md" className="mt-3">
                 Elige el cuello de botella principal
               </Heading>
@@ -158,7 +158,7 @@ export function DiagnosticExperience() {
                   Ver demo
                 </Button>
                 <Button as="Link" to={activeItem.href}>
-                  Solicitar diagnostico <ArrowRight className="h-4 w-4" />
+                  Solicitar diagnóstico <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -178,7 +178,7 @@ export function DiagnosticExperience() {
                 Puerta de entrada
               </p>
               <p className="mt-3 text-sm text-zinc-300">
-                El diagnostico sirve para empezar con una primera fase clara sin comprometer un proyecto grande desde el dia uno.
+                El diagnóstico sirve para empezar con una primera fase clara sin comprometer un proyecto grande desde el dia uno.
               </p>
             </div>
           </div>

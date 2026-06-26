@@ -36,7 +36,7 @@ export const scenarios: Scenario[] = [
         priority: 'Media',
         destination: 'Ventas',
         action: 'Responder, pedir contexto y abrir oportunidad cualificada.',
-        intent: 'Consulta comercial con dependencia de integracion',
+        intent: 'Consulta comercial con dependencia de integración',
       },
       {
         id: 'lead-3',
@@ -47,7 +47,7 @@ export const scenarios: Scenario[] = [
         amount: 5200,
         priority: 'Alta',
         destination: 'Operaciones',
-        action: 'Crear diagnostico operativo y preparar propuesta automatizada.',
+        action: 'Crear diagnóstico operativo y preparar propuesta automatizada.',
         intent: 'Dolor operativo con impacto directo en ventas',
       },
     ],
@@ -95,7 +95,7 @@ export const scenarios: Scenario[] = [
         priority: 'Media',
         destination: 'Finanzas',
         action: 'Preparar resumen de facturas y tarea para administracion.',
-        intent: 'Consulta de cobro y documentacion',
+        intent: 'Consulta de cobro y documentación',
       },
     ],
   },
@@ -105,9 +105,9 @@ export const scenarios: Scenario[] = [
     subtitle: 'Un lote con leads, incidencias y solicitudes mezcladas',
     problem: 'Nadie quiere revisar fila por fila un CSV para decidir que va a ventas, soporte o facturacion.',
     inputLabel: 'CSV / exportaciones periodicas',
-    outputLabel: 'Clasificacion, prioridad y acciones por lote',
+    outputLabel: 'Clasificación, prioridad y acciones por lote',
     impact: 'Convierte un archivo plano en una cola priorizada y en tareas claras para el equipo.',
-    assistantPrompt: 'Limpio el lote, leo el contenido de cada fila y preparo ruta, prioridad y accion visible.',
+    assistantPrompt: 'Limpio el lote, leo el contenido de cada fila y preparo ruta, prioridad y acción visible.',
     sampleInput:
       'CSV: empresa, canal, mensaje, importe\nReformas Luna, web, presupuesto urgente para seguimiento, 8500\nTaller Norte, email, 120 facturas por revisar, 4200\nDistribuciones Soler, csv, pedido duplicado y queja, 1800',
     items: [

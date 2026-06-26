@@ -52,10 +52,10 @@ export function OperationalBoard({
           </table>
         </div>
       </Panel>
-      <Panel title="Que hace wow en 10 segundos" eyebrow="Valor visible">
+      <Panel title="Qué hace wow en 10 segundos" eyebrow="Valor visible">
         <div className="grid gap-3 md:grid-cols-3">
           <OutcomeRow label="Pedido" value="La cola ya no es correo: tiene progreso, riesgo y responsable." tone="cyan" />
-          <OutcomeRow label="Stock" value="Las roturas se ven antes y disparan una accion clara." tone="emerald" />
+          <OutcomeRow label="Stock" value="Las roturas se ven antes y disparan una acción clara." tone="emerald" />
           <OutcomeRow label="Credito" value="Los bloqueos aparecen dentro del flujo y no fuera de sistema." tone="rose" />
         </div>
       </Panel>

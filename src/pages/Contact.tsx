@@ -9,7 +9,7 @@ import { trackEvent } from '../lib/analytics';
 const nextSteps = [
   'Leemos el contexto y vemos si el problema esta bien planteado.',
   'Si tiene sentido, te proponemos un siguiente paso claro y proporcionado.',
-  'Si no lo vemos, tambien te lo diremos sin vender una solucion forzada.'
+  'Si no lo vemos, también te lo diremos sin vender una solución forzada.'
 ];
 
 const problemOptions = [
@@ -18,7 +18,7 @@ const problemOptions = [
     title: 'Tareas manuales',
     description: 'Copiar datos, revisar correos, perseguir estados o hacer seguimiento a mano.',
     problem: 'Perdemos horas cada semana en tareas manuales y necesitamos automatizar una primera pieza.',
-    need: 'Automatizacion',
+    need: 'Automatización',
     projectType: 'Automatizaciones e IA aplicada',
     icon: Workflow,
   },
@@ -59,10 +59,10 @@ export function Contact() {
             <div className="max-w-2xl">
               <Eyebrow>Contacto</Eyebrow>
               <Heading as="h1" size="2xl" className="mt-5">
-                Pide un diagnostico gratuito y sal con una primera ruta clara.
+                Pide un diagnóstico gratuito y sal con una primera ruta clara.
               </Heading>
               <p className="mt-6 text-lg leading-8 text-zinc-400">
-                Puedes venir con una idea clara o con un problema todavia difuso. Lo importante es detectar que pieza puede quitar friccion sin arrancar con un proyecto gigante.
+                Puedes venir con una idea clara o con un problema todavía difuso. Lo importante es detectar que pieza puede quitar fricción sin arrancar con un proyecto gigante.
               </p>
 
               <div className="mt-8 grid gap-3">
@@ -125,7 +125,7 @@ export function Contact() {
             <DiagnosticForm
               key={`${selectedProblem.id}-${initialProblem}-${initialProjectType}`}
               streamlined
-              title="Pedir diagnostico gratuito"
+              title="Pedir diagnóstico gratuito"
               description="Deja los datos minimos y el cuello de botella. La respuesta busca claridad, no vender complejidad."
               initialProblem={formProblem}
               initialProjectType={formProjectType}

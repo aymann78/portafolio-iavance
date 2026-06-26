@@ -30,7 +30,7 @@ export const modules: Array<{
     label: 'Pedidos',
     eyebrow: 'Order desk',
     title: 'Pedidos con aprobacion y salida visibles',
-    description: 'La cola deja de vivir en correo y pasa a una vista con progreso, riesgo y accion.',
+    description: 'La cola deja de vivir en correo y pasa a una vista con progreso, riesgo y acción.',
     icon: ClipboardList,
   },
   {
@@ -94,7 +94,7 @@ export const initialOrders: Order[] = [
     value: 8900,
     channel: 'CSV semanal',
     status: 'Bloqueado',
-    due: 'Revision de credito',
+    due: 'Revisión de credito',
     progress: 54,
     issue: 'Credito fuera de politica y stock sensible',
   },

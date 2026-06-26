@@ -213,7 +213,7 @@ export function ProcessPanel({
                 <th className="px-4 py-3">Intento detectado</th>
                 <th className="px-4 py-3">Destino</th>
                 <th className="px-4 py-3">Estado</th>
-                <th className="px-4 py-3">Accion</th>
+                <th className="px-4 py-3">Acción</th>
               </tr>
             </thead>
             <tbody>

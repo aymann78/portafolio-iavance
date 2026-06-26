@@ -12,7 +12,7 @@ export function Services() {
           <Reveal>
             <Eyebrow>Soluciones</Eyebrow>
             <Heading as="h1" size="2xl" className="mt-5">
-              Tres formas de quitar friccion a captacion, operaciones y producto.
+              Tres formas de quitar fricción a captación, operaciones y producto.
             </Heading>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
               La propuesta no gira alrededor de vender horas. Gira alrededor de detectar que pieza hace falta y ponerla en marcha con un plan asumible.
@@ -130,14 +130,14 @@ export function Services() {
               <CardContent className="pt-10 text-center">
                 <Eyebrow>Siguiente paso</Eyebrow>
                 <Heading as="h2" size="lg" className="mt-4">
-                  Si no tienes claro que linea encaja, empezamos por el diagnostico.
+                  Si no tienes claro que línea encaja, empezamos por el diagnóstico.
                 </Heading>
                 <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
-                  Lo mas importante al inicio no es elegir tecnologia. Es entender bien el cuello de botella y ordenar la siguiente decision.
+                  Lo mas importante al inicio no es elegir tecnologia. Es entender bien el cuello de botella y ordenar la siguiente decisión.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
                   <Button as="Link" to="/contacto">
-                    Solicitar diagnostico
+                    Solicitar diagnóstico
                   </Button>
                   <Button as="Link" to="/casos" variant="outline">
                     Ver demos

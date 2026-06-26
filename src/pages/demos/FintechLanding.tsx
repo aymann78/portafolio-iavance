@@ -32,7 +32,7 @@ export function FintechLanding() {
         </div>
         <div className="hidden md:flex gap-8 font-medium text-slate-600 text-sm">
           <a href="#product" className="hover:text-blue-600 transition-colors">Producto</a>
-          <a href="#docs" className="hover:text-blue-600 transition-colors">Documentacion</a>
+          <a href="#docs" className="hover:text-blue-600 transition-colors">Documentación</a>
           <a href="#contact" className="hover:text-blue-600 transition-colors">Contacto</a>
         </div>
         <div className="flex gap-4">

@@ -19,9 +19,9 @@ export function useLeadToOpsState() {
   const [runStatus, setRunStatus] = useState<RunStatus>('idle');
   const [activeStageIndex, setActiveStageIndex] = useState(0);
   const [activity, setActivity] = useState<ActivityItem[]>([
-    { id: 'activity-1', title: 'Flujo listo para clasificar entradas.', meta: 'Motor de automatizacion', tone: 'info' },
+    { id: 'activity-1', title: 'Flujo listo para clasificar entradas.', meta: 'Motor de automatización', tone: 'info' },
     { id: 'activity-2', title: 'Plantillas de salida preparadas para CRM y equipo.', meta: 'Salida visible', tone: 'neutral' },
-    { id: 'activity-3', title: 'Reglas de prioridad cargadas por destino y urgencia.', meta: 'Decision engine', tone: 'neutral' },
+    { id: 'activity-3', title: 'Reglas de prioridad cargadas por destino y urgencia.', meta: 'Decisión engine', tone: 'neutral' },
   ]);
 
   const scenario = scenarios.find((item) => item.id === scenarioId) ?? scenarios[0];
@@ -97,7 +97,7 @@ export function useLeadToOpsState() {
         {
           id: `scenario-${nextScenarioId}-2`,
           title: 'Flujo listo para clasificar y enrutar.',
-          meta: 'Motor de automatizacion',
+          meta: 'Motor de automatización',
           tone: 'neutral',
         },
         {
@@ -120,7 +120,7 @@ export function useLeadToOpsState() {
       {
         id: `select-${itemId}-${Date.now()}`,
         title: `Entrada abierta: ${itemId}`,
-        meta: 'Contexto listo para decision',
+        meta: 'Contexto listo para decisión',
         tone: 'info' as const,
       },
       ...current,
@@ -155,9 +155,9 @@ export function useLeadToOpsState() {
     setRunStatus('idle');
     setActiveStageIndex(0);
     setActivity([
-      { id: 'activity-1', title: 'Flujo listo para clasificar entradas.', meta: 'Motor de automatizacion', tone: 'info' },
+      { id: 'activity-1', title: 'Flujo listo para clasificar entradas.', meta: 'Motor de automatización', tone: 'info' },
       { id: 'activity-2', title: 'Plantillas de salida preparadas para CRM y equipo.', meta: 'Salida visible', tone: 'neutral' },
-      { id: 'activity-3', title: 'Reglas de prioridad cargadas por destino y urgencia.', meta: 'Decision engine', tone: 'neutral' },
+      { id: 'activity-3', title: 'Reglas de prioridad cargadas por destino y urgencia.', meta: 'Decisión engine', tone: 'neutral' },
     ]);
     trackEvent('demo_action_triggered', { demo: 'lead_to_ops', action: 'reset' });
   }

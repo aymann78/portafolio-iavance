@@ -30,7 +30,7 @@ export function BusinessSummaryPanel({
         </div>
       </Panel>
 
-      <Panel title="Salida visible" eyebrow="Que recibe el negocio">
+      <Panel title="Salida visible" eyebrow="Qué recibe el negocio">
         <div className="space-y-3">
           {[
             `CRM actualizado para ${selectedItem.company}.`,
@@ -48,7 +48,7 @@ export function BusinessSummaryPanel({
       <Panel title="Antes / despues" eyebrow="Porque se entiende mejor">
         <div className="space-y-3">
           <OutcomeRow label="Antes" value="Mensajes mezclados y decisiones lentas, dependientes de una persona." tone="rose" />
-          <OutcomeRow label="Ahora" value="El sistema muestra entrada, criterio, ruta y accion sin esconder el proceso." tone="emerald" />
+          <OutcomeRow label="Ahora" value="El sistema muestra entrada, criterio, ruta y acción sin esconder el proceso." tone="emerald" />
           <OutcomeRow label="Impacto" value="El visitante entiende en segundos que entra, que decide y que sale." tone="cyan" />
         </div>
       </Panel>
@@ -71,12 +71,12 @@ export function LiveRunSidebar({
         <ActivityFeed items={activity} />
       </Panel>
 
-      <Panel title="Reglas aplicadas" eyebrow="Decision visible">
+      <Panel title="Reglas aplicadas" eyebrow="Decisión visible">
         <div className="space-y-3">
           <RuleCard label="Input" value={scenario.inputLabel} icon={Mail} />
           <RuleCard label="Lectura" value={selectedItem.intent} icon={Sparkles} />
           <RuleCard label="Ruta" value={selectedItem.destination} icon={Route} />
-          <RuleCard label="Accion" value={selectedItem.action} icon={Send} />
+          <RuleCard label="Acción" value={selectedItem.action} icon={Send} />
         </div>
       </Panel>
 
@@ -86,8 +86,8 @@ export function LiveRunSidebar({
         className="flex items-center justify-between rounded-[28px] border border-cyan-300/25 bg-cyan-400/10 px-5 py-4 text-white transition hover:bg-cyan-400/15"
       >
         <span>
-          <span className="block text-sm font-semibold">Pedir diagnostico de automatizacion</span>
-          <span className="mt-1 block text-xs text-cyan-100/75">Entrada, reglas, acciones e integracion</span>
+          <span className="block text-sm font-semibold">Pedir diagnóstico de automatización</span>
+          <span className="mt-1 block text-xs text-cyan-100/75">Entrada, reglas, acciones e integración</span>
         </span>
         <ArrowRight className="h-5 w-5" />
       </a>

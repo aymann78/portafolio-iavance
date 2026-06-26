@@ -54,7 +54,7 @@ export function Header({
       <div className="grid gap-3 p-5 md:grid-cols-2 xl:grid-cols-4">
         <MetricCard label="System health" value={`${summary.liveConnectors}/4 live`} hint="ERP, CRM y alertas" icon={Sparkles} accent="cyan" />
         <MetricCard label="Pending approvals" value={String(summary.blockedOrders + summary.openTasks)} hint="Bloqueos y tareas del dia" icon={ShieldCheck} accent="amber" />
-        <MetricCard label="Throughput" value={new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0 }).format(summary.throughput)} hint="Volumen hoy en operacion" icon={Database} accent="emerald" />
+        <MetricCard label="Throughput" value={new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 0 }).format(summary.throughput)} hint="Volumen hoy en operación" icon={Database} accent="emerald" />
         <MetricCard label="Active alerts" value={String(summary.lowStock)} hint="Productos por debajo de minimo" icon={BellRing} accent="rose" />
       </div>
     </header>

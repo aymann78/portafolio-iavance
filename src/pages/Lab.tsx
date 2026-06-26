@@ -25,7 +25,7 @@ export function Lab() {
                 Demos navegables, interacciones y pruebas de concepto.
               </Heading>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-                Esta zona no sustituye al diagnostico. Sirve para enseñar criterio, validar decisiones de producto y explorar ideas antes de convertirlas en una solucion para negocio.
+                Esta zona no sustituye al diagnóstico. Sirve para enseñar criterio, validar decisiones de producto y explorar ideas antes de convertirlas en una solución para negocio.
               </p>
             </div>
           </Reveal>
@@ -106,7 +106,7 @@ export function Lab() {
         <Container className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <Reveal>
             <div>
-              <Eyebrow>Como leer las demos</Eyebrow>
+              <Eyebrow>Cómo leer las demos</Eyebrow>
               <Heading as="h2" size="lg" className="mt-4">
                 Lo que entra aqui puede ser demo, concepto o caso de uso
               </Heading>

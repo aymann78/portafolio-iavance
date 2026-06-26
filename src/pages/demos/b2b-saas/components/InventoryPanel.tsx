@@ -67,7 +67,7 @@ export function InventoryPanel({
         <CompareStack
           items={[
             ['Antes', 'Stock en hoja y roturas detectadas tarde', 'rose'],
-            ['Ahora', 'Cobertura, minimo y accion en la misma tarjeta', 'emerald'],
+            ['Ahora', 'Cobertura, minimo y acción en la misma tarjeta', 'emerald'],
             ['Siguiente paso', 'Reposicion generada sin perseguir a compras', 'cyan'],
           ]}
         />

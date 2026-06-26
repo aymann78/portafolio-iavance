@@ -55,7 +55,7 @@ export function InsightSidebar({
               ]}
             />
             <div className="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
-              Si este pedido estuviera en un Excel o un correo, el comercial estaria ahora llamando para preguntar. Aqui el bloqueo y la solucion son visibles.
+              Si este pedido estuviera en un Excel o un correo, el comercial estaria ahora llamando para preguntar. Aqui el bloqueo y la solución son visibles.
             </div>
           </div>
         );
@@ -123,7 +123,7 @@ export function InsightSidebar({
   return (
     <aside className="min-w-0 space-y-4">
       {/* Primer panel: Dependiente del módulo activo */}
-      <Panel title="Insight seleccionado" eyebrow="Lo que se entiende rapido">
+      <Panel title="Insight seleccionado" eyebrow="Lo que se entiende rápido">
         {renderInsightPanel()}
       </Panel>
 
@@ -131,7 +131,7 @@ export function InsightSidebar({
         <div className="space-y-3">
           <OutcomeRow label="Antes" value="Pedidos, stock y credito van cada uno por su lado." tone="rose" />
           <OutcomeRow label="Ahora" value="Todo aparece como una cola operativa con consecuencias visibles." tone="emerald" />
-          <OutcomeRow label="Por que vende" value="El visitante imagina su operativa dentro de este panel." tone="cyan" />
+          <OutcomeRow label="Por qué vende" value="El visitante imagina su operativa dentro de este panel." tone="cyan" />
         </div>
       </Panel>
     </aside>
@@ -173,7 +173,7 @@ export function RightSidebar({
         className="flex items-center justify-between rounded-[28px] border border-cyan-300/25 bg-cyan-400/10 px-5 py-4 text-white transition hover:bg-cyan-400/15"
       >
         <span>
-          <span className="block text-sm font-semibold">Pedir diagnostico de ERP interno</span>
+          <span className="block text-sm font-semibold">Pedir diagnóstico de ERP interno</span>
           <span className="mt-1 block text-xs text-cyan-100/75">Pedidos, stock, credito y aprobaciones</span>
         </span>
         <ArrowRight className="h-5 w-5" />

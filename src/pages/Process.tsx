@@ -3,11 +3,11 @@ import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Reveal
 
 const steps = [
   {
-    title: 'Diagnostico',
-    text: 'Analizamos el problema, el contexto del negocio y el coste real de la friccion actual.'
+    title: 'Diagnóstico',
+    text: 'Analizamos el problema, el contexto del negocio y el coste real de la fricción actual.'
   },
   {
-    title: 'Mapa de solucion',
+    title: 'Mapa de solución',
     text: 'Convertimos ese contexto en una propuesta clara: que construir, que no tocar y por donde empezar.'
   },
   {
@@ -16,7 +16,7 @@ const steps = [
   },
   {
     title: 'Despliegue',
-    text: 'Ponemos la solucion en marcha, conectamos puntos criticos y dejamos claro como se utiliza.'
+    text: 'Ponemos la solución en marcha, conectamos puntos criticos y dejamos claro como se utiliza.'
   },
   {
     title: 'Optimizacion',
@@ -27,7 +27,7 @@ const steps = [
 const engagement = [
   'Primero se ordena el problema; luego se discute la tecnologia.',
   'No hace falta empezar con un proyecto enorme para generar traccion.',
-  'Cada fase deja una decision mas clara que la anterior.',
+  'Cada fase deja una decisión mas clara que la anterior.',
   'Lo que no aporta al negocio en esta etapa, se descarta.'
 ];
 
@@ -42,7 +42,7 @@ export function Process() {
               Un metodo sencillo para no perderse entre ideas, herramientas y urgencias.
             </Heading>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-              La manera de trabajar importa tanto como la solucion final. Si el proceso es confuso, el proyecto tambien lo sera.
+              La manera de trabajar importa tanto como la solución final. Si el proceso es confuso, el proyecto también lo sera.
             </p>
           </Reveal>
         </Container>
@@ -76,7 +76,7 @@ export function Process() {
             <div className="max-w-xl">
               <Eyebrow>Que incluye la entrada</Eyebrow>
               <Heading as="h2" size="lg" className="mt-4">
-                El diagnostico digital ordena la siguiente decision
+                El diagnóstico digital ordena la siguiente decisión
               </Heading>
               <p className="mt-4 text-zinc-400">
                 Es la forma de entrar sin comprar complejidad a ciegas. Se trata de aterrizar el problema, las prioridades y la mejor direccion para avanzar.
@@ -113,15 +113,15 @@ export function Process() {
                       Si necesitas ordenar el problema antes de construir, empecemos por ahi.
                     </Heading>
                     <p className="mt-4 max-w-3xl text-zinc-400">
-                      A veces lo mas valioso no es una nueva pantalla, sino una decision bien tomada al principio.
+                      A veces lo mas valioso no es una nueva pantalla, sino una decisión bien tomada al principio.
                     </p>
                   </div>
                   <div className="flex flex-col gap-4">
                     <Button as="Link" to="/contacto">
-                      Solicitar diagnostico
+                      Solicitar diagnóstico
                     </Button>
                     <Button as="Link" to="/servicios" variant="outline">
-                      Ver lineas de trabajo
+                      Ver líneas de trabajo
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>

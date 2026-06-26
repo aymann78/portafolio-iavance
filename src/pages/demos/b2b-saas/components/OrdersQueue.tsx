@@ -70,7 +70,7 @@ export function OrdersQueue({
             <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Riesgo visible</p>
             <p className="mt-3 text-lg font-semibold text-white">{selectedOrder.issue}</p>
             <p className="mt-2 text-sm leading-6 text-[#9eb0b4]">
-              La decision operativa aparece dentro del flujo, no como una nota suelta fuera de sistema.
+              La decisión operativa aparece dentro del flujo, no como una nota suelta fuera de sistema.
             </p>
           </div>
           {selectedOrder.status === 'Bloqueado' ? (

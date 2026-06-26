@@ -53,21 +53,21 @@ const operatingModes = [
     id: 'csv',
     label: 'Datos en CSV',
     pain: 'Exportaciones, incidencias o leads mezclados que alguien revisa fila por fila.',
-    result: 'Clasificacion, prioridad, resumen y siguiente accion sin revisar todo a mano.',
+    result: 'Clasificación, prioridad, resumen y siguiente acción sin revisar todo a mano.',
     metric: '74%',
-    metricLabel: 'revision repetitiva reducible',
+    metricLabel: 'revisión repetitiva reducible',
     errorMetric: '4 rutas',
     errorLabel: 'acciones recomendadas',
     cta: '/contacto?service=automatizaciones-e-ia&problem=Queremos%20clasificar%20CSVs%20o%20datos%20automaticamente',
     icon: FileSpreadsheet,
-    stages: ['Carga', 'Limpieza', 'Prioridad', 'Accion'],
+    stages: ['Carga', 'Limpieza', 'Prioridad', 'Acción'],
   },
 ] as const;
 
 const trustSignals = ['Respuesta clara', 'Primer mapa de oportunidad', 'Sin proyecto gigante de entrada'];
 
 const capabilities = [
-  { label: 'Automatizacion', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
+  { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
   { label: 'Integraciones', text: 'Datos conectados entre herramientas.', icon: PlugZap },
   { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
 ];
@@ -81,21 +81,21 @@ const fastWins = [
 
 const confidenceNotes = [
   'No prometemos IA magica: si una regla simple resuelve mejor el problema, usamos eso.',
-  'El diagnostico separa friccion real, prioridad de negocio y primera pieza viable.',
+  'El diagnóstico separa fricción real, prioridad de negocio y primera pieza viable.',
   'Las demos son demos o conceptos. No se presentan como casos reales de clientes.',
-  'Cada entrega debe dejar algo usable: flujo, panel, integracion, documentacion o decision.',
+  'Cada entrega debe dejar algo usable: flujo, panel, integración, documentación o decisión.',
 ];
 
 const faqs = [
   {
-    question: '¿Cuanto cuesta empezar?',
+    question: '¿Cuánto cuesta empezar?',
     answer:
-      'La primera entrada es el diagnostico gratuito. Despues se propone una primera pieza proporcionada al problema, no un proyecto enorme por defecto.',
+      'La primera entrada es el diagnóstico gratuito. Despues se propone una primera pieza proporcionada al problema, no un proyecto enorme por defecto.',
   },
   {
     question: '¿En cuanto tiempo se puede automatizar algo?',
     answer:
-      'Muchas primeras piezas se pueden acotar en 30 dias si el proceso esta claro y las herramientas actuales permiten integracion razonable.',
+      'Muchas primeras piezas se pueden acotar en 30 días si el proceso esta claro y las herramientas actuales permiten integración razonable.',
   },
   {
     question: '¿Tengo que cambiar mis herramientas actuales?',
@@ -105,10 +105,10 @@ const faqs = [
   {
     question: '¿Usais IA en todos los proyectos?',
     answer:
-      'Solo cuando mejora una decision o reduce trabajo repetitivo con suficiente control. Automatizar no siempre significa meter IA.',
+      'Solo cuando mejora una decisión o reduce trabajo repetitivo con suficiente control. Automatizar no siempre significa meter IA.',
   },
   {
-    question: '¿Quien mantiene lo que se construye?',
+    question: '¿Quién mantiene lo que se construye?',
     answer:
       'La entrega debe quedar documentada y preparada para evolucionar. Si hace falta mantenimiento, se plantea como una fase separada y clara.',
   },
@@ -135,12 +135,12 @@ export function Home() {
         <Container className="relative z-10 grid gap-6 py-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:py-10">
           <Reveal direction="none">
             <div className="max-w-3xl">
-              <Eyebrow>Automatizacion operativa B2B</Eyebrow>
+              <Eyebrow>Automatización operativa B2B</Eyebrow>
               <Heading as="h1" size="2xl" className="mt-4 max-w-4xl text-balance">
-                Menos tareas manuales. Mas operaciones que se mueven solas.
+                Menos tareas manuales. Más operaciones que se mueven solas.
               </Heading>
               <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
-                Empezamos por operaciones B2B, pero construimos casi cualquier pieza tecnologica util: automatizaciones,
+                Empezamos por operaciones B2B, pero construimos casi cualquier pieza tecnológica útil: automatizaciones,
                 integraciones, software interno, portales, dashboards, IA aplicada y producto digital a medida.
               </p>
 
@@ -149,9 +149,9 @@ export function Home() {
                   as="Link"
                   to="/contacto"
                   size="lg"
-                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Pedir diagnostico gratuito' })}
+                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Pedir diagnóstico gratuito' })}
                 >
-                  Pedir diagnostico gratuito
+                  Pedir diagnóstico gratuito
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
@@ -190,10 +190,10 @@ export function Home() {
               </div>
 
               <div className="mt-4 rounded-lg border border-brand-500/20 bg-brand-500/10 p-4">
-                <p className="text-xs font-mono uppercase tracking-[0.18em] text-brand-300">No solo automatizacion</p>
+                <p className="text-xs font-mono uppercase tracking-[0.18em] text-brand-300">No solo automatización</p>
                 <p className="mt-2 text-sm leading-6 text-zinc-200">
-                  Tambien hacemos herramientas internas, portales B2B, dashboards, integraciones complejas, IA aplicada,
-                  backoffice, APIs, scraping, bots y piezas tecnologicas a medida cuando el negocio lo necesita.
+                  También hacemos herramientas internas, portales B2B, dashboards, integraciones complejas, IA aplicada,
+                  backoffice, APIs, scraping, bots y piezas tecnológicas a medida cuando el negocio lo necesita.
                 </p>
               </div>
             </div>
@@ -307,7 +307,7 @@ export function Home() {
                 </Heading>
               </div>
               <p className="text-zinc-400">
-                La persona que llega no tiene por que saber si necesita una automatizacion, una integracion o una herramienta interna. La web la lleva hacia una decision simple.
+                La persona que llega no tiene por qué saber si necesita una automatización, una integración o una herramienta interna. La web la lleva hacia una decisión simple.
               </p>
             </div>
           </Reveal>
@@ -342,12 +342,12 @@ export function Home() {
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <div>
-              <Eyebrow>Primeros 30 dias</Eyebrow>
+              <Eyebrow>Primeros 30 días</Eyebrow>
               <Heading as="h2" size="lg" className="mt-3">
-                Que podemos automatizar sin rehacer toda la empresa.
+                Qué podemos automatizar sin rehacer toda la empresa.
               </Heading>
               <p className="mt-4 text-zinc-400">
-                El objetivo es encontrar una primera pieza que quite friccion real y deje una base mas ordenada para seguir creciendo.
+                El objetivo es encontrar una primera pieza que quite fricción real y deje una base mas ordenada para seguir creciendo.
               </p>
             </div>
           </Reveal>
@@ -484,7 +484,7 @@ export function Home() {
               </p>
               <div className="mt-6 flex items-center gap-3 rounded-lg border border-zinc-800 bg-black/60 p-4 text-sm text-zinc-300">
                 <ClipboardCheck className="h-5 w-5 text-brand-300" />
-                Diagnostico gratuito: friccion, prioridad y primera accion recomendable.
+                Diagnóstico gratuito: fricción, prioridad y primera acción recomendable.
               </div>
             </div>
           </Reveal>
@@ -493,9 +493,9 @@ export function Home() {
             <DiagnosticForm
               compact
               streamlined
-              title="Pide un diagnostico gratuito"
+              title="Pide un diagnóstico gratuito"
               description="Cuentanos que parte del negocio sigue dependiendo de trabajo manual y te respondemos con una forma razonable de empezar."
-              initialNeedType="Automatizacion"
+              initialNeedType="Automatización"
               initialProjectType="Automatizaciones e IA aplicada"
             />
           </Reveal>

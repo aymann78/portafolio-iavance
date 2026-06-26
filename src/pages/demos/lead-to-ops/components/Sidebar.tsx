@@ -13,7 +13,7 @@ export function Sidebar({
   return (
     <aside className="overflow-hidden rounded-[30px] border border-white/8 bg-[#0d1215]">
       <div className="border-b border-white/8 px-5 py-5">
-        <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">Automatizacion operativa</p>
+        <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">Automatización operativa</p>
         <h1 className="mt-3 text-4xl font-semibold leading-tight text-white">Lead-to-Ops</h1>
         <p className="mt-3 text-sm leading-7 text-[#97a9ad]">
           Una sola demo para entender que entra, que decide el sistema y que sale hacia ventas, soporte o finanzas.
@@ -50,7 +50,7 @@ export function Sidebar({
         <div className="mt-3 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Tecnologia a medida</p>
           <p className="mt-2 text-sm leading-6 text-[#a9bbbf]">
-            No hacemos solo automatizacion: tambien producto digital, portales, paneles, integraciones, IA y software a medida.
+            No hacemos solo automatización: también producto digital, portales, paneles, integraciones, IA y software a medida.
           </p>
         </div>
       </div>

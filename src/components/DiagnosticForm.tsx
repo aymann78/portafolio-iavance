@@ -38,20 +38,20 @@ interface DiagnosticFormProps {
 
 function normalizeProjectType(value: string) {
   const map: Record<string, string> = {
-    'webs-de-conversion': 'Webs de conversion',
+    'webs-de-conversion': 'Webs de conversión',
     'automatizaciones-e-ia': 'Automatizaciones e IA aplicada',
     'software-e-integraciones': 'Software e integraciones',
-    'automatizacion': 'Automatizaciones e IA aplicada',
+    'automatización': 'Automatizaciones e IA aplicada',
     'integraciones': 'Software e integraciones',
     'software-interno': 'Software e integraciones',
-    'no-lo-tengo-claro': 'No lo tengo claro todavia'
+    'no-lo-tengo-claro': 'No lo tengo claro todavía'
   };
 
   return map[value] ?? value;
 }
 
 export function DiagnosticForm({
-  title = 'Solicita un diagnostico digital',
+  title = 'Solicita un diagnóstico digital',
   description = 'Cuéntanos el cuello de botella principal y te responderemos con el siguiente paso más razonable para tu caso.',
   compact = false,
   streamlined = false,
@@ -73,14 +73,14 @@ export function DiagnosticForm({
     () => [
       'Automatizaciones e IA aplicada',
       'Software e integraciones',
-      'Webs de conversion',
-      'No lo tengo claro todavia'
+      'Webs de conversión',
+      'No lo tengo claro todavía'
     ],
     []
   );
 
   const needOptions = useMemo(
-    () => ['Automatizacion', 'Integraciones', 'Software interno', 'No lo tengo claro'],
+    () => ['Automatización', 'Integraciones', 'Software interno', 'No lo tengo claro'],
     []
   );
 
@@ -117,7 +117,7 @@ export function DiagnosticForm({
           need_type: form.tipoNecesidad,
           main_problem: form.problemaPrincipal,
           message: form.mensaje,
-          _subject: `Nuevo diagnostico desde ${siteMeta.name}`,
+          _subject: `Nuevo diagnóstico desde ${siteMeta.name}`,
           _template: 'table',
           _captcha: 'false'
         })
@@ -134,7 +134,7 @@ export function DiagnosticForm({
         project_type: form.tipoProyecto,
         need_type: form.tipoNecesidad,
       });
-      setFeedback('Mensaje enviado. Si es la primera vez que usas este formulario, revisaremos tambien la activacion del buzón.');
+      setFeedback('Mensaje enviado. Si es la primera vez que usas este formulario, revisaremos también la activacion del buzón.');
       setForm({
         ...initialState,
         problemaPrincipal: initialProblem,
@@ -154,7 +154,7 @@ export function DiagnosticForm({
   return (
     <div className="rounded-lg border border-zinc-800 bg-black/90 p-5 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-7">
       <div className="mb-6">
-        <p className="text-xs font-mono uppercase tracking-[0.24em] text-brand-400">Diagnostico digital</p>
+        <p className="text-xs font-mono uppercase tracking-[0.24em] text-brand-400">Diagnóstico digital</p>
         <h3 className="mt-3 text-2xl font-semibold tracking-normal text-white">{title}</h3>
         <p className="mt-3 max-w-xl text-zinc-400">{description}</p>
       </div>
@@ -229,7 +229,7 @@ export function DiagnosticForm({
         {!streamlined && (
           <>
             <label className="flex flex-col gap-2">
-              <span className="text-sm font-medium text-zinc-300">Linea de trabajo</span>
+              <span className="text-sm font-medium text-zinc-300">Línea de trabajo</span>
               <select
                 value={form.tipoProyecto}
                 onChange={(event) => handleChange('tipoProyecto', event.target.value)}
@@ -252,7 +252,7 @@ export function DiagnosticForm({
                 rows={compact ? 4 : 6}
                 value={form.mensaje}
                 onChange={(event) => handleChange('mensaje', event.target.value)}
-                placeholder="Contexto, objetivos, herramientas actuales o cualquier dato util"
+                placeholder="Contexto, objetivos, herramientas actuales o cualquier dato útil"
                 className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
               />
             </label>
@@ -282,7 +282,7 @@ export function DiagnosticForm({
                 </>
               ) : (
                 <>
-                  Solicitar diagnostico
+                  Solicitar diagnóstico
                   <ArrowRight className="h-4 w-4" />
                 </>
               )}

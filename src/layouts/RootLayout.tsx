@@ -73,10 +73,10 @@ export function RootLayout() {
           <div className="hidden lg:block">
             <NavLink
               to="/contacto"
-              onClick={() => trackEvent('cta_click', { location: 'header', label: 'Pedir diagnostico gratuito' })}
+              onClick={() => trackEvent('cta_click', { location: 'header', label: 'Pedir diagnóstico gratuito' })}
               className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200"
             >
-              Pedir diagnostico gratuito
+              Pedir diagnóstico gratuito
             </NavLink>
           </div>
 
@@ -122,7 +122,7 @@ export function RootLayout() {
               iavance<span className="text-brand-400">.es</span>
             </p>
             <p className="mt-4 max-w-md text-sm leading-7 text-zinc-400">
-              Detectamos friccion en captacion, operaciones y producto para convertirla en una solucion clara y ejecutable.
+              Detectamos fricción en captación, operaciones y producto para convertirla en una solución clara y ejecutable.
             </p>
           </div>
 
@@ -151,7 +151,7 @@ export function RootLayout() {
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Entrada</p>
               <NavLink to="/contacto" className="mt-4 inline-flex text-sm text-white transition hover:text-brand-300">
-                Pedir diagnostico gratuito
+                Pedir diagnóstico gratuito
               </NavLink>
             </div>
           </div>

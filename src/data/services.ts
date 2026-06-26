@@ -14,17 +14,17 @@ export interface ServiceLine {
 export const services: ServiceLine[] = [
   {
     slug: 'webs-de-conversion',
-    title: 'Webs de conversion',
-    kicker: 'Captacion con criterio',
+    title: 'Webs de conversión',
+    kicker: 'Captación con criterio',
     summary:
-      'Webs, landings y experiencias comerciales pensadas para aclarar la propuesta, reducir friccion y convertir interes en conversaciones.',
+      'Webs, landings y experiencias comerciales pensadas para aclarar la propuesta, reducir fricción y convertir interes en conversaciones.',
     problem:
-      'No se entiende rapido que vendes, para quien es y por que alguien deberia contactar ahora.',
+      'No se entiende rápido que vendes, para quien es y por qué alguien deberia contactar ahora.',
     solution:
       'Construimos paginas ligeras, bien ordenadas y enfocadas en negocio: mensaje, estructura, prueba y CTA trabajando juntos.',
     outcomes: [
       'Mejor primera impresion comercial',
-      'Menos friccion en captacion y campañas',
+      'Menos fricción en captación y campañas',
       'Jerarquia pensada para trafico frio',
       'Base mas solida para ventas y demos'
     ],
@@ -32,12 +32,12 @@ export const services: ServiceLine[] = [
       'Arquitectura de mensajes y estructura',
       'Diseño y desarrollo a medida',
       'Optimizacion de carga y claridad visual',
-      'CTAs, formularios y recorrido de conversion'
+      'CTAs, formularios y recorrido de conversión'
     ],
     whenItFits: [
       'Lanzas una nueva propuesta o servicio',
       'Tu web actual no ayuda a vender',
-      'Necesitas una landing para captacion',
+      'Necesitas una landing para captación',
       'Quieres una presencia premium sin humo'
     ],
     relatedBuilds: []
@@ -45,13 +45,13 @@ export const services: ServiceLine[] = [
   {
     slug: 'automatizaciones-e-ia',
     title: 'Automatizaciones e IA aplicada',
-    kicker: 'Operaciones mas ligeras',
+    kicker: 'Operaciones más ligeras',
     summary:
-      'Diseñamos flujos que eliminan tareas manuales, conectan herramientas y usan IA solo cuando mejora una decision o un proceso.',
+      'Diseñamos flujos que eliminan tareas manuales, conectan herramientas y usan IA solo cuando mejora una decisión o un proceso.',
     problem:
-      'Pierdes horas copiando datos, revisando correos, moviendo informacion entre herramientas o persiguiendo tareas repetitivas.',
+      'Pierdes horas copiando datos, revisando correos, moviendo información entre herramientas o persiguiendo tareas repetitivas.',
     solution:
-      'Mapeamos el proceso, detectamos cuellos de botella y construimos automatizaciones que conectan captura, clasificacion, accion y seguimiento.',
+      'Mapeamos el proceso, detectamos cuellos de botella y construimos automatizaciones que conectan captura, clasificación, acción y seguimiento.',
     outcomes: [
       'Menos tareas repetitivas y menos errores',
       'Datos mas ordenados y accesibles',
@@ -59,14 +59,14 @@ export const services: ServiceLine[] = [
       'IA usada con sentido, no como decorado'
     ],
     deliverables: [
-      'Mapa de automatizacion priorizado',
+      'Mapa de automatización priorizado',
       'Integraciones entre herramientas y APIs',
       'Flujos con reglas, validaciones y alertas',
-      'Documentacion operativa y criterio de uso'
+      'Documentación operativa y criterio de uso'
     ],
     whenItFits: [
-      'El equipo repite procesos todos los dias',
-      'Hay informacion repartida en varias herramientas',
+      'El equipo repite procesos todos los días',
+      'Hay información repartida en varias herramientas',
       'Necesitas clasificar o enrutar datos',
       'Quieres reducir dependencia de tareas manuales'
     ],
@@ -81,7 +81,7 @@ export const services: ServiceLine[] = [
     problem:
       'Tu equipo trabaja en hojas, correos y herramientas separadas, y nadie ve con claridad que esta pasando en operaciones.',
     solution:
-      'Diseñamos interfaces y capas de integracion que centralizan tareas criticas, ordenan informacion y facilitan escalar con control.',
+      'Diseñamos interfaces y capas de integración que centralizan tareas criticas, ordenan información y facilitan escalar con control.',
     outcomes: [
       'Procesos mas claros y trazables',
       'Menos dependencia de soluciones improvisadas',
@@ -89,7 +89,7 @@ export const services: ServiceLine[] = [
       'Base solida para crecer sin caos'
     ],
     deliverables: [
-      'Mapa funcional y arquitectura de solucion',
+      'Mapa funcional y arquitectura de solución',
       'Portal, dashboard o herramienta a medida',
       'Conexion con APIs, CRM, ERP o bases internas',
       'MVP claro o evolutivo por sprints'

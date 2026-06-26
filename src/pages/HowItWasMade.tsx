@@ -32,7 +32,7 @@ export function HowItWasMade() {
             Anatomia en proceso
           </Heading>
           <p className="max-w-xl text-zinc-400">
-            Este build aun no tiene la documentacion detallada publicada, aunque el enfoque general ya esta explicado en su ficha principal.
+            Este build aun no tiene la documentación detallada publicada, aunque el enfoque general ya esta explicado en su ficha principal.
           </p>
           <Button as="Link" to={`/casos/${build.slug}`}>
             Volver a la demo
@@ -59,7 +59,7 @@ export function HowItWasMade() {
               </Tag>
             </div>
             <Heading as="h1" size="2xl" className="mt-5">
-              Como se penso y por que esta montado asi
+              Como se penso y por qué esta montado asi
             </Heading>
           </Reveal>
         </Container>

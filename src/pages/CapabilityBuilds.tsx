@@ -15,7 +15,7 @@ export function CapabilityBuilds() {
                 Demos y casos de uso para ver que podemos construir antes de hablar.
               </Heading>
               <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-400 md:text-lg">
-                No enseñamos clientes inventados. Aqui tienes demos interactivas y casos de uso para entender rapido nuestro criterio en automatizacion, operaciones y software interno.
+                No enseñamos clientes inventados. Aqui tienes demos interactivas y casos de uso para entender rápido nuestro criterio en automatización, operaciones y software interno.
               </p>
             </Reveal>
 

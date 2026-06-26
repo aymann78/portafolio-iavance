@@ -73,7 +73,7 @@ export function Sidebar({
         <div className="mt-3 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Tecnologia a medida</p>
           <p className="mt-2 text-sm leading-6 text-[#a9bbbf]">
-            No solo ERP: tambien portales, dashboards, integraciones, IA aplicada, herramientas internas y piezas a medida.
+            No solo ERP: también portales, dashboards, integraciones, IA aplicada, herramientas internas y piezas a medida.
           </p>
         </div>
       </div>
