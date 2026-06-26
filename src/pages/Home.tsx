@@ -5,14 +5,12 @@ import {
   CheckCircle2,
   ClipboardCheck,
   Clock3,
-  DatabaseZap,
   FileSpreadsheet,
   Gauge,
   MousePointer2,
   PlugZap,
   ShieldCheck,
   Workflow,
-  Zap,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { DiagnosticForm } from '../components/DiagnosticForm';
@@ -67,11 +65,7 @@ const operatingModes = [
 
 const trustSignals = ['Pedidos por correo', 'Stock en hojas', 'Leads sin seguimiento', 'CRM/ERP desconectados'];
 
-const capabilities = [
-  { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
-  { label: 'Integraciones', text: 'Datos conectados entre herramientas.', icon: PlugZap },
-  { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
-];
+
 
 const beforeAfterExamples = [
   {
@@ -166,23 +160,22 @@ export function Home() {
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_24%_8%,rgba(14,165,233,0.2),transparent_34%),radial-gradient(circle_at_76%_18%,rgba(34,197,94,0.12),transparent_28%)]" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
 
-        <Container className="relative z-10 grid gap-10 py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-16">
+        <Container className="relative z-10 flex flex-col gap-16 py-12 lg:py-20">
           <Reveal direction="none">
-            <div className="max-w-2xl">
+            <div className="mx-auto max-w-4xl text-center flex flex-col items-center">
               <Eyebrow>Automatización operativa B2B</Eyebrow>
-              <Heading as="h1" size="xl" className="mt-4 text-balance">
+              <Heading as="h1" size="2xl" className="mt-4 text-balance">
                 Automatizamos operaciones B2B que todavía dependen de correos, hojas y seguimiento manual.
               </Heading>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
+              <p className="mt-6 mx-auto max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
                 Detectamos dónde se pierden horas, priorizamos la primera automatización viable y construimos una solución usable conectada con tus herramientas actuales.
               </p>
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="mt-8 flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row">
                 <Button
                   as="Link"
                   to="/contacto"
                   size="lg"
-                  className="min-w-[240px]"
                   onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Solicitar diagnóstico operativo' })}
                 >
                   Solicitar diagnóstico operativo
@@ -199,7 +192,7 @@ export function Home() {
                 </Button>
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-400 border-t border-zinc-800/50 pt-6">
+              <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-zinc-400">
                 {trustSignals.map((signal) => (
                   <span key={signal} className="inline-flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-400" />
@@ -211,7 +204,7 @@ export function Home() {
           </Reveal>
 
           <Reveal delay="sm" direction="none">
-            <div className="rounded-lg border border-zinc-800 bg-black/82 shadow-[0_24px_90px_rgba(0,0,0,0.42)]">
+            <div className="mx-auto w-full max-w-5xl rounded-lg border border-zinc-800 bg-black/82 shadow-[0_24px_90px_rgba(0,0,0,0.42)]">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 px-4 py-3">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 items-center justify-center rounded-md border border-brand-500/25 bg-brand-500/10 text-brand-300">
