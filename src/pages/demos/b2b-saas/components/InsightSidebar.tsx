@@ -13,8 +13,6 @@ export function InsightSidebar({
   connectorState,
   orders,
   tasks,
-  activity,
-  completeTask,
 }: {
   activeModule: ModuleKey;
   selectedOrder: Order;

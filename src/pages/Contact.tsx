@@ -109,7 +109,6 @@ export function Contact() {
                         @iavance.es
                       </a>
                     </div>
-                    <p className="mt-5 text-xs leading-5 text-zinc-500">{siteMeta.contactEmailRecommendation}</p>
                     <div className="mt-6">
                       <Button as="a" href={siteMeta.instagram} target="_blank" rel="noreferrer" variant="outline">
                         Hablar por Instagram
@@ -123,7 +122,6 @@ export function Contact() {
 
           <Reveal delay="md" direction="left">
             <DiagnosticForm
-              key={`${selectedProblem.id}-${initialProblem}-${initialProjectType}`}
               streamlined
               title="Pedir diagnóstico gratuito"
               description="Deja los datos minimos y el cuello de botella. La respuesta busca claridad, no vender complejidad."

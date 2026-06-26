@@ -4,7 +4,6 @@ import { Scenario, InputItem, RunStatus, ActivityItem } from '../types';
 import { Panel, MiniMetric, OutcomeRow, ActivityFeed, RuleCard } from './Shared';
 
 export function BusinessSummaryPanel({
-  scenario,
   selectedItem,
   metrics,
   runStatus,

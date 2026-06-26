@@ -126,7 +126,7 @@ export function RootLayout() {
             </p>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-4">
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Mapa</p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-zinc-400">
@@ -153,6 +153,14 @@ export function RootLayout() {
               <NavLink to="/contacto" className="mt-4 inline-flex text-sm text-white transition hover:text-brand-300">
                 Pedir diagnóstico gratuito
               </NavLink>
+            </div>
+            <div>
+              <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Legal</p>
+              <div className="mt-4 flex flex-col gap-3 text-sm text-zinc-400">
+                <NavLink to="/privacidad" className="transition hover:text-white">
+                  Privacidad
+                </NavLink>
+              </div>
             </div>
           </div>
         </Container>

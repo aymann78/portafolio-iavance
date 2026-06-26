@@ -1,5 +1,4 @@
 import { ChevronRight, Layers3 } from 'lucide-react';
-import { trackEvent } from '../../../../lib/analytics';
 import { ModuleKey, SyncStatus } from '../types';
 import { connectorLabels, modules } from '../constants';
 import { StatusRow } from './Shared';

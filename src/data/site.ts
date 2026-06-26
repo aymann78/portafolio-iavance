@@ -3,10 +3,9 @@ export const siteMeta = {
   domain: 'https://iavance.es',
   description:
     'Automatización operativa B2B para empresas que pierden horas entre hojas, correos, datos dispersos y procesos manuales.',
-  email: 'iavance@gmail.com',
-  contactEmailRecommendation: 'Recomendado: cambiar a hola@iavance.es o diagnóstico@iavance.es para aumentar confianza B2B.',
+  email: 'hola@iavance.es',
   instagram: 'https://instagram.com/iavance.es',
-  formEndpoint: 'https://formsubmit.co/ajax/iavance@gmail.com',
+  formEndpoint: 'https://formsubmit.co/ajax/hola@iavance.es',
   ogImage: '/og-image.svg',
   sameAs: ['https://instagram.com/iavance.es'],
   schema: {
@@ -14,7 +13,7 @@ export const siteMeta = {
       '@type': 'Organization',
       name: 'iavance.es',
       url: 'https://iavance.es',
-      email: 'iavance@gmail.com',
+      email: 'hola@iavance.es',
     },
     service: {
       '@type': 'Service',

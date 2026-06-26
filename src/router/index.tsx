@@ -13,6 +13,7 @@ import { CapabilityBuilds } from '../pages/CapabilityBuilds';
 import { Process } from '../pages/Process';
 import { Contact } from '../pages/Contact';
 import { Automations } from '../pages/Automations';
+import { Privacy } from '../pages/Privacy';
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
       {
         path: 'projects/:slug/how-it-was-made',
         element: <HowItWasMade />
+      },
+      {
+        path: 'privacidad',
+        element: <Privacy />
       },
     ],
   },

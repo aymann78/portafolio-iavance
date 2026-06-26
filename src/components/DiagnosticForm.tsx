@@ -1,4 +1,4 @@
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { ArrowRight, CheckCircle2, Instagram, LoaderCircle, Mail } from 'lucide-react';
 import { siteMeta } from '../data/site';
 import { Button } from './ui';
@@ -69,6 +69,17 @@ export function DiagnosticForm({
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
 
+  useEffect(() => {
+    if (initialProblem || initialProjectType || initialNeedType) {
+      setForm(prev => ({
+        ...prev,
+        problemaPrincipal: initialProblem || prev.problemaPrincipal,
+        tipoProyecto: initialProjectType ? normalizeProjectType(initialProjectType) : prev.tipoProyecto,
+        tipoNecesidad: initialNeedType || prev.tipoNecesidad
+      }));
+    }
+  }, [initialProblem, initialProjectType, initialNeedType]);
+
   const projectOptions = useMemo(
     () => [
       'Automatizaciones e IA aplicada',
@@ -134,7 +145,7 @@ export function DiagnosticForm({
         project_type: form.tipoProyecto,
         need_type: form.tipoNecesidad,
       });
-      setFeedback('Mensaje enviado. Si es la primera vez que usas este formulario, revisaremos también la activacion del buzón.');
+      setFeedback('Mensaje recibido. Revisaremos tu caso y te responderemos en 24–48 h laborables.');
       setForm({
         ...initialState,
         problemaPrincipal: initialProblem,
@@ -147,7 +158,7 @@ export function DiagnosticForm({
         project_type: form.tipoProyecto,
         need_type: form.tipoNecesidad,
       });
-      setFeedback('No hemos podido enviar el mensaje ahora mismo. Puedes escribirnos por Instagram o correo sin perder el contexto.');
+      setFeedback('No hemos podido enviar el formulario ahora mismo. Escríbenos a hola@iavance.es y conserva este mismo contexto.');
     }
   }
 
@@ -179,10 +190,11 @@ export function DiagnosticForm({
             placeholder="Tu nombre"
           />
           <Field
-            label="Empresa"
+            label="Empresa o web"
+            required
             value={form.empresa}
             onChange={(value) => handleChange('empresa', value)}
-            placeholder="Nombre de la empresa"
+            placeholder="Nombre de la empresa o web"
           />
         </div>
 
@@ -218,13 +230,17 @@ export function DiagnosticForm({
           </label>
         </div>
 
-        <Field
-          label="Problema principal"
-          required
-          value={form.problemaPrincipal}
-          onChange={(value) => handleChange('problemaPrincipal', value)}
-          placeholder="Que esta frenando ahora mismo al negocio"
-        />
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-zinc-300">Problema principal</span>
+          <textarea
+            required
+            rows={3}
+            value={form.problemaPrincipal}
+            onChange={(event) => handleChange('problemaPrincipal', event.target.value)}
+            placeholder="Qué tarea se repite, qué herramientas usáis y qué pasa cuando se retrasa."
+            className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+          />
+        </label>
 
         {!streamlined && (
           <>
@@ -295,6 +311,9 @@ export function DiagnosticForm({
             )}
             {status === 'error' && <p className="max-w-sm text-sm text-amber-300">{feedback}</p>}
           </div>
+        </div>
+        <div className="mt-4 text-xs text-zinc-500 text-center md:text-left">
+          Respuesta en 24–48 h laborables. Sin spam. Si no vemos encaje, te lo diremos claro. Al enviar, aceptas la <a href="/privacidad" className="underline hover:text-white transition">política de privacidad</a>.
         </div>
       </form>
     </div>
