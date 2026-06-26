@@ -43,6 +43,11 @@ export function FintechLanding() {
         </div>
       </nav>
 
+      {/* Demo Disclaimer */}
+      <div className="bg-amber-100 text-amber-900 px-6 py-3 text-center text-sm font-medium pt-28 relative z-40 border-b border-amber-200">
+        Demo conceptual: Esta es una página simulada para ilustrar arquitectura de conversión B2B. No procesamos pagos y las marcas son ficticias.
+      </div>
+
       {/* Hero Section */}
       <section className="pt-40 lg:pt-48 pb-20 px-6 lg:px-12 flex flex-col items-center text-center relative">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-3xl h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -78,7 +83,7 @@ export function FintechLanding() {
       {/* Social Proof (Simulated) */}
       <section id="product" className="py-12 border-y border-slate-200 bg-white scroll-mt-28">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Procesando millones diarios para los mejores</p>
+          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Empresas ficticias para demostración</p>
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
             {['AcmeCorp', 'GlobalTech', 'Nexus Systems', 'Stark Ind', 'Wayne Ent'].map(brand => (
               <span key={brand} className="text-xl md:text-2xl font-black tracking-tighter text-slate-900">

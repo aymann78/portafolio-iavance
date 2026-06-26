@@ -57,7 +57,7 @@ export function Automations() {
                 Arquitectura de Procesos
               </Heading>
               <p className="text-zinc-400 text-lg leading-relaxed max-w-2xl">
-                Liquida el trabajo manual. Construimos flujos de datos instantáneos y autónomos. 0% fricción humana, 100% margen operativo.
+                Agiliza el trabajo repetitivo. Construimos flujos de datos estructurados para conectar tus herramientas. Menos tareas manuales, más control operativo.
               </p>
             </div>
           </Reveal>
@@ -236,9 +236,9 @@ export function Automations() {
                   <h3 className="text-zinc-500 font-mono text-xs uppercase tracking-widest mb-4">Capacidad del Sistema</h3>
                   <div className="flex flex-col gap-3">
                     {[
-                      { label: 'Errores de digitación', value: '0', color: 'text-emerald-400' },
-                      { label: 'Intervención manual', value: '0%', color: 'text-emerald-400' },
-                      { label: 'Disponibilidad', value: '24/7', color: 'text-white' },
+                      { label: 'Errores de copia manual', value: 'Mínimo', color: 'text-emerald-400' },
+                      { label: 'Intervención manual', value: '< 5%', color: 'text-emerald-400' },
+                      { label: 'Disponibilidad del flujo', value: 'Alta', color: 'text-white' },
                     ].map(stat => (
                       <div key={stat.label} className="flex justify-between items-center">
                         <span className="text-zinc-500 text-sm">{stat.label}</span>
@@ -254,8 +254,8 @@ export function Automations() {
                       <ShieldCheck className="w-4 h-4 text-brand-500" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">Cero errores humanos</h4>
-                      <p className="text-zinc-400 text-xs leading-relaxed">Las máquinas no sufren fatiga ni cometen errores de copia. Los datos fluyen por API estructurada con integridad total.</p>
+                      <h4 className="text-white font-bold text-sm mb-1">Menos margen de error</h4>
+                      <p className="text-zinc-400 text-xs leading-relaxed">Al evitar el traspaso manual de datos, reduces los típicos errores de copiar y pegar. La información fluye estructurada mediante APIs.</p>
                     </div>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export function Automations() {
             <MessageSquare className="w-10 h-10 text-zinc-700 mx-auto mb-5" />
             <Heading as="h3" size="md" className="mb-4">Tus herramientas son silos que no se hablan</Heading>
             <p className="text-zinc-400 text-lg">
-              Deja de mover datos manualmente. Integramos tu ecosistema de software mediante Webhooks y APIs para que la información fluya sin ningún tipo de fricción humana.
+              Deja de mover datos a mano. Integramos tu ecosistema de software mediante Webhooks y APIs para que la información fluya sin cuellos de botella constantes.
             </p>
           </Reveal>
         </Container>

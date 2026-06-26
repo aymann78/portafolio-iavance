@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { RootLayout } from '../layouts/RootLayout';
 import { Home } from '../pages/Home';
 import { Lab } from '../pages/Lab';
@@ -14,6 +14,7 @@ import { Process } from '../pages/Process';
 import { Contact } from '../pages/Contact';
 import { Automations } from '../pages/Automations';
 import { Privacy } from '../pages/Privacy';
+import { NotFound } from '../pages/NotFound';
 
 export const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ export const router = createBrowserRouter([
         path: 'privacidad',
         element: <Privacy />
       },
+      {
+        path: '*',
+        element: <NotFound />
+      }
     ],
   },
   {
@@ -100,15 +105,15 @@ export const router = createBrowserRouter([
       },
       {
         path: 'market-signal-engine',
-        element: <LeadToOpsCommandCenter />
+        element: <Navigate to="/demo/lead-to-ops" replace />
       },
       {
         path: 'automation-chatbot',
-        element: <LeadToOpsCommandCenter />
+        element: <Navigate to="/demo/lead-to-ops" replace />
       },
       {
         path: 'csv-ops-classifier',
-        element: <LeadToOpsCommandCenter />
+        element: <Navigate to="/demo/lead-to-ops" replace />
       }
     ]
   }
