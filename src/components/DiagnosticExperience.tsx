@@ -6,18 +6,6 @@ import { ProofBadge } from './ProofBadge';
 
 const options = [
   {
-    id: 'conversión',
-    label: 'Mi web no convierte',
-    icon: Gauge,
-    service: 'Webs de conversión',
-    summary:
-      'Tu propuesta necesita claridad, jerarquia y una experiencia que convierta visitas en conversaciones.',
-    recommendation:
-      'Empezariamos por un diagnóstico de mensajes, estructura y fricción en captación para decidir si hace falta una landing, una web comercial o un ajuste del funnel.',
-      buildSlug: 'b2b-autoflow',
-    href: '/contacto?service=webs-de-conversion&problem=Mi%20web%20no%20convierte'
-  },
-  {
     id: 'ops',
     label: 'Mi equipo pierde tiempo en tareas manuales',
     icon: Cpu,
@@ -33,30 +21,42 @@ const options = [
     id: 'systems',
     label: 'Tengo herramientas desconectadas',
     icon: Network,
-    service: 'Software e integraciones',
+    service: 'Integraciones CRM/ERP y datos',
     summary:
       'Tus datos viven en varios sitios, los equipos trabajan con versiones distintas y cada paso depende de alguien.',
     recommendation:
       'La prioridad seria definir una capa comun de integración y una interfaz que ordene estados, datos y acciones sin añadir mas herramientas por encima.',
     buildSlug: 'b2b-autoflow',
-    href: '/contacto?service=software-e-integraciones&problem=Tengo%20herramientas%20desconectadas'
+    href: '/contacto?service=integraciones-crm-erp&problem=Tengo%20herramientas%20desconectadas'
   },
   {
     id: 'internal-tool',
     label: 'Necesito una herramienta interna',
     icon: BarChart3,
-    service: 'Software e integraciones',
+    service: 'Software interno y portales B2B',
     summary:
       'Hay una parte del negocio que ya no cabe bien en software generalista y necesita una herramienta propia.',
     recommendation:
       'Definiriamos un MVP con el minimo de complejidad útil: roles, estados, flujos y conexiones con las herramientas que ya usas.',
     buildSlug: 'b2b-autoflow',
-    href: '/contacto?service=software-e-integraciones&problem=Necesito%20una%20herramienta%20interna'
+    href: '/contacto?service=software-interno&problem=Necesito%20una%20herramienta%20interna'
+  },
+  {
+    id: 'conversión',
+    label: 'Mi web no convierte',
+    icon: Gauge,
+    service: 'Webs de conversión',
+    summary:
+      'Tu propuesta necesita claridad, jerarquia y una experiencia que convierta visitas en conversaciones.',
+    recommendation:
+      'Empezariamos por un diagnóstico de mensajes, estructura y fricción en captación para decidir si hace falta una landing, una web comercial o un ajuste del funnel.',
+      buildSlug: 'b2b-autoflow',
+    href: '/contacto?service=webs-de-conversion&problem=Mi%20web%20no%20convierte'
   }
 ] as const;
 
 export function DiagnosticExperience() {
-  const [activeId, setActiveId] = useState<(typeof options)[number]['id']>('conversión');
+  const [activeId, setActiveId] = useState<(typeof options)[number]['id']>('ops');
 
   const activeItem = useMemo(
     () => options.find((option) => option.id === activeId) ?? options[0],

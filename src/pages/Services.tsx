@@ -48,6 +48,12 @@ export function Services() {
                     <p className="mt-6 text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Como lo abordamos</p>
                     <p className="mt-4 text-zinc-300">{service.solution}</p>
                   </div>
+                  <div className="mt-8">
+                    <Button as="Link" to={`/contacto?servicio=${service.slug}`} size="lg">
+                      {service.cta}
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </div>
               </Reveal>
 

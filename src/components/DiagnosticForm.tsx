@@ -40,10 +40,11 @@ function normalizeProjectType(value: string) {
   const map: Record<string, string> = {
     'webs-de-conversion': 'Webs de conversión',
     'automatizaciones-e-ia': 'Automatizaciones e IA aplicada',
-    'software-e-integraciones': 'Software e integraciones',
+    'software-e-integraciones': 'Software interno y portales B2B',
+    'integraciones-crm-erp': 'Integraciones CRM/ERP y datos',
+    'software-interno': 'Software interno y portales B2B',
     'automatización': 'Automatizaciones e IA aplicada',
-    'integraciones': 'Software e integraciones',
-    'software-interno': 'Software e integraciones',
+    'integraciones': 'Integraciones CRM/ERP y datos',
     'no-lo-tengo-claro': 'No lo tengo claro todavía'
   };
 
@@ -83,8 +84,8 @@ export function DiagnosticForm({
   const projectOptions = useMemo(
     () => [
       'Automatizaciones e IA aplicada',
-      'Software e integraciones',
-      'Webs de conversión',
+      'Integraciones CRM/ERP y datos',
+      'Software interno y portales B2B',
       'No lo tengo claro todavía'
     ],
     []

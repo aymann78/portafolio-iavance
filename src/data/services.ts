@@ -9,6 +9,7 @@ export interface ServiceLine {
   deliverables: string[];
   whenItFits: string[];
   relatedBuilds: string[];
+  cta: string;
 }
 
 export const services: ServiceLine[] = [
@@ -40,66 +41,69 @@ export const services: ServiceLine[] = [
       'Necesitas clasificar o enrutar datos',
       'Quieres reducir dependencia de tareas manuales'
     ],
-    relatedBuilds: ['lead-to-ops']
+    relatedBuilds: ['lead-to-ops'],
+    cta: 'Diagnosticar automatización'
   },
   {
-    slug: 'software-e-integraciones',
-    title: 'Software e integraciones a medida',
-    kicker: 'Producto interno que ordena',
+    slug: 'integraciones-crm-erp',
+    title: 'Integraciones CRM/ERP y datos',
+    kicker: 'Herramientas conectadas',
     summary:
-      'Portales, dashboards y herramientas internas para empresas que ya no pueden sostener su operativa con parches.',
+      'Conectamos sistemas para que la información fluya sin intervención manual, eliminando silos de datos y pérdida de contexto.',
     problem:
-      'Tu equipo trabaja en hojas, correos y herramientas separadas, y nadie ve con claridad que esta pasando en operaciones.',
+      'Cada equipo usa un software distinto, el CRM no se habla con el ERP, y sacar un informe fiable cuesta horas o días cruzando datos.',
     solution:
-      'Diseñamos interfaces y capas de integración que centralizan tareas criticas, ordenan información y facilitan escalar con control.',
+      'Mapeamos el modelo de datos, conectamos las APIs necesarias y centralizamos la información para tener una única fuente de verdad operativa.',
     outcomes: [
-      'Procesos mas claros y trazables',
-      'Menos dependencia de soluciones improvisadas',
-      'Mejor visibilidad de estados y datos',
-      'Base solida para crecer sin caos'
+      'Una única fuente de verdad',
+      'Información consistente en todos los equipos',
+      'Sincronización en tiempo real',
+      'Adiós al cruce manual de CSVs'
     ],
     deliverables: [
-      'Mapa funcional y arquitectura de solución',
+      'Mapa de arquitectura de datos',
+      'Conexión segura entre APIs y webhooks',
+      'Sincronización de estados y entidades',
+      'Alertas de error y monitoreo'
+    ],
+    whenItFits: [
+      'El CRM y el ERP están desconectados',
+      'Ventas no ve lo que pasa en Operaciones',
+      'Hay que hacer doble introducción de datos',
+      'Se pierde contexto entre herramientas'
+    ],
+    relatedBuilds: [],
+    cta: 'Revisar integración'
+  },
+  {
+    slug: 'software-interno',
+    title: 'Software interno y portales B2B',
+    kicker: 'Control y visibilidad',
+    summary:
+      'Portales, dashboards y herramientas a medida para empresas que ya no pueden sostener su operativa ni la relación con sus clientes a base de parches.',
+    problem:
+      'Trabajas con un montón de hojas, correos y herramientas separadas. Tus clientes te piden información constantemente y nadie ve con claridad qué está pasando.',
+    solution:
+      'Diseñamos interfaces claras que centralizan tareas críticas, ordenan la información para el equipo o los clientes y facilitan operar con control.',
+    outcomes: [
+      'Procesos más claros y trazables',
+      'Menos consultas repetitivas de clientes',
+      'Mejor visibilidad de estados y bloqueos',
+      'Base sólida para crecer sin caos'
+    ],
+    deliverables: [
+      'Arquitectura de la solución',
       'Portal, dashboard o herramienta a medida',
-      'Conexion con APIs, CRM, ERP o bases internas',
-      'MVP claro o evolutivo por sprints'
+      'Conexión con las bases de datos de la empresa',
+      'Despliegue de un MVP funcional'
     ],
     whenItFits: [
-      'Necesitas una herramienta propia',
-      'Tu operativa B2B es compleja',
-      'Hay demasiadas dependencias entre personas',
-      'Quieres centralizar datos y acciones'
+      'Necesitas un portal para tus clientes B2B',
+      'Tu operativa interna es demasiado compleja',
+      'Hay dependencias entre demasiadas personas',
+      'Quieres dar autonomía a usuarios externos'
     ],
-    relatedBuilds: ['b2b-autoflow']
-  },
-  {
-    slug: 'webs-de-conversion',
-    title: 'Webs de conversión',
-    kicker: 'Captación con criterio',
-    summary:
-      'Webs, landings y experiencias comerciales pensadas para aclarar la propuesta, reducir fricción y convertir interes en conversaciones.',
-    problem:
-      'No se entiende rápido que vendes, para quien es y por qué alguien deberia contactar ahora.',
-    solution:
-      'Construimos paginas ligeras, bien ordenadas y enfocadas en negocio: mensaje, estructura, prueba y CTA trabajando juntos.',
-    outcomes: [
-      'Mejor primera impresion comercial',
-      'Menos fricción en captación y campañas',
-      'Jerarquia pensada para trafico frio',
-      'Base mas solida para ventas y demos'
-    ],
-    deliverables: [
-      'Arquitectura de mensajes y estructura',
-      'Diseño y desarrollo a medida',
-      'Optimizacion de carga y claridad visual',
-      'CTAs, formularios y recorrido de conversión'
-    ],
-    whenItFits: [
-      'Lanzas una nueva propuesta o servicio',
-      'Tu web actual no ayuda a vender',
-      'Necesitas una landing para captación',
-      'Quieres una presencia premium sin humo'
-    ],
-    relatedBuilds: []
+    relatedBuilds: ['b2b-autoflow'],
+    cta: 'Aterrizar software interno'
   }
 ];
