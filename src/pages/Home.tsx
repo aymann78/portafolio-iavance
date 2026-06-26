@@ -2,17 +2,13 @@ import { useState } from 'react';
 import {
   AlertTriangle,
   ArrowRight,
-  CheckCircle2,
   ClipboardCheck,
   Clock3,
-  DatabaseZap,
   FileSpreadsheet,
   Gauge,
   MousePointer2,
-  PlugZap,
   ShieldCheck,
   Workflow,
-  Zap,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { DiagnosticForm } from '../components/DiagnosticForm';
@@ -65,13 +61,6 @@ const operatingModes = [
   },
 ] as const;
 
-const trustSignals = ['Pedidos por correo', 'Stock en hojas', 'Leads sin seguimiento', 'CRM/ERP desconectados'];
-
-const capabilities = [
-  { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
-  { label: 'Integraciones', text: 'Datos conectados entre herramientas.', icon: PlugZap },
-  { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
-];
 
 const beforeAfterExamples = [
   {
