@@ -52,7 +52,7 @@ export function RootLayout() {
     <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-black text-white selection:bg-brand-500 selection:text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/80 bg-black/80 backdrop-blur-xl">
         <Container className="flex h-16 items-center justify-between">
-          <Link to="/" className="text-xl font-semibold tracking-tight text-white">
+          <Link to="/" className="text-xl font-semibold tracking-tight text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
             iavance<span className="text-brand-400">.es</span>
           </Link>
 
@@ -62,7 +62,7 @@ export function RootLayout() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `transition-colors ${isActive ? 'text-white' : 'text-zinc-400 hover:text-white'}`
+                  `rounded transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black ${isActive ? 'text-white' : 'text-zinc-400 hover:text-white'}`
                 }
               >
                 {item.label}
@@ -74,7 +74,7 @@ export function RootLayout() {
             <NavLink
               to="/contacto"
               onClick={() => trackEvent('cta_click', { location: 'header', label: 'Pedir diagnóstico gratuito' })}
-              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white px-5 py-2 text-sm font-semibold text-black transition hover:bg-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               Pedir diagnóstico gratuito
             </NavLink>
@@ -83,8 +83,9 @@ export function RootLayout() {
           <button
             type="button"
             onClick={() => setMenuOpen((current) => !current)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 text-zinc-200 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 text-zinc-200 lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             aria-label="Abrir menu"
+            aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -98,7 +99,7 @@ export function RootLayout() {
                   key={item.to}
                   to={item.to}
                   className={({ isActive }) =>
-                    `rounded-2xl px-4 py-3 text-sm font-medium transition-colors ${
+                    `rounded-2xl px-4 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
                       isActive ? 'bg-zinc-900 text-white' : 'text-zinc-400 hover:bg-zinc-950 hover:text-white'
                     }`
                   }
@@ -131,7 +132,7 @@ export function RootLayout() {
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Mapa</p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-zinc-400">
                 {navigation.map((item) => (
-                  <NavLink key={item.to} to={item.to} className="transition hover:text-white">
+                  <NavLink key={item.to} to={item.to} className="transition hover:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                     {item.label}
                   </NavLink>
                 ))}
@@ -140,24 +141,24 @@ export function RootLayout() {
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Contacto</p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-zinc-400">
-                <a href={`mailto:${siteMeta.email}`} className="transition hover:text-white">
+                <a href={`mailto:${siteMeta.email}`} className="transition hover:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                   {siteMeta.email}
                 </a>
-                <a href={siteMeta.instagram} target="_blank" rel="noreferrer" className="transition hover:text-white">
+                <a href={siteMeta.instagram} target="_blank" rel="noreferrer" className="transition hover:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                   Instagram
                 </a>
               </div>
             </div>
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Entrada</p>
-              <NavLink to="/contacto" className="mt-4 inline-flex text-sm text-white transition hover:text-brand-300">
+              <NavLink to="/contacto" className="mt-4 inline-flex text-sm text-white transition hover:text-brand-300 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                 Pedir diagnóstico gratuito
               </NavLink>
             </div>
             <div>
               <p className="text-xs font-mono uppercase tracking-[0.24em] text-zinc-500">Legal</p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-zinc-400">
-                <NavLink to="/privacidad" className="transition hover:text-white">
+                <NavLink to="/privacidad" className="transition hover:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
                   Privacidad
                 </NavLink>
               </div>

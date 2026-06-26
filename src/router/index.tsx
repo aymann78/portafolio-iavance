@@ -1,13 +1,11 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { lazy } from 'react';
 import { RootLayout } from '../layouts/RootLayout';
 import { Home } from '../pages/Home';
 import { Lab } from '../pages/Lab';
 import { ProjectDetail } from '../pages/ProjectDetail';
 import { HowItWasMade } from '../pages/HowItWasMade';
 import { DemoLayout } from '../layouts/DemoLayout';
-import { FintechLanding } from '../pages/demos/FintechLanding';
-import { B2bSaasLanding } from '../pages/demos/b2b-saas';
-import { LeadToOpsCommandCenter } from '../pages/demos/lead-to-ops';
 import { Services } from '../pages/Services';
 import { CapabilityBuilds } from '../pages/CapabilityBuilds';
 import { Process } from '../pages/Process';
@@ -15,6 +13,11 @@ import { Contact } from '../pages/Contact';
 import { Automations } from '../pages/Automations';
 import { Privacy } from '../pages/Privacy';
 import { NotFound } from '../pages/NotFound';
+import { SuspenseWrapper } from '../components/SuspenseWrapper';
+
+const FintechLanding = lazy(() => import('../pages/demos/FintechLanding').then(m => ({ default: m.FintechLanding })));
+const B2bSaasLanding = lazy(() => import('../pages/demos/b2b-saas').then(m => ({ default: m.B2bSaasLanding })));
+const LeadToOpsCommandCenter = lazy(() => import('../pages/demos/lead-to-ops').then(m => ({ default: m.LeadToOpsCommandCenter })));
 
 export const router = createBrowserRouter([
   {
@@ -93,15 +96,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'fintech-cro-landing',
-        element: <FintechLanding />
+        element: <SuspenseWrapper><FintechLanding /></SuspenseWrapper>
       },
       {
         path: 'b2b-saas-platform',
-        element: <B2bSaasLanding />
+        element: <SuspenseWrapper><B2bSaasLanding /></SuspenseWrapper>
       },
       {
         path: 'lead-to-ops',
-        element: <LeadToOpsCommandCenter />
+        element: <SuspenseWrapper><LeadToOpsCommandCenter /></SuspenseWrapper>
       },
       {
         path: 'market-signal-engine',

@@ -219,7 +219,7 @@ export function DiagnosticForm({
                 }
               }}
               required
-              className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+              className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
             >
               <option value="">Selecciona una opcion</option>
               {needOptions.map((option) => (
@@ -239,7 +239,7 @@ export function DiagnosticForm({
             value={form.problemaPrincipal}
             onChange={(event) => handleChange('problemaPrincipal', event.target.value)}
             placeholder="Qué tarea se repite, qué herramientas usáis y qué pasa cuando se retrasa."
-            className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+            className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
           />
         </label>
 
@@ -251,7 +251,7 @@ export function DiagnosticForm({
                 value={form.tipoProyecto}
                 onChange={(event) => handleChange('tipoProyecto', event.target.value)}
                 required
-                className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+                className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
               >
                 <option value="">Selecciona una opcion</option>
                 {projectOptions.map((option) => (
@@ -270,7 +270,7 @@ export function DiagnosticForm({
                 value={form.mensaje}
                 onChange={(event) => handleChange('mensaje', event.target.value)}
                 placeholder="Contexto, objetivos, herramientas actuales o cualquier dato útil"
-                className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+                className="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
               />
             </label>
           </>
@@ -284,7 +284,7 @@ export function DiagnosticForm({
             </div>
             <div className="flex items-center gap-2">
               <Instagram className="h-4 w-4" />
-              <a className="transition hover:text-white" href={siteMeta.instagram} target="_blank" rel="noreferrer">
+              <a className="transition hover:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black" href={siteMeta.instagram} target="_blank" rel="noreferrer">
                 @iavance.es
               </a>
             </div>
@@ -314,7 +314,7 @@ export function DiagnosticForm({
           </div>
         </div>
         <div className="mt-4 text-xs text-zinc-500 text-center md:text-left">
-          Respuesta en 24–48 h laborables. Sin spam. Si no vemos encaje, te lo diremos claro. Al enviar, aceptas la <a href="/privacidad" className="underline hover:text-white transition">política de privacidad</a>.
+          Respuesta en 24–48 h laborables. Sin spam. Si no vemos encaje, te lo diremos claro. Al enviar, aceptas la <a href="/privacidad" className="underline hover:text-white transition rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black">política de privacidad</a>.
         </div>
       </form>
     </div>
@@ -340,7 +340,7 @@ function Field({ label, value, onChange, placeholder, required = false, type = '
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus:border-brand-500/40 focus:ring-2 focus:ring-brand-500/10"
+        className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
       />
     </label>
   );
