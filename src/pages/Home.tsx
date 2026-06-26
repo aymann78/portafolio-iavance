@@ -417,29 +417,32 @@ export function Home() {
             </div>
           </Reveal>
 
-          <div className="grid gap-3 md:grid-cols-2">
-            <div className="grid gap-3">
-              {confidenceNotes.map((note, index) => (
-                <Reveal key={index} delay={index % 2 === 0 ? 'sm' : 'md'}>
-                  <div className="flex h-full gap-3 rounded-lg border border-zinc-800 bg-black/70 p-4">
-                    <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
-                    <p className="text-sm leading-6 text-zinc-300">{note}</p>
-                  </div>
-                </Reveal>
-              ))}
+          <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+            <div>
+              <p className="mb-4 text-sm font-semibold text-white">Nuestros límites</p>
+              <ul className="space-y-4">
+                {confidenceNotes.map((note, index) => (
+                  <Reveal key={index} delay={index % 2 === 0 ? 'sm' : 'md'}>
+                    <li className="flex items-start gap-3">
+                      <ClipboardCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                      <span className="text-sm leading-6 text-zinc-400">{note}</span>
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
             </div>
-            <div className="grid gap-3">
-              {notToAutomate.map((note, index) => (
-                <Reveal key={index} delay={index % 2 === 0 ? 'md' : 'lg'}>
-                  <div className="flex h-full gap-3 rounded-lg border border-zinc-800/60 bg-zinc-950/40 p-4">
-                    <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500/70" />
-                    <div>
-                      <p className="text-xs font-mono uppercase tracking-[0.12em] text-zinc-500 mb-1">Cuándo no automatizar</p>
-                      <p className="text-sm leading-6 text-zinc-400">{note}</p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
+            <div>
+              <p className="mb-4 text-sm font-semibold text-white">Cuándo no automatizar</p>
+              <ul className="space-y-4">
+                {notToAutomate.map((note, index) => (
+                  <Reveal key={index} delay={index % 2 === 0 ? 'md' : 'lg'}>
+                    <li className="flex items-start gap-3">
+                      <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-500/70" />
+                      <span className="text-sm leading-6 text-zinc-400">{note}</span>
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
             </div>
           </div>
         </Container>
@@ -467,28 +470,24 @@ export function Home() {
           <div className="grid gap-4 md:grid-cols-2">
             {featuredBuilds.map((build, index) => (
               <Reveal key={build.slug} delay={index === 0 ? 'sm' : 'md'}>
-                <Card hoverable className="h-full rounded-lg border-zinc-800 bg-black">
-                  <CardContent className="pt-6">
-                    <div className="flex flex-wrap gap-2">
-                      <ProofBadge type={build.proofType} />
-                      <Tag variant="ghost" className="text-zinc-500">
-                        {build.category}
-                      </Tag>
-                    </div>
-                    <p className="mt-5 text-xl font-semibold text-white">{build.title}</p>
-                    <p className="mt-3 text-sm leading-6 text-zinc-400">{build.shortDescription}</p>
-                    <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-                      {build.demoUrl && (
-                        <Button as="a" href={build.demoUrl} size="sm">
-                          Probar demo
-                        </Button>
-                      )}
-                      <Button as="Link" to={`/casos/${build.slug}`} variant="outline" size="sm">
-                        Ver detalle
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="flex flex-col border-t border-zinc-800 pt-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <ProofBadge type={build.proofType} />
+                    <span className="text-xs text-zinc-500">{build.category}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{build.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-zinc-400">{build.shortDescription}</p>
+                  <div className="mt-4 flex items-center gap-4">
+                    {build.demoUrl && (
+                      <a href={build.demoUrl} className="text-sm font-medium text-brand-400 hover:text-brand-300 transition-colors">
+                        Probar demo &rarr;
+                      </a>
+                    )}
+                    <a href={`/casos/${build.slug}`} className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+                      Ver detalle
+                    </a>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>

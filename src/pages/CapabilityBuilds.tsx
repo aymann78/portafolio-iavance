@@ -119,25 +119,21 @@ export function CapabilityBuilds() {
                   No son casos reales disfrazados. Son pruebas de capacidad.
                 </Heading>
               </div>
-              <div className="grid gap-3 md:grid-cols-2">
-                <Card className="rounded-2xl border-zinc-800 bg-black">
-                  <CardContent className="pt-5">
-                    <MousePointer2 className="h-5 w-5 text-brand-400" />
-                    <p className="mt-4 font-semibold text-white">Puedes tocar y probar</p>
-                    <p className="mt-2 text-sm leading-6 text-zinc-400">
-                      Las demos muestran flujos útiles: mini-ERP operativo y automatización de entradas, clasificación y acción.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="rounded-2xl border-zinc-800 bg-black">
-                  <CardContent className="pt-5">
-                    <ArrowRight className="h-5 w-5 text-brand-400" />
-                    <p className="mt-4 font-semibold text-white">Sirven para abrir conversación</p>
-                    <p className="mt-2 text-sm leading-6 text-zinc-400">
-                      Si una pieza se parece a tu problema, el diagnóstico define alcance, prioridad y siguiente sprint.
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="border-t border-zinc-800 pt-5">
+                  <MousePointer2 className="h-5 w-5 text-brand-400" />
+                  <p className="mt-4 font-semibold text-white">Puedes tocar y probar</p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-400">
+                    Las demos muestran flujos útiles: mini-ERP operativo y automatización de entradas, clasificación y acción.
+                  </p>
+                </div>
+                <div className="border-t border-zinc-800 pt-5">
+                  <ArrowRight className="h-5 w-5 text-brand-400" />
+                  <p className="mt-4 font-semibold text-white">Sirven para abrir conversación</p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-400">
+                    Si una pieza se parece a tu problema, el diagnóstico define alcance, prioridad y siguiente sprint.
+                  </p>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -145,32 +141,24 @@ export function CapabilityBuilds() {
       </section>
 
       <section className="bg-black py-10 md:py-14">
-        <Container>
+        <Container className="max-w-4xl text-center">
           <Reveal>
-            <Card className="rounded-[2rem] border-zinc-800 bg-black/70">
-              <CardContent className="pt-8">
-                <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-                  <div>
-                    <Eyebrow>Siguiente paso</Eyebrow>
-                    <Heading as="h2" size="md" className="mt-4">
-                      Si algo te encaja, lo aterrizamos a tu negocio.
-                    </Heading>
-                    <p className="mt-3 max-w-3xl text-zinc-400">
-                      Respuesta clara, primer mapa de oportunidad y una puerta de entrada proporcionada para detectar fricción, priorizar y decidir qué merece construirse.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <Button as="Link" to="/contacto">
-                      Solicitar diagnóstico
-                    </Button>
-                    <Button as="Link" to="/servicios" variant="outline">
-                      Ver servicios
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <Eyebrow>Siguiente paso</Eyebrow>
+            <Heading as="h2" size="md" className="mt-4">
+              Si algo te encaja, lo aterrizamos a tu negocio.
+            </Heading>
+            <p className="mx-auto mt-3 max-w-2xl text-zinc-400">
+              Respuesta clara, primer mapa de oportunidad y una puerta de entrada proporcionada para detectar fricción, priorizar y decidir qué merece construirse.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button as="Link" to="/contacto">
+                Solicitar diagnóstico
+              </Button>
+              <Button as="Link" to="/servicios" variant="outline">
+                Ver servicios
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
           </Reveal>
         </Container>
       </section>

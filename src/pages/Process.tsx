@@ -91,49 +91,37 @@ export function Process() {
           </Reveal>
 
           <Reveal delay="md">
-            <Card className="rounded-[1.75rem] border-zinc-800 bg-black">
-              <CardContent className="pt-8">
-                <div className="grid gap-4 md:grid-cols-2">
-                  {engagement.map((item) => (
-                    <div key={item} className="flex gap-3 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
-                      <p className="text-sm text-zinc-300">{item}</p>
-                    </div>
-                  ))}
+            <div className="grid gap-x-8 gap-y-4 md:grid-cols-2 pt-6">
+              {engagement.map((item) => (
+                <div key={item} className="flex gap-3">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                  <p className="text-sm text-zinc-300 leading-6">{item}</p>
                 </div>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
           </Reveal>
         </Container>
       </Section>
 
       <Section spacing="md">
-        <Container>
+        <Container className="max-w-4xl text-center">
           <Reveal>
-            <Card className="rounded-[2rem] border-zinc-800 bg-black/70">
-              <CardContent className="pt-10">
-                <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                  <div>
-                    <Eyebrow>Siguiente paso</Eyebrow>
-                    <Heading as="h2" size="lg" className="mt-4">
-                      Si necesitas ordenar el problema antes de construir, empecemos por ahi.
-                    </Heading>
-                    <p className="mt-4 max-w-3xl text-zinc-400">
-                      A veces lo mas valioso no es una nueva pantalla, sino una decisión bien tomada al principio.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    <Button as="Link" to="/contacto">
-                      Solicitar diagnóstico
-                    </Button>
-                    <Button as="Link" to="/servicios" variant="outline">
-                      Ver líneas de trabajo
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <Eyebrow>Siguiente paso</Eyebrow>
+            <Heading as="h2" size="lg" className="mt-4">
+              Si necesitas ordenar el problema antes de construir, empecemos por ahí.
+            </Heading>
+            <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+              A veces lo más valioso no es una nueva pantalla, sino una decisión bien tomada al principio.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button as="Link" to="/contacto">
+                Solicitar diagnóstico
+              </Button>
+              <Button as="Link" to="/servicios" variant="outline">
+                Ver líneas de trabajo
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
           </Reveal>
         </Container>
       </Section>

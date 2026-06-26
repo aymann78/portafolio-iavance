@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { publicCapabilityBuilds } from '../data/projects';
 import { services } from '../data/services';
-import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
+import { Button, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
 import { Seo } from '../components/Seo';
 
 export function Services() {
@@ -65,52 +65,46 @@ export function Services() {
 
               <div className="space-y-6">
                 <Reveal delay="sm">
-                  <Card className="rounded-[1.75rem] border-zinc-800 bg-black">
-                    <CardContent className="pt-8">
-                      <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Resultados que perseguimos</p>
-                      <div className="mt-6 grid gap-4 md:grid-cols-2">
-                        {service.outcomes.map((outcome) => (
-                          <div key={outcome} className="flex gap-3 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
-                            <span className="text-sm text-zinc-300">{outcome}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <div className="pt-2">
+                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Resultados que perseguimos</p>
+                    <ul className="mt-4 grid gap-3 md:grid-cols-2">
+                      {service.outcomes.map((outcome) => (
+                        <li key={outcome} className="flex gap-3 text-sm text-zinc-300">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                          <span className="leading-5">{outcome}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </Reveal>
 
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-8 border-t border-zinc-800/50 pt-8 md:grid-cols-2">
                   <Reveal delay="md">
-                    <Card className="rounded-[1.75rem] border-zinc-800 bg-zinc-950/50">
-                      <CardContent className="pt-8">
-                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Entregables habituales</p>
-                        <ul className="mt-6 space-y-4 text-sm text-zinc-300">
-                          {service.deliverables.map((item) => (
-                            <li key={item} className="flex gap-3">
-                              <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
+                    <div>
+                      <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Entregables habituales</p>
+                      <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+                        {service.deliverables.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                            <span className="leading-5">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </Reveal>
 
                   <Reveal delay="lg">
-                    <Card className="rounded-[1.75rem] border-zinc-800 bg-zinc-950/50">
-                      <CardContent className="pt-8">
-                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Cuando suele encajar</p>
-                        <ul className="mt-6 space-y-4 text-sm text-zinc-300">
-                          {service.whenItFits.map((item) => (
-                            <li key={item} className="flex gap-3">
-                              <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
+                    <div>
+                      <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">Cuándo suele encajar</p>
+                      <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+                        {service.whenItFits.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                            <span className="leading-5">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </Reveal>
                 </div>
 
@@ -136,27 +130,23 @@ export function Services() {
       })}
 
       <Section spacing="md">
-        <Container>
+        <Container className="max-w-4xl text-center">
           <Reveal>
-            <Card className="rounded-[2rem] border-zinc-800 bg-zinc-950/50">
-              <CardContent className="pt-10 text-center">
-                <Eyebrow>Siguiente paso</Eyebrow>
-                <Heading as="h2" size="lg" className="mt-4">
-                  Si no tienes claro que línea encaja, empezamos por el diagnóstico.
-                </Heading>
-                <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
-                  Lo mas importante al inicio no es elegir tecnologia. Es entender bien el cuello de botella y ordenar la siguiente decisión.
-                </p>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-                  <Button as="Link" to="/contacto">
-                    Solicitar diagnóstico
-                  </Button>
-                  <Button as="Link" to="/casos" variant="outline">
-                    Ver demos
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <Eyebrow>Siguiente paso</Eyebrow>
+            <Heading as="h2" size="lg" className="mt-4">
+              Si no tienes claro qué línea encaja, empezamos por el diagnóstico.
+            </Heading>
+            <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+              Lo más importante al inicio no es elegir tecnología. Es entender bien el cuello de botella y ordenar la siguiente decisión.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button as="Link" to="/contacto">
+                Solicitar diagnóstico
+              </Button>
+              <Button as="Link" to="/casos" variant="outline">
+                Ver demos
+              </Button>
+            </div>
           </Reveal>
         </Container>
       </Section>
