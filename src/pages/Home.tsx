@@ -64,7 +64,7 @@ const operatingModes = [
   },
 ] as const;
 
-const trustSignals = ['Respuesta clara', 'Primer mapa de oportunidad', 'Sin proyecto gigante de entrada'];
+const trustSignals = ['Pedidos por correo', 'Stock en hojas', 'Leads sin seguimiento', 'CRM/ERP desconectados'];
 
 const capabilities = [
   { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
@@ -137,11 +137,10 @@ export function Home() {
             <div className="max-w-3xl">
               <Eyebrow>Automatización operativa B2B</Eyebrow>
               <Heading as="h1" size="2xl" className="mt-4 max-w-4xl text-balance">
-                Menos tareas manuales. Más operaciones que se mueven solas.
+                Automatizamos operaciones B2B que todavía dependen de correos, hojas y seguimiento manual.
               </Heading>
               <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
-                Empezamos por operaciones B2B, pero construimos casi cualquier pieza tecnológica útil: automatizaciones,
-                integraciones, software interno, portales, dashboards, IA aplicada y producto digital a medida.
+                Detectamos dónde se pierden horas, priorizamos la primera automatización viable y construimos una solución usable conectada con tus herramientas actuales.
               </p>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -149,9 +148,9 @@ export function Home() {
                   as="Link"
                   to="/contacto"
                   size="lg"
-                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Pedir diagnóstico gratuito' })}
+                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Solicitar diagnóstico operativo' })}
                 >
-                  Pedir diagnóstico gratuito
+                  Solicitar diagnóstico operativo
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
@@ -159,16 +158,16 @@ export function Home() {
                   to="/casos"
                   variant="outline"
                   size="lg"
-                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Probar demos' })}
+                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Ver demos' })}
                 >
-                  Probar demos
+                  Ver demos
                 </Button>
               </div>
 
-              <div className="mt-5 grid gap-2 text-sm text-zinc-400 sm:grid-cols-3">
+              <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-400">
                 {trustSignals.map((signal) => (
                   <span key={signal} className="inline-flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-400" />
                     {signal}
                   </span>
                 ))}
@@ -189,11 +188,10 @@ export function Home() {
                 })}
               </div>
 
-              <div className="mt-4 rounded-lg border border-brand-500/20 bg-brand-500/10 p-4">
-                <p className="text-xs font-mono uppercase tracking-[0.18em] text-brand-300">No solo automatización</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-200">
-                  También hacemos herramientas internas, portales B2B, dashboards, integraciones complejas, IA aplicada,
-                  backoffice, APIs, scraping, bots y piezas tecnológicas a medida cuando el negocio lo necesita.
+              <div className="mt-4 rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                <p className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-400">Software a medida</p>
+                <p className="mt-2 text-sm leading-6 text-zinc-300">
+                  Cuando el proceso lo necesita, también construimos software interno, portales y paneles conectados para dar visibilidad a la operación.
                 </p>
               </div>
             </div>
@@ -301,13 +299,13 @@ export function Home() {
           <Reveal>
             <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
               <div>
-                <Eyebrow>Soluciones</Eyebrow>
+                <Eyebrow>Soluciones B2B</Eyebrow>
                 <Heading as="h2" size="lg" className="mt-3">
-                  Entramos por el dolor operativo, no por la tecnologia.
+                  Para empresas con pedidos, leads, stock, operaciones o datos repartidos entre herramientas.
                 </Heading>
               </div>
               <p className="text-zinc-400">
-                La persona que llega no tiene por qué saber si necesita una automatización, una integración o una herramienta interna. La web la lleva hacia una decisión simple.
+                No tienes por qué saber si necesitas automatizar, integrar o crear software a medida. Entramos por el dolor operativo, mapeamos el proceso y decidimos la solución más simple.
               </p>
             </div>
           </Reveal>
@@ -493,7 +491,7 @@ export function Home() {
             <DiagnosticForm
               compact
               streamlined
-              title="Pide un diagnóstico gratuito"
+              title="Solicitar diagnóstico operativo"
               description="Cuentanos que parte del negocio sigue dependiendo de trabajo manual y te respondemos con una forma razonable de empezar."
               initialNeedType="Automatización"
               initialProjectType="Automatizaciones e IA aplicada"

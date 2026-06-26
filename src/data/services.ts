@@ -13,36 +13,6 @@ export interface ServiceLine {
 
 export const services: ServiceLine[] = [
   {
-    slug: 'webs-de-conversion',
-    title: 'Webs de conversión',
-    kicker: 'Captación con criterio',
-    summary:
-      'Webs, landings y experiencias comerciales pensadas para aclarar la propuesta, reducir fricción y convertir interes en conversaciones.',
-    problem:
-      'No se entiende rápido que vendes, para quien es y por qué alguien deberia contactar ahora.',
-    solution:
-      'Construimos paginas ligeras, bien ordenadas y enfocadas en negocio: mensaje, estructura, prueba y CTA trabajando juntos.',
-    outcomes: [
-      'Mejor primera impresion comercial',
-      'Menos fricción en captación y campañas',
-      'Jerarquia pensada para trafico frio',
-      'Base mas solida para ventas y demos'
-    ],
-    deliverables: [
-      'Arquitectura de mensajes y estructura',
-      'Diseño y desarrollo a medida',
-      'Optimizacion de carga y claridad visual',
-      'CTAs, formularios y recorrido de conversión'
-    ],
-    whenItFits: [
-      'Lanzas una nueva propuesta o servicio',
-      'Tu web actual no ayuda a vender',
-      'Necesitas una landing para captación',
-      'Quieres una presencia premium sin humo'
-    ],
-    relatedBuilds: []
-  },
-  {
     slug: 'automatizaciones-e-ia',
     title: 'Automatizaciones e IA aplicada',
     kicker: 'Operaciones más ligeras',
@@ -101,5 +71,35 @@ export const services: ServiceLine[] = [
       'Quieres centralizar datos y acciones'
     ],
     relatedBuilds: ['b2b-autoflow']
+  },
+  {
+    slug: 'webs-de-conversion',
+    title: 'Webs de conversión',
+    kicker: 'Captación con criterio',
+    summary:
+      'Webs, landings y experiencias comerciales pensadas para aclarar la propuesta, reducir fricción y convertir interes en conversaciones.',
+    problem:
+      'No se entiende rápido que vendes, para quien es y por qué alguien deberia contactar ahora.',
+    solution:
+      'Construimos paginas ligeras, bien ordenadas y enfocadas en negocio: mensaje, estructura, prueba y CTA trabajando juntos.',
+    outcomes: [
+      'Mejor primera impresion comercial',
+      'Menos fricción en captación y campañas',
+      'Jerarquia pensada para trafico frio',
+      'Base mas solida para ventas y demos'
+    ],
+    deliverables: [
+      'Arquitectura de mensajes y estructura',
+      'Diseño y desarrollo a medida',
+      'Optimizacion de carga y claridad visual',
+      'CTAs, formularios y recorrido de conversión'
+    ],
+    whenItFits: [
+      'Lanzas una nueva propuesta o servicio',
+      'Tu web actual no ayuda a vender',
+      'Necesitas una landing para captación',
+      'Quieres una presencia premium sin humo'
+    ],
+    relatedBuilds: []
   }
 ];
