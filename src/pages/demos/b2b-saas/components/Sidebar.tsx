@@ -62,18 +62,19 @@ export function Sidebar({
       </div>
 
       <div className="border-t border-white/8 px-4 py-4">
-        <p className="text-xs font-mono uppercase tracking-[0.24em] text-[#708488]">Valor visible</p>
-        <div className="mt-3 rounded-2xl border border-cyan-400/15 bg-cyan-400/8 p-4">
-          <p className="text-sm font-semibold text-white">Menos perseguir estados</p>
-          <p className="mt-2 text-sm leading-6 text-[#a9bbbf]">
-            El visitante ve cola, riesgo, credito y stock sin imaginar el backend.
+        <div className="rounded-2xl border border-amber-500/20 bg-amber-500/10 p-4 text-amber-200">
+          <p className="text-xs font-mono uppercase tracking-[0.18em] text-amber-400">Demo conceptual</p>
+          <p className="mt-2 text-sm leading-6 text-amber-200/80">
+            Esta interfaz ilustra un portal B2B conectado. En un entorno real, se integraría con tu ERP, CRM o pasarela de pago para leer estados reales. Los datos aquí mostrados son ficticios.
           </p>
         </div>
-        <div className="mt-3 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
-          <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Tecnologia a medida</p>
-          <p className="mt-2 text-sm leading-6 text-[#a9bbbf]">
-            No solo ERP: también portales, dashboards, integraciones, IA aplicada, herramientas internas y piezas a medida.
-          </p>
+        <div className="mt-4">
+          <a
+            href="/contacto?service=software-interno"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
+          >
+            Aterrizar software interno
+          </a>
         </div>
       </div>
     </aside>

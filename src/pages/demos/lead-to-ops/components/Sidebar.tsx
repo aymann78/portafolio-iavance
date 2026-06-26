@@ -43,15 +43,23 @@ export function Sidebar({
       </div>
 
       <div className="border-t border-white/8 px-4 py-4">
-        <p className="text-xs font-mono uppercase tracking-[0.24em] text-[#708488]">Input realista</p>
+        <p className="text-xs font-mono uppercase tracking-[0.24em] text-[#708488]">Input realista simulado</p>
         <pre className="mt-3 whitespace-pre-wrap rounded-2xl border border-white/8 bg-[#0b1013] p-4 text-xs leading-6 text-[#d8e4e6]">
           {scenario.sampleInput}
         </pre>
-        <div className="mt-3 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
-          <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Tecnologia a medida</p>
-          <p className="mt-2 text-sm leading-6 text-[#a9bbbf]">
-            No hacemos solo automatización: también producto digital, portales, paneles, integraciones, IA y software a medida.
+        <div className="mt-4 rounded-2xl border border-amber-500/20 bg-amber-500/10 p-4 text-amber-200">
+          <p className="text-xs font-mono uppercase tracking-[0.18em] text-amber-400">Demo conceptual</p>
+          <p className="mt-2 text-sm leading-6 text-amber-200/80">
+            Esta interfaz ilustra un flujo operativo automatizado. En un entorno real, las entradas se conectarían a tu email o formularios, y los datos se enviarían a tu CRM.
           </p>
+        </div>
+        <div className="mt-4">
+          <a
+            href="/contacto?service=automatizaciones-e-ia"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
+          >
+            Diagnosticar automatización
+          </a>
         </div>
       </div>
     </aside>
