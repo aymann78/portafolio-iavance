@@ -13,7 +13,7 @@ const options = [
     summary:
       'Hay tiempo y margen que se escapan en tareas repetitivas, seguimiento manual y movimientos de datos.',
     recommendation:
-      'Mapeariamos el flujo actual, priorizariamos los puntos mas costosos y planteariamos automatizaciones con reglas claras y una capa de IA solo donde mejore la operación.',
+      'Mapearíamos el flujo actual, priorizaríamos los puntos más costosos y plantearíamos automatizaciones con reglas claras y una capa de IA solo donde mejore la operación.',
       buildSlug: 'lead-to-ops',
     href: '/contacto?service=automatizaciones-e-ia&problem=Mi%20equipo%20pierde%20tiempo%20en%20tareas%20manuales'
   },

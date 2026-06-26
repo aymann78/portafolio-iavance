@@ -221,7 +221,7 @@ export function DiagnosticForm({
               required
               className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
             >
-              <option value="">Selecciona una opcion</option>
+              <option value="">Selecciona una opción</option>
               {needOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
@@ -253,7 +253,7 @@ export function DiagnosticForm({
                 required
                 className="h-12 rounded-xl border border-zinc-800 bg-zinc-950 px-4 text-sm text-white outline-none transition focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-500/50"
               >
-                <option value="">Selecciona una opcion</option>
+                <option value="">Selecciona una opción</option>
                 {projectOptions.map((option) => (
                   <option key={option} value={option}>
                     {option}

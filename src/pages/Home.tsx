@@ -2,17 +2,17 @@ import { useState } from 'react';
 import {
   AlertTriangle,
   ArrowRight,
-  CheckCircle2,
+
   ClipboardCheck,
   Clock3,
-  DatabaseZap,
+
   FileSpreadsheet,
   Gauge,
   MousePointer2,
   PlugZap,
   ShieldCheck,
   Workflow,
-  Zap,
+
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { DiagnosticForm } from '../components/DiagnosticForm';
@@ -67,11 +67,7 @@ const operatingModes = [
 
 const trustSignals = ['Pedidos por correo', 'Stock en hojas', 'Leads sin seguimiento', 'CRM/ERP desconectados'];
 
-const capabilities = [
-  { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
-  { label: 'Integraciones', text: 'Datos conectados entre herramientas.', icon: PlugZap },
-  { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
-];
+
 
 const beforeAfterExamples = [
   {
@@ -198,36 +194,16 @@ export function Home() {
                 </Button>
               </div>
 
-              <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-400">
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-zinc-500">
                 {trustSignals.map((signal) => (
                   <span key={signal} className="inline-flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand-500/50" />
                     {signal}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {capabilities.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={item.label} className="rounded-lg border border-zinc-800 bg-black/55 p-3">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                        <Icon className="h-4 w-4 text-brand-300" />
-                        {item.label}
-                      </div>
-                      <p className="mt-2 text-xs leading-5 text-zinc-500">{item.text}</p>
-                    </div>
-                  );
-                })}
-              </div>
 
-              <div className="mt-4 rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
-                <p className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-400">Software a medida</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-300">
-                  Cuando el proceso lo necesita, también construimos software interno, portales y paneles conectados para dar visibilidad a la operación.
-                </p>
-              </div>
             </div>
           </Reveal>
 
