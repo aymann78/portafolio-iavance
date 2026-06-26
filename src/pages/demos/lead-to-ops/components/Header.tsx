@@ -20,8 +20,8 @@ export function Header({
   resetDemo: () => void;
 }) {
   return (
-    <header className="relative overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900  ">
-      <div className="flex flex-col gap-4 border-b border-zinc-800 p-5 xl:flex-row xl:items-start xl:justify-between">
+    <header className="relative overflow-hidden rounded-lg border border-zinc-800/80 bg-zinc-900  ">
+      <div className="flex flex-col gap-4 border-b border-zinc-800/80 p-5 xl:flex-row xl:items-start xl:justify-between">
         <div className="max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">Entrada → criterio → acción</p>
           <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-tight text-white md:text-5xl">

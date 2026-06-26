@@ -16,7 +16,7 @@ export function FinancePanel({
           {orders
             .filter((item) => item.status === 'Bloqueado' || item.status === 'Validando')
             .map((order) => (
-              <div key={order.id} className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
+              <div key={order.id} className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="font-semibold text-white">{order.id}</p>
@@ -25,8 +25,8 @@ export function FinancePanel({
                   <StatusPill status={order.status} />
                 </div>
                 <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <span className="rounded-full border border-zinc-800 px-3 py-1 text-xs text-[#a9bbbf]">{formatCurrency(order.value)}</span>
-                  <span className="rounded-full border border-zinc-800 px-3 py-1 text-xs text-[#a9bbbf]">{order.due}</span>
+                  <span className="rounded-full border border-zinc-800/80 px-3 py-1 text-xs text-[#a9bbbf]">{formatCurrency(order.value)}</span>
+                  <span className="rounded-full border border-zinc-800/80 px-3 py-1 text-xs text-[#a9bbbf]">{order.due}</span>
                 </div>
                 {order.status === 'Bloqueado' ? (
                   <button

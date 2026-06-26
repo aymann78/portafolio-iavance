@@ -37,7 +37,7 @@ export function InsightSidebar({
                 ['Estado', selectedOrder.status],
               ]}
             />
-            <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-[#9eb0b4]">
+            <div className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4 text-sm leading-6 text-[#9eb0b4]">
               Este pedido esta marcado como <strong className="text-white">{selectedOrder.status}</strong>.
               El bloqueo no viene del operario, sino de las reglas de negocio automaticas.
             </div>
@@ -83,7 +83,7 @@ export function InsightSidebar({
                 ['Facturas pdts.', String(selectedAccount.pendingInvoices)],
               ]}
             />
-            <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-[#9eb0b4]">
+            <div className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4 text-sm leading-6 text-[#9eb0b4]">
               Al abrir la ficha de cliente en una llamada, el equipo ve el limite de credito y las tareas abiertas. No hay sorpresas financieras post-venta.
             </div>
           </div>
@@ -110,7 +110,7 @@ export function InsightSidebar({
                 <StatusRow key={label} label={label} status={connectorState[label]} />
               ))}
             </div>
-            <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-[#9eb0b4]">
+            <div className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4 text-sm leading-6 text-[#9eb0b4]">
               Si el ERP cae, o el CRM no sincroniza el credito, la plataforma asume un estado degradado seguro pero sigue operando visualmente.
             </div>
           </div>

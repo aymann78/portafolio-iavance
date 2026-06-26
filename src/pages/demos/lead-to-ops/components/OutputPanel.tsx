@@ -37,7 +37,7 @@ export function BusinessSummaryPanel({
             'Tarea creada con contexto, prioridad y responsable.',
             'Actividad guardada para seguimiento y auditoria.',
           ].map((item) => (
-            <div key={item} className="rounded-md border border-zinc-800 bg-zinc-950  px-4 py-3 text-sm leading-6 text-[#d8e4e6]">
+            <div key={item} className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40  px-4 py-3 text-sm leading-6 text-[#d8e4e6]">
               {item}
             </div>
           ))}

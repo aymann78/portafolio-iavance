@@ -14,7 +14,7 @@ export function B2bSaasLanding() {
   const { state, computed, actions } = useB2bState();
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#090b0d] text-[#eef5f5]">
+    <div className="min-h-screen overflow-x-hidden bg-black text-[#eef5f5]">
       <Seo 
         title="Demo: B2B Autoflow ERP | iavance.es" 
         description="Explora un centro de mando operativo interactivo." 

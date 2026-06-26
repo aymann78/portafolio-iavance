@@ -13,8 +13,8 @@ export function Header({
   resetDemo: () => void;
 }) {
   return (
-    <header className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950">
-      <div className="flex flex-col gap-4 border-b border-zinc-800 p-5 xl:flex-row xl:items-start xl:justify-between">
+    <header className="overflow-hidden rounded-lg border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40">
+      <div className="flex flex-col gap-4 border-b border-zinc-800/80 p-5 xl:flex-row xl:items-start xl:justify-between">
         <div className="max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">{currentModule.eyebrow}</p>
           <h1 className="mt-3 max-w-2xl text-4xl font-semibold leading-tight text-white md:text-5xl">
@@ -26,7 +26,7 @@ export function Header({
         </div>
 
         <div className="w-full max-w-[420px] space-y-3">
-          <div className="flex items-center gap-2 rounded-md border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-[#8ea3a7]">
+          <div className="flex items-center gap-2 rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 px-4 py-3 text-sm text-[#8ea3a7]">
             <Search className="h-4 w-4 text-cyan-300" />
             Buscar pedido, cuenta, sku o alerta
           </div>

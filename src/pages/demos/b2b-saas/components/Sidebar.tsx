@@ -13,8 +13,8 @@ export function Sidebar({
   connectorState: Record<(typeof connectorLabels)[number], SyncStatus>;
 }) {
   return (
-    <aside className="overflow-hidden rounded-[30px] border border-zinc-800 bg-[#0d1215]">
-      <div className="border-b border-zinc-800 px-5 py-5">
+    <aside className="overflow-hidden rounded-[30px] border border-zinc-800/80 bg-[#0d1215]">
+      <div className="border-b border-zinc-800/80 px-5 py-5">
         <div className="flex items-center gap-3">
           <span className="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-400/12 text-cyan-200">
             <Layers3 className="h-6 w-6" />
@@ -52,7 +52,7 @@ export function Sidebar({
         })}
       </div>
 
-      <div className="border-t border-zinc-800 px-4 py-4">
+      <div className="border-t border-zinc-800/80 px-4 py-4">
         <p className="text-xs font-mono uppercase tracking-[0.24em] text-[#708488]">Estado sistema</p>
         <div className="mt-3 space-y-2">
           {connectorLabels.map((label) => (
@@ -61,7 +61,7 @@ export function Sidebar({
         </div>
       </div>
 
-      <div className="border-t border-zinc-800 px-4 py-4">
+      <div className="border-t border-zinc-800/80 px-4 py-4">
         <div className="rounded-md border border-amber-500/20 bg-amber-500/10 p-4 text-amber-200">
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-amber-400">Demo conceptual</p>
           <p className="mt-2 text-sm leading-6 text-amber-200/80">

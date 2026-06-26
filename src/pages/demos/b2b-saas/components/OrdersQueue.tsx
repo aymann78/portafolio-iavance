@@ -21,10 +21,10 @@ export function OrdersQueue({
       <Panel title="Pedidos por estado" eyebrow="Cola de trabajo">
         <div className="grid gap-3 xl:grid-cols-2">
           {(['Nuevo', 'Validando', 'Bloqueado', 'Listo'] as OrderStatus[]).map((status) => (
-            <div key={status} className="min-w-0 rounded-md border border-zinc-800 bg-zinc-950 p-3">
+            <div key={status} className="min-w-0 rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-3">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{status}</p>
-                <span className="rounded-full border border-zinc-800 px-2 py-1 text-xs text-[#a9bbbf]">
+                <span className="rounded-full border border-zinc-800/80 px-2 py-1 text-xs text-[#a9bbbf]">
                   {orders.filter((item) => item.status === status).length}
                 </span>
               </div>
@@ -39,7 +39,7 @@ export function OrdersQueue({
                       className={`w-full rounded-md border p-3 text-left transition ${
                         order.id === selectedOrderId
                           ? 'border-cyan-300/25 bg-cyan-400/10'
-                          : 'border-zinc-800 bg-zinc-900 hover:border-cyan-300/20 hover:bg-white/[0.04]'
+                          : 'border-zinc-800/80 bg-zinc-900 hover:border-cyan-300/20 hover:bg-white/[0.04]'
                       }`}
                     >
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -66,7 +66,7 @@ export function OrdersQueue({
               ['Siguiente hito', selectedOrder.due],
             ]}
           />
-          <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
+          <div className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4">
             <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Riesgo visible</p>
             <p className="mt-3 text-lg font-semibold text-white">{selectedOrder.issue}</p>
             <p className="mt-2 text-sm leading-6 text-[#9eb0b4]">

@@ -22,7 +22,7 @@ function CsvAutomationFlow({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="min-w-0 rounded-md border border-zinc-800 bg-zinc-950  p-4">
+      <div className="min-w-0 rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40  p-4">
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">CSV de entrada</p>
@@ -34,7 +34,7 @@ function CsvAutomationFlow({
         </div>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[420px] text-left text-sm">
-            <thead className="border-b border-zinc-800 text-xs uppercase tracking-[0.18em] text-[#708488]">
+            <thead className="border-b border-zinc-800/80 text-xs uppercase tracking-[0.18em] text-[#708488]">
               <tr>
                 <th className="px-3 py-3">Empresa</th>
                 <th className="px-3 py-3">Canal</th>
@@ -65,12 +65,12 @@ function CsvAutomationFlow({
         </div>
       </div>
 
-      <div className="rounded-md border border-zinc-800 bg-zinc-950  p-4">
+      <div className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40  p-4">
         <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Salida por destino</p>
         <p className="mt-2 text-lg font-semibold text-white">Resultado del lote</p>
         <div className="mt-4 space-y-3">
           {(Object.entries(grouped) as Array<[Destination, number]>).map(([destination, total]) => (
-            <div key={destination} className="rounded-md border border-zinc-800 bg-zinc-950  p-3">
+            <div key={destination} className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40  p-3">
               <div className="flex items-center justify-between gap-3">
                 <RouteBadge destination={destination} />
                 <span className="text-sm font-semibold text-white">{total}</span>
@@ -132,7 +132,7 @@ export function ProcessPanel({
                         ? 'border-cyan-300/30 bg-cyan-400/10 motion-safe:animate-pulse'
                         : complete
                           ? 'border-emerald-400/18 bg-emerald-400/10'
-                          : 'border-zinc-800 bg-zinc-950'
+                          : 'border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40'
                     }`}
                   >
                     <div className="flex items-start gap-3">
@@ -159,7 +159,7 @@ export function ProcessPanel({
             </div>
           )}
 
-          <div className="mt-4 rounded-md border border-zinc-800 bg-zinc-950 p-4">
+          <div className="mt-4 rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Estado del run</p>
@@ -194,7 +194,7 @@ export function ProcessPanel({
             <p className="mt-3 text-sm leading-7 text-cyan-50">{scenario.assistantPrompt}</p>
           </div>
 
-          <div className="mt-4 space-y-3 rounded-md border border-zinc-800 bg-zinc-950  p-4">
+          <div className="mt-4 space-y-3 rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40  p-4">
             <DecisionRow icon={MessageSquareText} label="Entrada elegida" value={selectedItem.source} />
             <DecisionRow icon={ScanSearch} label="Lectura" value={selectedItem.intent} />
             <DecisionRow icon={ShieldAlert} label="Prioridad" value={selectedItem.priority} />
@@ -207,7 +207,7 @@ export function ProcessPanel({
       <Panel title="Operational board" eyebrow="Que esta procesando el sistema">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[740px] text-left">
-            <thead className="border-b border-zinc-800 text-xs uppercase tracking-[0.2em] text-[#708488]">
+            <thead className="border-b border-zinc-800/80 text-xs uppercase tracking-[0.2em] text-[#708488]">
               <tr>
                 <th className="px-4 py-3">Entrada</th>
                 <th className="px-4 py-3">Intento detectado</th>

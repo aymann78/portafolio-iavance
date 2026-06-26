@@ -9,7 +9,7 @@ export function LeadToOpsCommandCenter() {
   const { state, computed, actions } = useLeadToOpsState();
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#090b0d] text-[#eef5f5]">
+    <div className="min-h-screen overflow-x-hidden bg-black text-[#eef5f5]">
       <Seo 
         title="Demo: Lead-to-Ops Command Center | iavance.es" 
         description="Simulación interactiva de automatización operativa B2B." 

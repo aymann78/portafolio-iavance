@@ -25,7 +25,7 @@ export function CustomersPanel({
               className={`w-full rounded-md border p-4 text-left transition ${
                 account.id === selectedAccountId
                   ? 'border-cyan-300/25 bg-cyan-400/10'
-                  : 'border-zinc-800 bg-zinc-950 hover:border-cyan-300/20 hover:bg-white/[0.04]'
+                  : 'border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 hover:border-cyan-300/20 hover:bg-white/[0.04]'
               }`}
             >
               <div className="flex items-start justify-between gap-3">
@@ -52,7 +52,7 @@ export function CustomersPanel({
             ['Salud', selectedAccount.health],
           ]}
         />
-        <div className="mt-4 rounded-md border border-zinc-800 bg-zinc-950 p-4">
+        <div className="mt-4 rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4">
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Que gana comercial</p>
           <p className="mt-3 text-sm leading-6 text-[#d5e0e2]">
             En una demo comercial se entiende que la cuenta no es solo CRM: es operativa, credito y seguimiento.

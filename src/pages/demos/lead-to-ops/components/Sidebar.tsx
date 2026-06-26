@@ -11,8 +11,8 @@ export function Sidebar({
   switchScenario: (id: ScenarioId) => void;
 }) {
   return (
-    <aside className="overflow-hidden rounded-[30px] border border-zinc-800 bg-[#0d1215]">
-      <div className="border-b border-zinc-800 px-5 py-5">
+    <aside className="overflow-hidden rounded-[30px] border border-zinc-800/80 bg-[#0d1215]">
+      <div className="border-b border-zinc-800/80 px-5 py-5">
         <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">Automatización operativa</p>
         <h1 className="mt-3 text-4xl font-semibold leading-tight text-white">Lead-to-Ops</h1>
         <p className="mt-3 text-sm leading-7 text-[#97a9ad]">
@@ -32,7 +32,7 @@ export function Sidebar({
               className={`w-full rounded-md border p-4 text-left transition ${
                 active
                   ? 'border-cyan-300/30 bg-cyan-400/10'
-                  : 'border-zinc-800 bg-zinc-950 hover:border-cyan-300/20 hover:bg-white/[0.04]'
+                  : 'border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 hover:border-cyan-300/20 hover:bg-white/[0.04]'
               }`}
             >
               <p className="text-lg font-semibold text-white">{item.title}</p>
@@ -42,9 +42,9 @@ export function Sidebar({
         })}
       </div>
 
-      <div className="border-t border-zinc-800 px-4 py-4">
+      <div className="border-t border-zinc-800/80 px-4 py-4">
         <p className="text-xs font-mono uppercase tracking-[0.24em] text-[#708488]">Input realista simulado</p>
-        <pre className="mt-3 whitespace-pre-wrap rounded-md border border-zinc-800 bg-zinc-950 p-4 text-xs leading-6 text-[#d8e4e6]">
+        <pre className="mt-3 whitespace-pre-wrap rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4 text-xs leading-6 text-[#d8e4e6]">
           {scenario.sampleInput}
         </pre>
         <div className="mt-4 rounded-md border border-amber-500/20 bg-amber-500/10 p-4 text-amber-200">

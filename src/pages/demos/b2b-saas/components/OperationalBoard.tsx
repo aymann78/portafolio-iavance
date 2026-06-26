@@ -16,7 +16,7 @@ export function OperationalBoard({
       <Panel title="Operational board" eyebrow="Lo que esta pasando ahora">
         <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className="border-b border-zinc-800 text-xs uppercase tracking-[0.2em] text-[#708488]">
+            <thead className="border-b border-zinc-800/80 text-xs uppercase tracking-[0.2em] text-[#708488]">
               <tr>
                 <th className="px-3 py-3">Pedido</th>
                 <th className="px-3 py-3">Cuenta</th>

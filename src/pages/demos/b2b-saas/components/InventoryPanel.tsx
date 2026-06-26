@@ -18,12 +18,12 @@ export function InventoryPanel({
             const needsAction = item.available <= item.min;
 
             return (
-              <div key={item.sku} className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
+              <div key={item.sku} className="rounded-md border border-zinc-800/80 bg-zinc-900 shadow-md shadow-black/40 p-4">
                 <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="text-sm font-semibold text-white">{item.name}</p>
-                      <span className="rounded-full border border-zinc-800 px-2 py-1 text-[11px] text-[#90a4a8]">{item.sku}</span>
+                      <span className="rounded-full border border-zinc-800/80 px-2 py-1 text-[11px] text-[#90a4a8]">{item.sku}</span>
                     </div>
                     <p className="mt-2 text-sm text-[#8fa4a8]">
                       {item.location} · proveedor {item.supplier} · reservado {item.reserved}
