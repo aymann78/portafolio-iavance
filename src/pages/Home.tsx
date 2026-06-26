@@ -2,17 +2,17 @@ import { useState } from 'react';
 import {
   AlertTriangle,
   ArrowRight,
-
+  CheckCircle2,
   ClipboardCheck,
   Clock3,
-
+  DatabaseZap,
   FileSpreadsheet,
   Gauge,
   MousePointer2,
   PlugZap,
   ShieldCheck,
   Workflow,
-
+  Zap,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { DiagnosticForm } from '../components/DiagnosticForm';
@@ -67,7 +67,11 @@ const operatingModes = [
 
 const trustSignals = ['Pedidos por correo', 'Stock en hojas', 'Leads sin seguimiento', 'CRM/ERP desconectados'];
 
-
+const capabilities = [
+  { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
+  { label: 'Integraciones', text: 'Datos conectados entre herramientas.', icon: PlugZap },
+  { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
+];
 
 const beforeAfterExamples = [
   {
@@ -178,9 +182,9 @@ export function Home() {
                   as="Link"
                   to="/contacto"
                   size="lg"
-                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Solicitar diagnóstico operativo' })}
+                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Solicitar diagnóstico' })}
                 >
-                  Solicitar diagnóstico operativo
+                  Solicitar diagnóstico
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
@@ -193,17 +197,6 @@ export function Home() {
                   Ver demos
                 </Button>
               </div>
-
-              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-zinc-500">
-                {trustSignals.map((signal) => (
-                  <span key={signal} className="inline-flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-brand-500/50" />
-                    {signal}
-                  </span>
-                ))}
-              </div>
-
-
             </div>
           </Reveal>
 
