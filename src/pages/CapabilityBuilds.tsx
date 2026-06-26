@@ -48,55 +48,64 @@ export function CapabilityBuilds() {
 
           <Reveal delay="md">
             <div className="mt-7 grid gap-3 md:grid-cols-3">
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-4">
-                <p className="text-xs font-mono uppercase tracking-[0.16em] text-zinc-500">Qué ves</p>
-                <p className="mt-2 text-sm font-semibold text-white">Demos, conceptos y arquitectura realista</p>
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 shadow-sm transition-colors hover:bg-zinc-900/70">
+                <p className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-brand-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
+                  Qué ves
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">Demos, conceptos y arquitectura operativa hiperrealista</p>
               </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-4">
-                <p className="text-xs font-mono uppercase tracking-[0.16em] text-zinc-500">Para qué sirve</p>
-                <p className="mt-2 text-sm font-semibold text-white">Entender si una solución encaja en tu operación</p>
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 shadow-sm transition-colors hover:bg-zinc-900/70">
+                <p className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-brand-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
+                  Para qué sirve
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">Alinear expectativas y entender si una solución encaja</p>
               </div>
-              <div className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-4">
-                <p className="text-xs font-mono uppercase tracking-[0.16em] text-zinc-500">Siguiente paso</p>
-                <p className="mt-2 text-sm font-semibold text-white">Diagnóstico digital claro y accesible</p>
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 shadow-sm transition-colors hover:bg-zinc-900/70">
+                <p className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-brand-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-400" />
+                  Siguiente paso
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">Diagnóstico operativo claro, accesible y sin compromiso</p>
               </div>
             </div>
           </Reveal>
 
-          <div className="mt-7 grid gap-4 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {publicCapabilityBuilds.map((build, index) => (
               <Reveal key={build.slug} delay={index === 0 ? 'sm' : index === 1 ? 'md' : 'lg'}>
-                <Card hoverable className="h-full rounded-2xl border-zinc-800 bg-zinc-950/70">
-                  <CardContent className="pt-5">
+                <Card hoverable className="group h-full rounded-2xl border-zinc-800 bg-zinc-950 shadow-md shadow-black/40 transition-colors hover:border-zinc-700">
+                  <CardContent className="flex h-full flex-col p-6 lg:p-8">
                     <div className="flex flex-wrap items-center gap-2">
                       <ProofBadge type={build.proofType} />
-                      <Tag variant="ghost" className="text-zinc-500">
+                      <Tag variant="ghost" className="text-zinc-400 bg-zinc-900">
                         {build.category}
                       </Tag>
                     </div>
 
-                    <Heading as="h2" size="sm" className="mt-5">
+                    <Heading as="h2" size="md" className="mt-6 text-white group-hover:text-brand-100 transition-colors">
                       {build.title}
                     </Heading>
-                    <p className="mt-3 text-sm leading-6 text-zinc-400">{build.shortDescription}</p>
+                    <p className="mt-3 text-base leading-7 text-zinc-400">{build.shortDescription}</p>
 
-                    <div className="mt-5 rounded-xl border border-zinc-800 bg-black/60 p-3">
-                      <p className="text-xs font-mono uppercase tracking-[0.16em] text-zinc-500">Problema</p>
+                    <div className="mt-6 flex-1 rounded-xl border border-zinc-800/50 bg-black/40 p-4 border-l-2 border-l-brand-500">
+                      <p className="text-xs font-mono uppercase tracking-[0.16em] text-zinc-500">El Problema</p>
                       <p className="mt-2 text-sm leading-6 text-zinc-300">{build.problem}</p>
                     </div>
 
-                    <div className="mt-5 grid gap-2">
+                    <div className="mt-8 flex flex-col gap-3">
                       {build.demoUrl && (
-                        <Button as="a" href={build.demoUrl} size="sm" fullWidth>
-                          <PlayCircle className="h-4 w-4" />
+                        <Button as="a" href={build.demoUrl} size="lg" className="w-full justify-center">
+                          <PlayCircle className="mr-2 h-4 w-4" />
                           Probar demo
                         </Button>
                       )}
-                      <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-1">
-                        <Button as="Link" to={`/casos/${build.slug}`} variant="outline" size="sm" fullWidth>
+                      <div className="grid grid-cols-2 gap-3">
+                        <Button as="Link" to={`/casos/${build.slug}`} variant="outline" size="sm" className="w-full justify-center">
                           Ver detalle
                         </Button>
-                        <Button as="Link" to={`/casos/${build.slug}/como-se-hizo`} variant="ghost" size="sm" fullWidth>
+                        <Button as="Link" to={`/casos/${build.slug}/como-se-hizo`} variant="ghost" size="sm" className="w-full justify-center bg-zinc-900 hover:bg-zinc-800">
                           Anatomía
                         </Button>
                       </div>
