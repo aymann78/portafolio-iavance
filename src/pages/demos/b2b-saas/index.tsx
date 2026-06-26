@@ -20,7 +20,7 @@ export function B2bSaasLanding() {
         description="Explora un centro de mando operativo interactivo." 
         path="/demo/b2b-saas-platform" 
       />
-      <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_18%_4%,rgba(0,245,255,0.12),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(20,184,166,0.12),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent)]" />
+      <div className="absolute inset-x-0 top-0 h-96 bg-transparent" />
       <main className="relative mx-auto grid w-full max-w-[1580px] gap-4 px-4 py-4 xl:grid-cols-[236px_minmax(0,1fr)_336px]">
         
         {/* Left Sidebar */}

@@ -20,8 +20,8 @@ export function Header({
   resetDemo: () => void;
 }) {
   return (
-    <header className="relative overflow-hidden rounded-[32px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-      <div className="flex flex-col gap-4 border-b border-white/8 p-5 xl:flex-row xl:items-start xl:justify-between">
+    <header className="relative overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900  ">
+      <div className="flex flex-col gap-4 border-b border-zinc-800 p-5 xl:flex-row xl:items-start xl:justify-between">
         <div className="max-w-3xl">
           <p className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-300">Entrada → criterio → acción</p>
           <h2 className="mt-3 max-w-2xl text-4xl font-semibold leading-tight text-white md:text-5xl">
@@ -36,7 +36,7 @@ export function Header({
           <button
             type="button"
             onClick={runAutomation}
-            className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#061014] shadow-[0_0_24px_rgba(0,245,255,0.35)] transition hover:bg-cyan-200 hover:shadow-[0_0_32px_rgba(0,245,255,0.5)]"
+            className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#061014] shadow-sm transition hover:bg-cyan-200 hover:shadow-md"
           >
             <Play className="h-4 w-4" />
             Procesar flujo

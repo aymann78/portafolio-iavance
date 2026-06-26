@@ -15,7 +15,7 @@ export function LeadToOpsCommandCenter() {
         description="Simulación interactiva de automatización operativa B2B." 
         path="/demo/lead-to-ops" 
       />
-      <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_18%_6%,rgba(0,245,255,0.12),transparent_30%),radial-gradient(circle_at_80%_2%,rgba(16,185,129,0.10),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent)]" />
+      <div className="absolute inset-x-0 top-0 h-96 bg-transparent" />
       <main className="relative mx-auto grid w-full max-w-[1580px] gap-4 px-4 py-4 lg:grid-cols-[240px_minmax(0,1fr)] 2xl:grid-cols-[260px_minmax(0,1fr)_320px]">
         
         {/* Left Sidebar */}

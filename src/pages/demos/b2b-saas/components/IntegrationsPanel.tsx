@@ -18,7 +18,7 @@ export function IntegrationsPanel({
               key={connector}
               type="button"
               onClick={() => syncConnector(connector)}
-              className="min-w-0 rounded-2xl border border-white/8 bg-[#0b1013] p-4 text-left transition hover:border-cyan-300/20 hover:bg-white/[0.04]"
+              className="min-w-0 rounded-md border border-zinc-800 bg-zinc-950 p-4 text-left transition hover:border-cyan-300/20 hover:bg-white/[0.04]"
             >
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <p className="min-w-0 break-words font-semibold text-white">{connector}</p>

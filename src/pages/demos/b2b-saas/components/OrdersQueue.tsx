@@ -21,10 +21,10 @@ export function OrdersQueue({
       <Panel title="Pedidos por estado" eyebrow="Cola de trabajo">
         <div className="grid gap-3 xl:grid-cols-2">
           {(['Nuevo', 'Validando', 'Bloqueado', 'Listo'] as OrderStatus[]).map((status) => (
-            <div key={status} className="min-w-0 rounded-2xl border border-white/8 bg-[#0b1013] p-3">
+            <div key={status} className="min-w-0 rounded-md border border-zinc-800 bg-zinc-950 p-3">
               <div className="mb-3 flex items-center justify-between">
                 <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{status}</p>
-                <span className="rounded-full border border-white/8 px-2 py-1 text-xs text-[#a9bbbf]">
+                <span className="rounded-full border border-zinc-800 px-2 py-1 text-xs text-[#a9bbbf]">
                   {orders.filter((item) => item.status === status).length}
                 </span>
               </div>
@@ -36,10 +36,10 @@ export function OrdersQueue({
                       key={order.id}
                       type="button"
                       onClick={() => selectOrder(order.id)}
-                      className={`w-full rounded-2xl border p-3 text-left transition ${
+                      className={`w-full rounded-md border p-3 text-left transition ${
                         order.id === selectedOrderId
                           ? 'border-cyan-300/25 bg-cyan-400/10'
-                          : 'border-white/8 bg-white/[0.02] hover:border-cyan-300/20 hover:bg-white/[0.04]'
+                          : 'border-zinc-800 bg-zinc-900 hover:border-cyan-300/20 hover:bg-white/[0.04]'
                       }`}
                     >
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -66,7 +66,7 @@ export function OrdersQueue({
               ['Siguiente hito', selectedOrder.due],
             ]}
           />
-          <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+          <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
             <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">Riesgo visible</p>
             <p className="mt-3 text-lg font-semibold text-white">{selectedOrder.issue}</p>
             <p className="mt-2 text-sm leading-6 text-[#9eb0b4]">
@@ -77,13 +77,13 @@ export function OrdersQueue({
             <button
               type="button"
               onClick={() => approveBlockedOrder(selectedOrder.id)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-300 px-4 py-3 text-sm font-semibold text-[#221607] transition hover:bg-amber-200"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-amber-300 px-4 py-3 text-sm font-semibold text-[#221607] transition hover:bg-amber-200"
             >
               <ShieldCheck className="h-4 w-4" />
               Autorizar y liberar pedido
             </button>
           ) : (
-            <div className="rounded-2xl border border-emerald-400/18 bg-emerald-400/8 px-4 py-3 text-sm text-emerald-50">
+            <div className="rounded-md border border-emerald-400/18 bg-emerald-400/8 px-4 py-3 text-sm text-emerald-50">
               Pedido sin bloqueo critico. El sistema ya muestra el siguiente paso con contexto.
             </div>
           )}

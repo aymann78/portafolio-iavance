@@ -37,7 +37,7 @@ export function InsightSidebar({
                 ['Estado', selectedOrder.status],
               ]}
             />
-            <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4 text-sm leading-6 text-[#9eb0b4]">
+            <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-[#9eb0b4]">
               Este pedido esta marcado como <strong className="text-white">{selectedOrder.status}</strong>.
               El bloqueo no viene del operario, sino de las reglas de negocio automaticas.
             </div>
@@ -52,7 +52,7 @@ export function InsightSidebar({
                 ['Problema', selectedOrder.issue],
               ]}
             />
-            <div className="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
+            <div className="rounded-md border border-rose-400/20 bg-rose-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
               Si este pedido estuviera en un Excel o un correo, el comercial estaria ahora llamando para preguntar. Aqui el bloqueo y la solución son visibles.
             </div>
           </div>
@@ -68,7 +68,7 @@ export function InsightSidebar({
                 ['Proveedor', lowStockItem.supplier],
               ]}
             />
-            <div className="rounded-2xl border border-amber-300/20 bg-amber-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
+            <div className="rounded-md border border-amber-300/20 bg-amber-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
               El stock se cruza con las ordenes de venta vivas. La rotura se previene antes de bloquear entregas.
             </div>
           </div>
@@ -83,7 +83,7 @@ export function InsightSidebar({
                 ['Facturas pdts.', String(selectedAccount.pendingInvoices)],
               ]}
             />
-            <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4 text-sm leading-6 text-[#9eb0b4]">
+            <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-[#9eb0b4]">
               Al abrir la ficha de cliente en una llamada, el equipo ve el limite de credito y las tareas abiertas. No hay sorpresas financieras post-venta.
             </div>
           </div>
@@ -97,7 +97,7 @@ export function InsightSidebar({
                 ['Autorizaciones pdts.', String(tasks.filter((item) => !item.done && item.owner === 'Finanzas').length)],
               ]}
             />
-            <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
+            <div className="rounded-md border border-emerald-400/20 bg-emerald-400/10 p-4 text-sm leading-6 text-[#d9e5e8]">
               El departamento de Riesgos autoriza o deniega directamente sobre la cola de pedidos de operaciones, sin duplicar herramientas.
             </div>
           </div>
@@ -110,7 +110,7 @@ export function InsightSidebar({
                 <StatusRow key={label} label={label} status={connectorState[label]} />
               ))}
             </div>
-            <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4 text-sm leading-6 text-[#9eb0b4]">
+            <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4 text-sm leading-6 text-[#9eb0b4]">
               Si el ERP cae, o el CRM no sincroniza el credito, la plataforma asume un estado degradado seguro pero sigue operando visualmente.
             </div>
           </div>

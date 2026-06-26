@@ -5,7 +5,7 @@ import { activityToneClass, getStatusPalette, statusToneClass } from '../utils';
 
 export function Panel({ title, eyebrow, children }: { title: string; eyebrow: string; children: ReactNode }) {
   return (
-    <section className="min-w-0 overflow-hidden rounded-[28px] border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl p-5 shadow-2xl">
+    <section className="min-w-0 overflow-hidden rounded-[28px] border border-zinc-800 bg-zinc-900 backdrop-blur-xl p-5 shadow-2xl">
       <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#708488]">{eyebrow}</p>
       <h2 className="mt-2 text-xl font-semibold leading-tight text-white">{title}</h2>
       <div className="mt-4 min-w-0">{children}</div>
@@ -36,7 +36,7 @@ export function MetricCard({
           : 'border-rose-400/20 bg-rose-400/10 text-rose-200';
 
   return (
-    <div className="rounded-2xl border border-white/8 bg-[#0a0f12] p-4">
+    <div className="rounded-md border border-zinc-800 bg-black p-4">
       <div className="flex items-center justify-between">
         <p className="text-sm font-medium text-[#8fa4a8]">{label}</p>
         <span className={`flex h-8 w-8 items-center justify-center rounded-lg border ${accentClass}`}>
@@ -58,7 +58,7 @@ export function OutcomeRow({ label, value, tone }: { label: string; value: strin
         : 'border-rose-400/25 bg-rose-400/15 text-rose-100';
 
   return (
-    <div className="rounded-2xl border border-white/8 bg-black/10 p-3 text-sm">
+    <div className="rounded-md border border-zinc-800 bg-black/10 p-3 text-sm">
       <span className={`inline-block rounded-full border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${badgeClass}`}>
         {label}
       </span>
@@ -79,7 +79,7 @@ export function CompareStack({ items }: { items: [string, string, 'rose' | 'emer
               : 'border-cyan-300/25 bg-cyan-400/10 text-cyan-200';
 
         return (
-          <div key={label} className="flex gap-4 rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+          <div key={label} className="flex gap-4 rounded-md border border-zinc-800 bg-zinc-950 p-4">
             <span className={`flex h-fit shrink-0 items-center justify-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest ${badgeClass}`}>
               {label}
             </span>
@@ -94,7 +94,7 @@ export function CompareStack({ items }: { items: [string, string, 'rose' | 'emer
 export function LiveCard({ label, value, accent }: { label: string; value: string; accent: 'cyan' | 'emerald' | 'amber' }) {
   const barClass = accent === 'cyan' ? 'bg-cyan-300' : accent === 'emerald' ? 'bg-emerald-400' : 'bg-amber-300';
   return (
-    <div className="rounded-2xl border border-white/8 bg-[#0b1013] p-4">
+    <div className="rounded-md border border-zinc-800 bg-zinc-950 p-4">
       <div className="flex items-center justify-between gap-3">
         <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{label}</p>
         <Activity className="h-4 w-4 text-cyan-300" />
@@ -109,7 +109,7 @@ export function LiveCard({ label, value, accent }: { label: string; value: strin
 
 export function StatusRow({ label, status }: { label: string; status: SyncStatus }) {
   return (
-    <div className="flex items-center justify-between rounded-2xl border border-white/8 bg-[#0a0f12] px-4 py-3">
+    <div className="flex items-center justify-between rounded-md border border-zinc-800 bg-black px-4 py-3">
       <span className="text-sm text-white">{label}</span>
       <span className="flex items-center gap-2 text-xs text-[#8ea3a7]">
         <span className={`h-2.5 w-2.5 rounded-full ${statusToneClass(status)}`} />
@@ -130,7 +130,7 @@ export function StatusPill({ status }: { status: OrderStatus }) {
 export function HealthBadge({ health }: { health: Health }) {
   const healthClass = health === 'Alta' ? 'bg-emerald-400' : health === 'Media' ? 'bg-amber-300' : 'bg-rose-400';
   return (
-    <span className="flex items-center gap-2 rounded-full border border-white/8 bg-[#05080a] px-3 py-1.5 text-xs text-[#a0b2b6]">
+    <span className="flex items-center gap-2 rounded-full border border-zinc-800 bg-[#05080a] px-3 py-1.5 text-xs text-[#a0b2b6]">
       <span className={`h-2 w-2 rounded-full ${healthClass}`} />
       {health}
     </span>
@@ -151,7 +151,7 @@ export function DetailGrid({ items }: { items: [string, string][] }) {
   return (
     <div className="grid gap-3 sm:grid-cols-2">
       {items.map(([label, value]) => (
-        <div key={label} className="rounded-2xl border border-white/8 bg-black/10 p-3">
+        <div key={label} className="rounded-md border border-zinc-800 bg-black/10 p-3">
           <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#708488]">{label}</p>
           <p className="mt-2 text-sm font-medium leading-6 text-white">{value}</p>
         </div>
@@ -197,7 +197,7 @@ export function TaskList({ tasks, onComplete, compact }: { tasks: Task[]; onComp
   return (
     <div className={`space-y-3 ${compact ? '' : 'p-2'}`}>
       {tasks.map((task) => (
-        <div key={task.id} className={`flex items-start gap-3 rounded-2xl border p-3 transition ${task.done ? 'border-emerald-400/20 bg-emerald-400/5' : 'border-white/8 bg-[#0b1013]'}`}>
+        <div key={task.id} className={`flex items-start gap-3 rounded-md border p-3 transition ${task.done ? 'border-emerald-400/20 bg-emerald-400/5' : 'border-zinc-800 bg-zinc-950'}`}>
           <button
             type="button"
             onClick={() => onComplete(task.id)}
