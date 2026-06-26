@@ -20,6 +20,7 @@ import { ProofBadge } from '../components/ProofBadge';
 import { publicCapabilityBuilds } from '../data/projects';
 import { services } from '../data/services';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
+import { Seo } from '../components/Seo';
 import { trackEvent } from '../lib/analytics';
 
 const operatingModes = [
@@ -155,6 +156,11 @@ export function Home() {
 
   return (
     <div className="flex w-full flex-col">
+      <Seo 
+        title="Automatización operativa B2B | iavance.es" 
+        description="Diagnóstico gratuito de cuello de botella. Menos tiempo en Excel y correos, más tiempo operando." 
+        path="/" 
+      />
       <Section spacing="none" className="overflow-hidden border-b border-zinc-900 bg-black">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:36px_36px]" />
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_24%_8%,rgba(14,165,233,0.2),transparent_34%),radial-gradient(circle_at_76%_18%,rgba(34,197,94,0.12),transparent_28%)]" />

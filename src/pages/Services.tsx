@@ -2,10 +2,16 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { publicCapabilityBuilds } from '../data/projects';
 import { services } from '../data/services';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Tag, Reveal } from '../components/ui';
+import { Seo } from '../components/Seo';
 
 export function Services() {
   return (
     <div className="flex w-full flex-col">
+      <Seo 
+        title="Soluciones de automatización, integraciones y software interno | iavance.es" 
+        description="Conoce nuestras líneas de operación B2B." 
+        path="/soluciones" 
+      />
       <Section spacing="sm" className="border-b border-zinc-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.14),transparent_36%),linear-gradient(to_bottom,rgba(255,255,255,0.03),transparent)]" />
         <Container className="relative z-10 max-w-5xl">

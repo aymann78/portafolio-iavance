@@ -1,11 +1,17 @@
 import { ArrowRight, MousePointer2, PlayCircle } from 'lucide-react';
 import { ProofBadge } from '../components/ProofBadge';
 import { publicCapabilityBuilds } from '../data/projects';
+import { Seo } from '../components/Seo';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Tag, Reveal } from '../components/ui';
 
 export function CapabilityBuilds() {
   return (
     <div className="flex w-full flex-col bg-black">
+      <Seo 
+        title="Demos de automatización operativa y software B2B | iavance.es" 
+        description="Casos y demos interactivas de operaciones B2B" 
+        path="/demos" 
+      />
       <section className="border-b border-zinc-900 bg-black py-8 md:py-10">
         <Container>
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">

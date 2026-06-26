@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { DatabaseZap, Instagram, Mail, MessageCircleMore, Rows3, Workflow } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import { DiagnosticForm } from '../components/DiagnosticForm';
+import { Seo } from '../components/Seo';
 import { siteMeta } from '../data/site';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Reveal } from '../components/ui';
 import { trackEvent } from '../lib/analytics';
@@ -53,6 +54,11 @@ export function Contact() {
 
   return (
     <div className="flex w-full flex-col">
+      <Seo 
+        title="Solicitar diagnóstico operativo | iavance.es" 
+        description="Solicita un diagnóstico para evaluar cómo la automatización y el software B2B puede quitar fricción a tus operaciones." 
+        path="/contacto" 
+      />
       <Section spacing="lg" className="border-b border-zinc-900">
         <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal>

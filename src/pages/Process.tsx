@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button, Card, CardContent, Container, Eyebrow, Heading, Section, Reveal } from '../components/ui';
+import { Seo } from '../components/Seo';
 
 const steps = [
   {
@@ -34,6 +35,11 @@ const engagement = [
 export function Process() {
   return (
     <div className="flex w-full flex-col">
+      <Seo 
+        title="Proceso de diagnóstico y ejecución | iavance.es" 
+        description="El diagnóstico sirve para priorizar el trabajo y ejecutar sin riesgos altos." 
+        path="/proceso" 
+      />
       <Section spacing="sm" className="border-b border-zinc-900">
         <Container className="max-w-5xl">
           <Reveal>

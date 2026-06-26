@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /demo/fintech-cro-landing
+Disallow: /demo/automation-chatbot
+Disallow: /demo/csv-ops-classifier
+Disallow: /demo/market-signal-engine
+
+Sitemap: https://iavance.es/sitemap.xml
