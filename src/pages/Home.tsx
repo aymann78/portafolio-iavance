@@ -72,18 +72,46 @@ const capabilities = [
   { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
 ];
 
-const fastWins = [
-  'Conectar formularios, WhatsApp, email o CRM para no perder oportunidades.',
-  'Convertir hojas de calculo en flujos con reglas, prioridad y avisos.',
-  'Crear paneles internos para ver estado, responsables y cuellos de botella.',
-  'Montar portales B2B para pedidos, stock, clientes y seguimiento.',
+const beforeAfterExamples = [
+  {
+    before: 'Pedidos llegan por email o WhatsApp y alguien los copia a una hoja.',
+    after: 'Entrada normalizada, validación de stock, aviso al responsable y estado visible.',
+  },
+  {
+    before: 'Leads entran por formulario, Instagram y correo sin prioridad.',
+    after: 'Clasificación, scoring simple, registro en CRM y alerta comercial.',
+  },
+  {
+    before: 'Incidencias o exportaciones CSV se revisan fila por fila.',
+    after: 'Clasificación automática, resumen, prioridad y siguiente acción sugerida.',
+  },
+  {
+    before: 'Responsables preguntan por Slack en qué estado está cada operación.',
+    after: 'Panel interno con estados, responsables, bloqueos y próximos pasos.',
+  },
 ];
 
 const confidenceNotes = [
-  'No prometemos IA magica: si una regla simple resuelve mejor el problema, usamos eso.',
+  'No prometemos IA mágica: si una regla simple resuelve mejor el problema, usamos eso.',
   'El diagnóstico separa fricción real, prioridad de negocio y primera pieza viable.',
   'Las demos son demos o conceptos. No se presentan como casos reales de clientes.',
   'Cada entrega debe dejar algo usable: flujo, panel, integración, documentación o decisión.',
+];
+
+const notToAutomate = [
+  'El proceso cambia cada semana.',
+  'No hay volumen suficiente para justificarlo.',
+  'Una regla simple ya resuelve el problema.',
+  'No hay un responsable claro de la operación.',
+];
+
+const diagnosticDeliverables = [
+  'Mapa del proceso actual',
+  'Cuello de botella prioritario',
+  'Primera pieza viable',
+  'Herramientas a conectar',
+  'Riesgos y límites',
+  'Siguiente paso recomendado',
 ];
 
 const faqs = [
@@ -340,24 +368,28 @@ export function Home() {
         <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <div>
-              <Eyebrow>Primeros 30 días</Eyebrow>
+              <Eyebrow>Antes / Después operativo</Eyebrow>
               <Heading as="h2" size="lg" className="mt-3">
-                Qué podemos automatizar sin rehacer toda la empresa.
+                Problemas que podemos aterrizar.
               </Heading>
               <p className="mt-4 text-zinc-400">
-                El objetivo es encontrar una primera pieza que quite fricción real y deje una base mas ordenada para seguir creciendo.
+                Ejemplos de cuellos de botella reales y la solución que construimos para aligerarlos.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid gap-3 md:grid-cols-2">
-            {fastWins.map((item, index) => (
-              <Reveal key={item} delay={index % 2 === 0 ? 'sm' : 'md'}>
-                <div className="flex gap-3 rounded-lg border border-zinc-800 bg-zinc-950/55 p-4">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-brand-500/10 text-sm font-semibold text-brand-300">
-                    {index + 1}
-                  </span>
-                  <p className="text-sm leading-6 text-zinc-300">{item}</p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {beforeAfterExamples.map((item, index) => (
+              <Reveal key={index} delay={index % 2 === 0 ? 'sm' : 'md'}>
+                <div className="flex h-full flex-col gap-3 rounded-lg border border-zinc-800 bg-zinc-950/55 p-5">
+                  <div>
+                    <span className="text-xs font-mono uppercase text-amber-500">Antes</span>
+                    <p className="mt-1 text-sm leading-6 text-zinc-400">{item.before}</p>
+                  </div>
+                  <div className="mt-auto border-t border-zinc-800/50 pt-3">
+                    <span className="text-xs font-mono uppercase text-brand-400">Después</span>
+                    <p className="mt-1 text-sm leading-6 text-zinc-300">{item.after}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -380,14 +412,29 @@ export function Home() {
           </Reveal>
 
           <div className="grid gap-3 md:grid-cols-2">
-            {confidenceNotes.map((note, index) => (
-              <Reveal key={note} delay={index % 2 === 0 ? 'sm' : 'md'}>
-                <div className="flex h-full gap-3 rounded-lg border border-zinc-800 bg-black/70 p-4">
-                  <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
-                  <p className="text-sm leading-6 text-zinc-300">{note}</p>
-                </div>
-              </Reveal>
-            ))}
+            <div className="grid gap-3">
+              {confidenceNotes.map((note, index) => (
+                <Reveal key={index} delay={index % 2 === 0 ? 'sm' : 'md'}>
+                  <div className="flex h-full gap-3 rounded-lg border border-zinc-800 bg-black/70 p-4">
+                    <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-300" />
+                    <p className="text-sm leading-6 text-zinc-300">{note}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <div className="grid gap-3">
+              {notToAutomate.map((note, index) => (
+                <Reveal key={index} delay={index % 2 === 0 ? 'md' : 'lg'}>
+                  <div className="flex h-full gap-3 rounded-lg border border-zinc-800/60 bg-zinc-950/40 p-4">
+                    <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500/70" />
+                    <div>
+                      <p className="text-xs font-mono uppercase tracking-[0.12em] text-zinc-500 mb-1">Cuándo no automatizar</p>
+                      <p className="text-sm leading-6 text-zinc-400">{note}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
@@ -480,9 +527,19 @@ export function Home() {
               <p className="mt-4 text-zinc-400">
                 No necesitas un briefing perfecto. Con saber donde se pierden horas, leads o control operativo ya podemos ordenar el siguiente paso.
               </p>
-              <div className="mt-6 flex items-center gap-3 rounded-lg border border-zinc-800 bg-black/60 p-4 text-sm text-zinc-300">
-                <ClipboardCheck className="h-5 w-5 text-brand-300" />
-                Diagnóstico gratuito: fricción, prioridad y primera acción recomendable.
+              <div className="mt-6 rounded-lg border border-zinc-800 bg-black/60 p-5">
+                <div className="flex items-center gap-2 font-semibold text-white mb-4">
+                  <ClipboardCheck className="h-5 w-5 text-brand-300" />
+                  Qué sale del diagnóstico
+                </div>
+                <ul className="grid gap-2 sm:grid-cols-2">
+                  {diagnosticDeliverables.map((deliverable) => (
+                    <li key={deliverable} className="flex items-start gap-2 text-sm text-zinc-300">
+                      <span className="mt-1.5 h-1 w-1 rounded-full bg-brand-400 shrink-0" />
+                      <span className="leading-5">{deliverable}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </Reveal>
