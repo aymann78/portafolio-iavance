@@ -2,13 +2,17 @@ import { useState } from 'react';
 import {
   AlertTriangle,
   ArrowRight,
+  CheckCircle2,
   ClipboardCheck,
   Clock3,
+  DatabaseZap,
   FileSpreadsheet,
   Gauge,
   MousePointer2,
+  PlugZap,
   ShieldCheck,
   Workflow,
+  Zap,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { DiagnosticForm } from '../components/DiagnosticForm';
@@ -61,6 +65,13 @@ const operatingModes = [
   },
 ] as const;
 
+const trustSignals = ['Pedidos por correo', 'Stock en hojas', 'Leads sin seguimiento', 'CRM/ERP desconectados'];
+
+const capabilities = [
+  { label: 'Automatización', text: 'Flujos que eliminan pasos repetitivos.', icon: Zap },
+  { label: 'Integraciones', text: 'Datos conectados entre herramientas.', icon: PlugZap },
+  { label: 'Software interno', text: 'Paneles, portales y control operativo.', icon: DatabaseZap },
+];
 
 const beforeAfterExamples = [
   {
@@ -155,25 +166,26 @@ export function Home() {
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_24%_8%,rgba(14,165,233,0.2),transparent_34%),radial-gradient(circle_at_76%_18%,rgba(34,197,94,0.12),transparent_28%)]" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent" />
 
-        <Container className="relative z-10 grid gap-6 py-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:py-10">
+        <Container className="relative z-10 grid gap-10 py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-16">
           <Reveal direction="none">
-            <div className="max-w-3xl">
+            <div className="max-w-2xl">
               <Eyebrow>Automatización operativa B2B</Eyebrow>
-              <Heading as="h1" size="2xl" className="mt-4 max-w-4xl text-balance">
+              <Heading as="h1" size="xl" className="mt-4 text-balance">
                 Automatizamos operaciones B2B que todavía dependen de correos, hojas y seguimiento manual.
               </Heading>
               <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
                 Detectamos dónde se pierden horas, priorizamos la primera automatización viable y construimos una solución usable conectada con tus herramientas actuales.
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button
                   as="Link"
                   to="/contacto"
                   size="lg"
-                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Solicitar diagnóstico' })}
+                  className="min-w-[240px]"
+                  onClick={() => trackEvent('cta_click', { location: 'hero', label: 'Solicitar diagnóstico operativo' })}
                 >
-                  Solicitar diagnóstico
+                  Solicitar diagnóstico operativo
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
@@ -185,6 +197,15 @@ export function Home() {
                 >
                   Ver demos
                 </Button>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-zinc-400 border-t border-zinc-800/50 pt-6">
+                {trustSignals.map((signal) => (
+                  <span key={signal} className="inline-flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-brand-400" />
+                    {signal}
+                  </span>
+                ))}
               </div>
             </div>
           </Reveal>
