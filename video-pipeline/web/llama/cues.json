@@ -1,0 +1,163 @@
+{
+ "estimated": true,
+ "scenes": [
+  {
+   "id": "dia1",
+   "tag": "Día 1",
+   "start": 0.3,
+   "end": 13.784444444444443,
+   "sentences": [
+    {
+     "text": "Día uno.",
+     "start": 2.6999999999999997,
+     "end": 4.068888888888889
+    },
+    {
+     "text": "Son las cinco de la mañana. Y una pequeña llama decide que hoy todo va a cambiar.",
+     "start": 4.518888888888888,
+     "end": 12.734444444444444
+    }
+   ]
+  },
+  {
+   "id": "motivacion",
+   "tag": "La chispa",
+   "start": 13.784444444444443,
+   "end": 23.646666666666665,
+   "sentences": [
+    {
+     "text": "El primer día arde con fuerza. Todo parece posible.",
+     "start": 14.184444444444443,
+     "end": 18.84444444444444
+    },
+    {
+     "text": "La motivación lo ilumina todo.",
+     "start": 19.294444444444444,
+     "end": 21.996666666666666
+    }
+   ]
+  },
+  {
+   "id": "lluvia",
+   "tag": "Los días siguientes",
+   "start": 23.646666666666665,
+   "end": 40.94,
+   "sentences": [
+    {
+     "text": "Pero la motivación es como el papel: arde rápido… y se acaba pronto.",
+     "start": 24.046666666666663,
+     "end": 30.66444444444444
+    },
+    {
+     "text": "Día dos. Día tres. La lluvia golpea la ventana, y el fuego ya no es el mismo.",
+     "start": 31.11444444444444,
+     "end": 39.69
+    }
+   ]
+  },
+  {
+   "id": "tentacion",
+   "tag": "Lo fácil",
+   "start": 40.94,
+   "end": 55.46777777777777,
+   "sentences": [
+    {
+     "text": "Entonces aparece lo fácil.",
+     "start": 41.739999999999995,
+     "end": 43.99777777777777
+    },
+    {
+     "text": "Una notificación. Cinco minutos más. Mañana empiezo.",
+     "start": 44.44777777777777,
+     "end": 48.398888888888884
+    },
+    {
+     "text": "Y la llama se inclina hacia una luz que no calienta.",
+     "start": 48.84888888888889,
+     "end": 54.217777777777776
+    }
+   ]
+  },
+  {
+   "id": "apagandose",
+   "tag": "Casi",
+   "start": 55.46777777777777,
+   "end": 64.96,
+   "sentences": [
+    {
+     "text": "Así se apagan casi todos. No de golpe. Poco a poco. Sin darse cuenta.",
+     "start": 55.86777777777777,
+     "end": 63.10999999999999
+    }
+   ]
+  },
+  {
+   "id": "decision",
+   "tag": "La decisión",
+   "start": 64.96,
+   "end": 74.97777777777776,
+   "sentences": [
+    {
+     "text": "Pero la disciplina no es tener ganas.",
+     "start": 65.55999999999999,
+     "end": 69.1511111111111
+    },
+    {
+     "text": "Es encenderte… aunque no las tengas.",
+     "start": 69.6011111111111,
+     "end": 72.92777777777776
+    }
+   ]
+  },
+  {
+   "id": "montaje",
+   "tag": "Cada día",
+   "start": 74.97777777777776,
+   "end": 86.23555555555552,
+   "sentences": [
+    {
+     "text": "Un día. Y otro. Y otro más.",
+     "start": 75.27777777777776,
+     "end": 79.22888888888887
+    },
+    {
+     "text": "Sin aplausos. Sin ganas. Solo apareciendo.",
+     "start": 79.67888888888886,
+     "end": 83.18555555555552
+    }
+   ]
+  },
+  {
+   "id": "cima",
+   "tag": "Un día",
+   "start": 86.23555555555552,
+   "end": 99.07555555555551,
+   "sentences": [
+    {
+     "text": "Y un día miras atrás y lo entiendes.",
+     "start": 86.83555555555552,
+     "end": 90.87111111111108
+    },
+    {
+     "text": "Ya no necesitas motivación. Te has convertido en el fuego.",
+     "start": 91.32111111111107,
+     "end": 96.4255555555555
+    }
+   ]
+  },
+  {
+   "id": "final",
+   "tag": "",
+   "start": 99.07555555555551,
+   "end": 105.96333333333328,
+   "sentences": [
+    {
+     "text": "Día uno. ¿Empiezas hoy?",
+     "start": 99.87555555555551,
+     "end": 102.31333333333329
+    }
+   ]
+  }
+ ],
+ "duration": 105.96333333333328
+}

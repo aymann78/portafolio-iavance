@@ -1,0 +1,28 @@
+[
+ {"id":"dia1","tag":"Día 1","pre":2.4,"hold":0.6,"lines":[
+   "Día uno.",
+   "Son las cinco de la mañana. Y una pequeña llama decide que hoy todo va a cambiar."]},
+ {"id":"motivacion","tag":"La chispa","pre":0.4,"hold":1.2,"lines":[
+   "El primer día arde con fuerza. Todo parece posible.",
+   "La motivación lo ilumina todo."]},
+ {"id":"lluvia","tag":"Los días siguientes","pre":0.4,"hold":0.8,"lines":[
+   "Pero la motivación es como el papel: arde rápido… y se acaba pronto.",
+   "Día dos. Día tres. La lluvia golpea la ventana, y el fuego ya no es el mismo."]},
+ {"id":"tentacion","tag":"Lo fácil","pre":0.8,"hold":0.8,"lines":[
+   "Entonces aparece lo fácil.",
+   "Una notificación. Cinco minutos más. Mañana empiezo.",
+   "Y la llama se inclina hacia una luz que no calienta."]},
+ {"id":"apagandose","tag":"Casi","pre":0.4,"hold":1.4,"lines":[
+   "Así se apagan casi todos. No de golpe. Poco a poco. Sin darse cuenta."]},
+ {"id":"decision","tag":"La decisión","pre":0.6,"hold":1.6,"lines":[
+   "Pero la disciplina no es tener ganas.",
+   "Es encenderte… aunque no las tengas."]},
+ {"id":"montaje","tag":"Cada día","pre":0.3,"hold":2.6,"lines":[
+   "Un día. Y otro. Y otro más.",
+   "Sin aplausos. Sin ganas. Solo apareciendo."]},
+ {"id":"cima","tag":"Un día","pre":0.6,"hold":2.2,"lines":[
+   "Y un día miras atrás y lo entiendes.",
+   "Ya no necesitas motivación. Te has convertido en el fuego."]},
+ {"id":"final","tag":"","pre":0.8,"hold":3.2,"lines":[
+   "Día uno. ¿Empiezas hoy?"]}
+]
