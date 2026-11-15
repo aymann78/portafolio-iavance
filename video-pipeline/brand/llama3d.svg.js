@@ -1,0 +1,74 @@
+// Logo 3D de la Llama (SVG con iluminación de filtros). Uso: node llama3d.svg.js mark|badge > salida.svg
+const mode = process.argv[2] || 'mark';
+const OUT = "M500 925 C300 925 185 795 185 630 C185 500 255 420 325 335 C345 440 395 475 428 487 C412 380 447 245 562 80 C592 232 705 300 775 452 C838 575 815 710 762 785 C712 875 612 925 500 925 Z";
+const MID = "M500 888 C337 888 258 784 258 656 C258 563 316 513 378 443 C388 520 430 548 462 553 C455 472 490 382 562 268 C601 374 680 426 716 522 C751 611 736 711 691 777 C652 846 580 888 500 888 Z";
+const INN = "M500 852 C398 852 342 781 342 703 C342 642 383 601 430 551 C445 601 471 621 497 627 C496 570 522 518 562 468 C592 531 652 576 661 660 C669 762 602 852 500 852 Z";
+const COR = "M500 826 C436 826 408 783 413 738 C417 700 452 672 500 622 C548 672 585 700 589 738 C594 783 564 826 500 826 Z";
+const layer = (d, fill, f, extra='') => `<path d="${d}" fill="${fill}" filter="url(#${f})" ${extra}/>`;
+const shadow = (d, dy, blur, op) => `<path d="${d}" fill="#2a0600" opacity="${op}" transform="translate(6 ${dy})" filter="url(#blur${blur})"/>`;
+const puff = (id, blur, surf, spec, tx=1) => `
+<filter id="${id}" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="${blur}" result="b"/>
+  <feDiffuseLighting in="b" surfaceScale="${surf}" diffuseConstant="1.5" lighting-color="#fff6e8" result="diff"><feDistantLight azimuth="232" elevation="50"/></feDiffuseLighting>
+  <feSpecularLighting in="b" surfaceScale="${surf}" specularConstant="${spec}" specularExponent="26" lighting-color="#fff0c8" result="spec"><feDistantLight azimuth="232" elevation="46"/></feSpecularLighting>
+  <feComposite in="spec" in2="SourceAlpha" operator="in" result="spec2"/>
+  <feBlend in="SourceGraphic" in2="diff" mode="multiply" result="lit"/>
+  <feComposite in="lit" in2="SourceAlpha" operator="in" result="lit2"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="5" seed="7" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 .45  0 0 0 0 .08  0 0 0 ${(1.3*tx).toFixed(2)} ${(-.5*tx).toFixed(2)}" result="warm"/>
+  <feComposite in="warm" in2="SourceAlpha" operator="in" result="warm2"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.05 0.012" numOctaves="3" seed="21" result="n2"/>
+  <feColorMatrix in="n2" type="matrix" values="0 0 0 0 .35  0 0 0 0 .05  0 0 0 0 0  0 0 0 ${(.9*tx).toFixed(2)} ${(-.42*tx).toFixed(2)}" result="dark"/>
+  <feComposite in="dark" in2="SourceAlpha" operator="in" result="dark2"/>
+  <feMerge><feMergeNode in="lit2"/><feMergeNode in="warm2"/><feMergeNode in="dark2"/><feMergeNode in="spec2"/></feMerge>
+</filter>`;
+const defs = `<defs>
+  <linearGradient id="gOut" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8c0a"/><stop offset=".4" stop-color="#f2500c"/><stop offset="1" stop-color="#a50d08"/></linearGradient>
+  <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc21f"/><stop offset=".55" stop-color="#ff8f12"/><stop offset="1" stop-color="#e8520c"/></linearGradient>
+  <linearGradient id="gInn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset="1" stop-color="#ffbe2e"/></linearGradient>
+  <linearGradient id="gCor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ffeaa0"/></linearGradient>
+  <radialGradient id="bg" cx=".5" cy=".58" r=".72"><stop offset="0" stop-color="#3a1608"/><stop offset=".55" stop-color="#1a0a06"/><stop offset="1" stop-color="#080403"/></radialGradient>
+  <linearGradient id="bronze" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".35" stop-color="#d98a1c"/><stop offset=".7" stop-color="#8a4510"/><stop offset="1" stop-color="#f0b648"/></linearGradient>
+  <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff7a1a" stop-opacity=".75"/><stop offset=".5" stop-color="#ff4a0a" stop-opacity=".25"/><stop offset="1" stop-color="#ff3a00" stop-opacity="0"/></radialGradient>
+  ${puff('pOut', 20, 22, 1.2, .45)}${puff('pMid', 15, 16, 1.0, .3)}${puff('pInn', 11, 12, 1.0, .12)}${puff('pCor', 9, 9, .8, 0)}
+  <filter id="pRing" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+    <feDiffuseLighting in="b" surfaceScale="9" diffuseConstant="1.5" lighting-color="#fff" result="d"><feDistantLight azimuth="232" elevation="48"/></feDiffuseLighting>
+    <feSpecularLighting in="b" surfaceScale="9" specularConstant="1.2" specularExponent="30" lighting-color="#fff4d0" result="s"><feDistantLight azimuth="232" elevation="44"/></feSpecularLighting>
+    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/><feBlend in="SourceGraphic" in2="d" mode="multiply" result="l"/><feComposite in="l" in2="SourceAlpha" operator="in" result="l2"/>
+    <feMerge><feMergeNode in="l2"/><feMergeNode in="s2"/></feMerge></filter>
+  <filter id="blur10" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="blur30" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="34"/></filter>
+  <filter id="blur3"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>`;
+const flame = `
+  <ellipse cx="500" cy="560" rx="470" ry="500" fill="url(#halo)"/>
+  <ellipse cx="500" cy="948" rx="280" ry="30" fill="#000" opacity=".5" filter="url(#blur10)"/>
+  ${shadow(OUT, 22, 10, .5)}
+  ${layer(OUT,'url(#gOut)','pOut')}
+  ${shadow(MID, 14, 10, .4)}
+  ${layer(MID,'url(#gMid)','pMid')}
+  ${shadow(INN, 10, 10, .35)}
+  ${layer(INN,'url(#gInn)','pInn')}
+  ${layer(COR,'url(#gCor)','pCor')}
+  <g fill="none" stroke-linecap="round">
+   <path d="M228 604 C224 534 258 482 304 426" stroke="#ffe2b0" stroke-opacity=".65" stroke-width="8"/>
+   <path d="M300 724 C284 692 286 652 310 612" stroke="#fff0c8" stroke-opacity=".5" stroke-width="7"/>
+   <path d="M580 150 C575 200 598 238 626 282" stroke="#fff0c0" stroke-opacity=".7" stroke-width="7"/>
+   <path d="M474 330 C492 300 520 292 540 250" stroke="#ffd070" stroke-opacity=".35" stroke-width="5"/>
+   <path d="M700 520 C720 580 714 650 686 716" stroke="#6a0f00" stroke-opacity=".25" stroke-width="10"/>
+  </g>
+  <g filter="url(#blur3)">
+   <path d="M668 150 C676 126 688 120 700 106 C704 126 700 144 688 156 Z" fill="#ffb02e"/>
+   <path d="M396 198 C402 180 410 176 418 166 C422 180 418 192 410 200 Z" fill="#ff9a1a"/>
+   <path d="M760 258 C764 246 770 244 776 236 C778 246 776 254 770 260 Z" fill="#ffd36a"/>
+   <circle cx="322" cy="262" r="7" fill="#ffb02e"/><circle cx="640" cy="64" r="6" fill="#ffd36a"/><circle cx="820" cy="360" r="5" fill="#ff8a1a"/><circle cx="232" cy="370" r="5" fill="#ff6a10"/>
+  </g>`;
+const body = mode === 'badge'
+ ? `<circle cx="500" cy="500" r="494" fill="url(#bg)"/>
+    <g opacity=".6" filter="url(#blur10)"><circle cx="190" cy="260" r="22" fill="#ff8a1a"/><circle cx="820" cy="210" r="30" fill="#ffb02e"/><circle cx="880" cy="640" r="20" fill="#ff6a10"/><circle cx="120" cy="700" r="26" fill="#ff7a1a"/><circle cx="700" cy="860" r="18" fill="#ffc34a"/></g>
+    <circle cx="500" cy="500" r="476" fill="none" stroke="url(#bronze)" stroke-width="30" filter="url(#pRing)"/>
+    <circle cx="500" cy="500" r="446" fill="none" stroke="#ffcf6a" stroke-opacity=".28" stroke-width="3"/>
+    <g transform="translate(500 528) scale(.8) translate(-500 -500)">${flame}</g>`
+ : flame;
+console.log(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">${defs}${body}</svg>`);
