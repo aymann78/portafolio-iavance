@@ -20,6 +20,15 @@ const sfx = {
   scramble: ['Digital text scramble decoding sound, fast computer typing glitchy', 1.2],
   check: ['Positive success confirm chime, short clean UI', 0.7],
   riser: ['Short tension riser, rising synth swell, builds up suspense, no melody', 2.0],
+  sms: ['Smartphone text message received notification sound, short modern double chime', 0.8],
+  coins: ['Handful of metal coins dropping and clinking, short', 1.2],
+  cash: ['Cash register cha-ching, short', 1.0],
+  keys: ['Bunch of metal keys jingling, short', 1.0],
+  unlock: ['Mechanical lock unlocking click and latch opening, satisfying', 0.8],
+  typing: ['Fast typing on a laptop keyboard, short burst', 1.5],
+  buzz: ['Short digital error buzzer, wrong answer, denied', 0.6],
+  domino: ['Dominoes falling in a chain reaction, quick clicks cascading', 2.0],
+  swipe: ['Quick soft swipe transition, paper slide air', 0.5],
 };
 
 for (const [name, [text, dur]] of Object.entries(sfx)) {

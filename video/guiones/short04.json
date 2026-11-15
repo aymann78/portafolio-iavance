@@ -1,0 +1,13 @@
+{
+  "id": "short04",
+  "title": "La misma contraseña para todo",
+  "voiceId": "cfU714yVeokYQrpdyev5",
+  "scenes": [
+    {"id": "hook", "text": "Si usas la misma contraseña para todo... en realidad ya no es tuya."},
+    {"id": "leak", "text": "Cada año se filtran miles de millones de contraseñas de webs hackeadas. Y acaban en listas que cualquiera puede descargar."},
+    {"id": "stuff", "text": "Los atacantes las prueban de forma automática en todas partes: tu correo, tu banco, tus redes."},
+    {"id": "domino", "text": "Si coincide con la de tu correo, están dentro. Y desde tu correo pueden cambiar todas las demás."},
+    {"id": "tips", "text": "Solución: una contraseña distinta para cada sitio, guardadas en un gestor de contraseñas. Y activa la verificación en dos pasos: aunque tengan tu contraseña, no podrán entrar."},
+    {"id": "outro", "text": "Y busca tu correo en Have I Been Pwned. Puede que ya estés en una filtración."}
+  ]
+}

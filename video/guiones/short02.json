@@ -1,0 +1,13 @@
+{
+  "id": "short02",
+  "title": "El SMS del paquete retenido",
+  "voiceId": "cfU714yVeokYQrpdyev5",
+  "scenes": [
+    {"id": "hook", "text": "«Tu paquete está retenido. Paga un euro con noventa y nueve para recibirlo.» Si te ha llegado este SMS... no lo pagues."},
+    {"id": "fake", "text": "No es la empresa de paquetería. Es una web falsa que copia su diseño. Y no quieren tu euro: quieren tu tarjeta."},
+    {"id": "steal", "text": "Metes los datos, pagas... y en minutos te hacen cargos de cientos de euros. A veces, hasta te piden el código del banco para «confirmar»."},
+    {"id": "why", "text": "Y cuela, porque casi siempre esperamos algún paquete. Y el SMS falso puede aparecer en el mismo chat que los mensajes reales."},
+    {"id": "tips", "text": "Así que: nunca pagues desde un enlace de un SMS. Entra tú en la app oficial. Y el código del banco, no se lo des a nadie."},
+    {"id": "outro", "text": "Y si ya has pagado: llama a tu banco y bloquea la tarjeta. Ahora."}
+  ]
+}

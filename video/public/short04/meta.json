@@ -1,0 +1,599 @@
+{
+ "model": "eleven_multilingual_v2",
+ "voiceId": "cfU714yVeokYQrpdyev5",
+ "total": 37.338,
+ "scenes": [
+  {
+   "id": "hook",
+   "start": 0,
+   "end": 4.191,
+   "words": [
+    {
+     "w": "Si",
+     "start": 0,
+     "end": 0.174
+    },
+    {
+     "w": "usas",
+     "start": 0.209,
+     "end": 0.453
+    },
+    {
+     "w": "la",
+     "start": 0.522,
+     "end": 0.592
+    },
+    {
+     "w": "misma",
+     "start": 0.639,
+     "end": 0.94
+    },
+    {
+     "w": "contraseña",
+     "start": 0.998,
+     "end": 1.614
+    },
+    {
+     "w": "para",
+     "start": 1.66,
+     "end": 1.846
+    },
+    {
+     "w": "todo...",
+     "start": 1.904,
+     "end": 2.357
+    },
+    {
+     "w": "en",
+     "start": 2.45,
+     "end": 2.566
+    },
+    {
+     "w": "realidad",
+     "start": 2.659,
+     "end": 3.251
+    },
+    {
+     "w": "ya",
+     "start": 3.448,
+     "end": 3.576
+    },
+    {
+     "w": "no",
+     "start": 3.622,
+     "end": 3.704
+    },
+    {
+     "w": "es",
+     "start": 3.738,
+     "end": 3.785
+    },
+    {
+     "w": "tuya.",
+     "start": 3.831,
+     "end": 4.191
+    }
+   ]
+  },
+  {
+   "id": "leak",
+   "start": 4.249,
+   "end": 10.96,
+   "words": [
+    {
+     "w": "Cada",
+     "start": 4.249,
+     "end": 4.493
+    },
+    {
+     "w": "año",
+     "start": 4.516,
+     "end": 4.725
+    },
+    {
+     "w": "se",
+     "start": 4.772,
+     "end": 4.853
+    },
+    {
+     "w": "filtran",
+     "start": 4.899,
+     "end": 5.248
+    },
+    {
+     "w": "miles",
+     "start": 5.317,
+     "end": 5.584
+    },
+    {
+     "w": "de",
+     "start": 5.619,
+     "end": 5.666
+    },
+    {
+     "w": "millones",
+     "start": 5.712,
+     "end": 6.072
+    },
+    {
+     "w": "de",
+     "start": 6.107,
+     "end": 6.153
+    },
+    {
+     "w": "contraseñas",
+     "start": 6.211,
+     "end": 6.827
+    },
+    {
+     "w": "de",
+     "start": 6.885,
+     "end": 6.943
+    },
+    {
+     "w": "webs",
+     "start": 7.024,
+     "end": 7.361
+    },
+    {
+     "w": "hackeadas.",
+     "start": 7.558,
+     "end": 8.371
+    },
+    {
+     "w": "Y",
+     "start": 8.406,
+     "end": 8.487
+    },
+    {
+     "w": "acaban",
+     "start": 8.568,
+     "end": 8.87
+    },
+    {
+     "w": "en",
+     "start": 8.928,
+     "end": 8.986
+    },
+    {
+     "w": "listas",
+     "start": 9.044,
+     "end": 9.392
+    },
+    {
+     "w": "que",
+     "start": 9.451,
+     "end": 9.532
+    },
+    {
+     "w": "cualquiera",
+     "start": 9.59,
+     "end": 10.008
+    },
+    {
+     "w": "puede",
+     "start": 10.054,
+     "end": 10.275
+    },
+    {
+     "w": "descargar.",
+     "start": 10.321,
+     "end": 10.96
+    }
+   ]
+  },
+  {
+   "id": "stuff",
+   "start": 11.099,
+   "end": 16.417,
+   "words": [
+    {
+     "w": "Los",
+     "start": 11.099,
+     "end": 11.308
+    },
+    {
+     "w": "atacantes",
+     "start": 11.389,
+     "end": 11.923
+    },
+    {
+     "w": "las",
+     "start": 12.005,
+     "end": 12.167
+    },
+    {
+     "w": "prueban",
+     "start": 12.237,
+     "end": 12.539
+    },
+    {
+     "w": "de",
+     "start": 12.585,
+     "end": 12.643
+    },
+    {
+     "w": "forma",
+     "start": 12.701,
+     "end": 12.945
+    },
+    {
+     "w": "automática",
+     "start": 12.968,
+     "end": 13.503
+    },
+    {
+     "w": "en",
+     "start": 13.526,
+     "end": 13.584
+    },
+    {
+     "w": "todas",
+     "start": 13.63,
+     "end": 13.862
+    },
+    {
+     "w": "partes:",
+     "start": 13.932,
+     "end": 14.443
+    },
+    {
+     "w": "tu",
+     "start": 14.478,
+     "end": 14.594
+    },
+    {
+     "w": "correo,",
+     "start": 14.652,
+     "end": 15.163
+    },
+    {
+     "w": "tu",
+     "start": 15.198,
+     "end": 15.314
+    },
+    {
+     "w": "banco,",
+     "start": 15.36,
+     "end": 15.674
+    },
+    {
+     "w": "tus",
+     "start": 15.708,
+     "end": 15.883
+    },
+    {
+     "w": "redes.",
+     "start": 15.964,
+     "end": 16.417
+    }
+   ]
+  },
+  {
+   "id": "domino",
+   "start": 16.533,
+   "end": 22.744,
+   "words": [
+    {
+     "w": "Si",
+     "start": 16.533,
+     "end": 16.765
+    },
+    {
+     "w": "coincide",
+     "start": 16.846,
+     "end": 17.45
+    },
+    {
+     "w": "con",
+     "start": 17.508,
+     "end": 17.647
+    },
+    {
+     "w": "la",
+     "start": 17.705,
+     "end": 17.787
+    },
+    {
+     "w": "de",
+     "start": 17.833,
+     "end": 17.914
+    },
+    {
+     "w": "tu",
+     "start": 17.972,
+     "end": 18.088
+    },
+    {
+     "w": "correo,",
+     "start": 18.158,
+     "end": 18.832
+    },
+    {
+     "w": "están",
+     "start": 18.994,
+     "end": 19.296
+    },
+    {
+     "w": "dentro.",
+     "start": 19.354,
+     "end": 19.795
+    },
+    {
+     "w": "Y",
+     "start": 19.842,
+     "end": 19.923
+    },
+    {
+     "w": "desde",
+     "start": 20.016,
+     "end": 20.236
+    },
+    {
+     "w": "tu",
+     "start": 20.294,
+     "end": 20.376
+    },
+    {
+     "w": "correo",
+     "start": 20.434,
+     "end": 20.759
+    },
+    {
+     "w": "pueden",
+     "start": 20.805,
+     "end": 21.061
+    },
+    {
+     "w": "cambiar",
+     "start": 21.107,
+     "end": 21.455
+    },
+    {
+     "w": "todas",
+     "start": 21.548,
+     "end": 21.885
+    },
+    {
+     "w": "las",
+     "start": 21.966,
+     "end": 22.152
+    },
+    {
+     "w": "demás.",
+     "start": 22.222,
+     "end": 22.744
+    }
+   ]
+  },
+  {
+   "id": "tips",
+   "start": 22.837,
+   "end": 32.891,
+   "words": [
+    {
+     "w": "Solución:",
+     "start": 22.837,
+     "end": 23.522
+    },
+    {
+     "w": "una",
+     "start": 23.684,
+     "end": 23.847
+    },
+    {
+     "w": "contraseña",
+     "start": 23.905,
+     "end": 24.474
+    },
+    {
+     "w": "distinta",
+     "start": 24.509,
+     "end": 24.904
+    },
+    {
+     "w": "para",
+     "start": 24.95,
+     "end": 25.113
+    },
+    {
+     "w": "cada",
+     "start": 25.147,
+     "end": 25.322
+    },
+    {
+     "w": "sitio,",
+     "start": 25.38,
+     "end": 25.705
+    },
+    {
+     "w": "guardadas",
+     "start": 25.728,
+     "end": 26.215
+    },
+    {
+     "w": "en",
+     "start": 26.285,
+     "end": 26.332
+    },
+    {
+     "w": "un",
+     "start": 26.413,
+     "end": 26.471
+    },
+    {
+     "w": "gestor",
+     "start": 26.506,
+     "end": 26.843
+    },
+    {
+     "w": "de",
+     "start": 26.901,
+     "end": 26.959
+    },
+    {
+     "w": "contraseñas.",
+     "start": 27.017,
+     "end": 27.887
+    },
+    {
+     "w": "Y",
+     "start": 28.05,
+     "end": 28.12
+    },
+    {
+     "w": "activa",
+     "start": 28.212,
+     "end": 28.596
+    },
+    {
+     "w": "la",
+     "start": 28.642,
+     "end": 28.7
+    },
+    {
+     "w": "verificación",
+     "start": 28.735,
+     "end": 29.339
+    },
+    {
+     "w": "en",
+     "start": 29.373,
+     "end": 29.42
+    },
+    {
+     "w": "dos",
+     "start": 29.455,
+     "end": 29.571
+    },
+    {
+     "w": "pasos:",
+     "start": 29.629,
+     "end": 30.117
+    },
+    {
+     "w": "aunque",
+     "start": 30.256,
+     "end": 30.523
+    },
+    {
+     "w": "tengan",
+     "start": 30.569,
+     "end": 30.79
+    },
+    {
+     "w": "tu",
+     "start": 30.836,
+     "end": 30.918
+    },
+    {
+     "w": "contraseña,",
+     "start": 30.976,
+     "end": 31.695
+    },
+    {
+     "w": "no",
+     "start": 31.742,
+     "end": 31.87
+    },
+    {
+     "w": "podrán",
+     "start": 31.939,
+     "end": 32.322
+    },
+    {
+     "w": "entrar.",
+     "start": 32.38,
+     "end": 32.891
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "start": 33.031,
+   "end": 37.338,
+   "words": [
+    {
+     "w": "Y",
+     "start": 33.031,
+     "end": 33.1
+    },
+    {
+     "w": "busca",
+     "start": 33.182,
+     "end": 33.46
+    },
+    {
+     "w": "tu",
+     "start": 33.507,
+     "end": 33.6
+    },
+    {
+     "w": "correo",
+     "start": 33.658,
+     "end": 33.983
+    },
+    {
+     "w": "en",
+     "start": 34.052,
+     "end": 34.168
+    },
+    {
+     "w": "Have",
+     "start": 34.331,
+     "end": 34.621
+    },
+    {
+     "w": "I",
+     "start": 34.644,
+     "end": 34.668
+    },
+    {
+     "w": "Been",
+     "start": 34.737,
+     "end": 34.877
+    },
+    {
+     "w": "Pwned.",
+     "start": 34.935,
+     "end": 35.364
+    },
+    {
+     "w": "Puede",
+     "start": 35.504,
+     "end": 35.724
+    },
+    {
+     "w": "que",
+     "start": 35.782,
+     "end": 35.852
+    },
+    {
+     "w": "ya",
+     "start": 35.91,
+     "end": 35.968
+    },
+    {
+     "w": "estés",
+     "start": 35.991,
+     "end": 36.235
+    },
+    {
+     "w": "en",
+     "start": 36.305,
+     "end": 36.351
+    },
+    {
+     "w": "una",
+     "start": 36.421,
+     "end": 36.525
+    },
+    {
+     "w": "filtración.",
+     "start": 36.572,
+     "end": 37.338
+    }
+   ]
+  }
+ ]
+}

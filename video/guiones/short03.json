@@ -1,0 +1,13 @@
+{
+  "id": "short03",
+  "title": "El Bizum inverso",
+  "voiceId": "cfU714yVeokYQrpdyev5",
+  "scenes": [
+    {"id": "hook", "text": "Vendes algo de segunda mano, y el comprador te escribe: «Ya te he hecho el Bizum, solo tienes que aceptarlo»."},
+    {"id": "reveal", "text": "Cuidado. Eso no es un pago. Es una solicitud de dinero: te lo está pidiendo él a ti."},
+    {"id": "how", "text": "Se llama Bizum inverso. Ves la cantidad, le das a aceptar pensando que cobras... y el dinero sale de tu cuenta."},
+    {"id": "key", "text": "La clave es esta: para recibir un Bizum no tienes que aceptar nada. El dinero entra solo."},
+    {"id": "tips", "text": "Si para cobrar te piden aceptar, confirmar o poner tu PIN, es una estafa. Fíjate siempre si pone «solicitud» o «envío»."},
+    {"id": "outro", "text": "Recuerda: cobrar nunca te pide nada."}
+  ]
+}

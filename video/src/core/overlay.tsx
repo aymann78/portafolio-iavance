@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import * as THREE from 'three';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {SANS, MONO} from './fonts';
@@ -137,11 +137,11 @@ export const Flash: React.FC<{color?: string}> = ({color = '#bcd4ff'}) => {
 
 /* ============ Subtítulos ============ */
 type Chunk = {words: Word[]; from: number; to: number; idx0: number};
-const buildChunks = (): Chunk[] => {
+const buildChunks = (all: Word[]): Chunk[] => {
   const chunks: Chunk[] = [];
   let cur: Word[] = [];
   let idx0 = 0;
-  ALL_WORDS.forEach((w, i) => {
+  all.forEach((w, i) => {
     if (!cur.length) idx0 = i;
     cur.push(w);
     const brk = /[.,:?!…]$/.test(w.w) || cur.length >= 3;
@@ -158,13 +158,13 @@ const buildChunks = (): Chunk[] => {
   });
   return chunks;
 };
-const CHUNKS = buildChunks();
+const clean = (s: string) => s.replace(/\.\.\./g, '…');
+const OLD_KEYS = /^(VPN|gemelo|malvado|falsa|cifrado|candado|atacante|contraseña)/i;
 
-const clean = (s: string) => s.replace(/\.\.\.$/, '…');
-
-export const Captions: React.FC = () => {
+export const Captions: React.FC<{words?: Word[]; keywords?: RegExp; accent?: string}> = ({words = ALL_WORDS, keywords = OLD_KEYS, accent = '#ffd60a'}) => {
   const f = useCurrentFrame();
   const t = f / FPS;
+  const CHUNKS = useMemo(() => buildChunks(words), [words]);
   const ci = CHUNKS.findIndex((c) => t >= c.from - 0.05 && t < c.to);
   if (ci < 0) return null;
   const c = CHUNKS[ci];
@@ -197,7 +197,7 @@ export const Captions: React.FC = () => {
                 fontSize: 92,
                 lineHeight: 1.12,
                 letterSpacing: -2,
-                color: active ? (w.w.match(/^(VPN|gemelo|malvado|falsa|cifrado|candado|atacante|contraseña)/i) ? '#ffd60a' : '#ffffff') : 'rgba(255,255,255,.38)',
+                color: active ? (w.w.replace(/^[«"¿¡]+/, '').match(keywords) ? accent : '#ffffff') : 'rgba(255,255,255,.38)',
                 transform: `scale(${active ? 1 + (1 - k) * 0.12 : 1})`,
                 display: 'inline-block',
                 WebkitTextStroke: '14px rgba(0,0,0,.9)',

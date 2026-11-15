@@ -3,11 +3,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const script = JSON.parse(fs.readFileSync('script.json', 'utf8'));
+const scriptPath = process.argv[2] ?? 'script.json';
+const script = JSON.parse(fs.readFileSync(scriptPath, 'utf8'));
 const key = process.env.ELEVENLABS_API_KEY ?? 'proxy-injected';
 const voiceId = process.env.VOICE_ID ?? script.voiceId;
 const model = process.env.MODEL ?? 'eleven_multilingual_v2';
-const outDir = path.join('public', 'voice');
+const outDir = process.argv[2] ? path.join('public', script.id) : path.join('public', 'voice');
 fs.mkdirSync(outDir, {recursive: true});
 
 const full = script.scenes.map((s) => s.text).join(' ');
