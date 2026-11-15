@@ -1,21 +1,32 @@
-# Short 01: publicación
+# Short 01: publicación (Bajo Llave · @bajollavesecurity)
 
-**Título** (≤ 60 caracteres, gancho + palabra clave):
-> Ese wifi gratis del aeropuerto puede ser una trampa ⚠️
+## Título
+Ese WiFi gratis del aeropuerto puede ser una trampa ⚠️
 
-**Alternativas para A/B:**
-- ¿Wifi gratis en el aeropuerto? Mira esto antes
-- Así te roban con un wifi falso (gemelo malvado)
+Alternativas para probar:
+- ¿WiFi gratis en el aeropuerto? Mira esto antes de conectarte
+- Así te espían con un WiFi falso (gemelo malvado)
 
-**Descripción:**
-> Un atacante puede crear una red con el mismo nombre que la del aeropuerto. Se llama "gemelo malvado" (evil twin). Tu móvil se conecta a la que tiene más señal y todo pasa por su portátil.
-> Cómo protegerte: usa datos móviles o VPN, desactiva la conexión automática y revisa la dirección antes de escribir una contraseña.
->
-> #ciberseguridad #wifi #hacking #seguridadinformatica #shorts
+## Descripción
+¿Te conectas al WiFi gratis del aeropuerto? Puede que ni siquiera sea del aeropuerto. 👀
 
-**Comentario fijado** (aumenta la interacción):
-> ¿Te conectas a wifis públicas? 👇 Cuéntame dónde y te digo cómo hacerlo seguro.
+Cualquiera puede crear una red con el mismo nombre que la real. Se llama "gemelo malvado" (evil twin). Tu móvil se conecta a la que tiene más señal, y desde ese momento todo lo que envías pasa primero por el portátil del atacante. Si la web tiene candado (HTTPS), el contenido va cifrado, pero te pueden mandar a una página falsa idéntica para robarte la contraseña.
 
-**Notas:**
-- Marca "contenido alterado o sintético" en YouTube Studio (la voz es IA).
-- Si el plan de ElevenLabs es el gratuito, no permite uso comercial. Para monetizar el canal hace falta como mínimo el plan Starter.
+🔐 Cómo protegerte:
+✅ Usa tus datos móviles o una VPN
+✅ Desactiva la conexión automática a redes WiFi
+✅ Mira bien la dirección web antes de escribir nada
+
+🔔 Sígueme para más seguridad explicada fácil y mantén tus datos bajo llave.
+
+Contenido educativo y de concienciación.
+
+#ciberseguridad #wifi #estafas #seguridadinformatica #shorts
+
+## Comentario fijado
+¿Dónde te conectas a WiFi pública? 👇 Aeropuerto, hotel, cafetería… Cuéntamelo y te digo cómo hacerlo seguro.
+
+## Al subirlo
+- En "Contenido alterado o sintético" marca Sí, porque la voz está generada con IA.
+- Audiencia: "No es contenido para niños".
+- Categoría: Ciencia y tecnología.
