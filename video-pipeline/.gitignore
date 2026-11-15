@@ -1,0 +1,3 @@
+# Salidas generadas (pesadas): se regeneran con tts.py, render.js y sfx.py
+out/
+web/dbg.js

@@ -1,0 +1,25 @@
+<!doctype html><meta charset=utf-8>
+<style>
+html,body{margin:0;background:#000;overflow:hidden;font-family:'DejaVu Sans','Liberation Sans',sans-serif;color:#fff}
+#stage{position:absolute;left:0;top:0;width:1280px;height:720px;overflow:hidden}
+#stage canvas{position:absolute;left:0;top:0}
+#hud{position:absolute;left:0;top:0;width:1280px;height:720px;pointer-events:none}
+.layer{position:absolute;left:0;top:0;width:1280px;height:720px;display:none}
+.abs{position:absolute;white-space:nowrap;text-shadow:0 2px 8px rgba(0,0,0,.75)}
+#band{position:absolute;left:0;bottom:0;width:1280px;height:200px;background:linear-gradient(to top,rgba(2,4,10,.82),rgba(2,4,10,0))}
+#cap{position:absolute;left:100px;width:1080px;bottom:36px;text-align:center;font-weight:700;font-size:33px;line-height:42px;text-shadow:0 2px 6px #000,0 0 14px #000;opacity:0}
+#tag{position:absolute;left:44px;top:34px;font-weight:700;font-size:21px;letter-spacing:3px;color:#50e1cd;display:flex;align-items:center;gap:14px;text-shadow:0 2px 6px #000}
+#tag i{display:block;height:4px;background:#50e1cd;width:0}
+#fade{position:absolute;left:0;top:0;width:1280px;height:720px;background:#000;opacity:0}
+#prog{position:absolute;left:0;bottom:0;height:4px;background:#50e1cd;opacity:.8}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.teal{color:#50e1cd}.amber{color:#ffbe50}.red{color:#ff6060}.muted{color:#96a8c4}
+.big{font-weight:800;text-align:center;text-shadow:0 3px 18px #000,0 0 30px rgba(0,0,0,.8)}
+.card{position:absolute;border:3px solid rgba(80,225,205,.75);border-radius:22px;background:rgba(6,14,28,.72);box-shadow:0 0 40px rgba(80,225,205,.18);text-align:center}
+.pill{position:absolute;background:#ff3b3b;border-radius:40px;font-weight:800;text-align:center;box-shadow:0 8px 30px rgba(255,59,59,.5)}
+svg{position:absolute;left:0;top:0;overflow:visible}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<body><div id=stage></div>
+<div id=hud><div id=band></div><div id=layers></div><div id=tag><i></i><span></span></div><div id=cap></div><div id=prog></div><div id=fade></div></div>
+<script type="module" src="main.js"></script>
