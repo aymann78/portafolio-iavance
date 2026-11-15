@@ -1,13 +1,13 @@
 {
   "id": "short01",
   "title": "El wifi gratis del aeropuerto",
-  "voiceId": "pNInz6obpgDQGcFmaJgB",
+  "voiceId": "cfU714yVeokYQrpdyev5",
   "scenes": [
-    {"id": "hook", "est": 5.5, "text": "El wifi gratis del aeropuerto puede leer todo lo que haces. Y te conectas tú solito."},
-    {"id": "twin", "est": 6.5, "text": "Funciona así. Tu móvil busca redes. Y un atacante crea una con el mismo nombre que la real."},
-    {"id": "route", "est": 8, "text": "Tu móvil se conecta a la que tiene más señal. Y desde ese momento, todo lo que envías pasa primero por su portátil."},
-    {"id": "https", "est": 9, "text": "Lo bueno: si la web tiene candado, el contenido va cifrado. Lo malo: te pueden llevar a una página falsa que se ve idéntica."},
-    {"id": "tips", "est": 9, "text": "Qué haces. Usa tus datos móviles o una VPN. Desactiva la conexión automática. Y mira bien la dirección antes de poner una contraseña."},
-    {"id": "outro", "est": 4.5, "text": "Así que, antes de conectarte, pregúntate: ¿esta red es de verdad del aeropuerto?"}
+    {"id": "hook", "est": 4.5, "text": "Ese wifi gratis del aeropuerto... puede que ni sea del aeropuerto."},
+    {"id": "twin", "est": 7, "text": "Tu móvil busca redes. Y cualquiera puede crear una con el mismo nombre que la real. Se llama gemelo malvado."},
+    {"id": "route", "est": 7, "text": "Tu móvil se conecta a la que tiene más señal. Y desde ese momento, todo lo que envías pasa primero por el portátil del atacante."},
+    {"id": "https", "est": 9, "text": "Lo bueno: si la web tiene candado, el contenido va cifrado. Lo malo: te puede mandar a una página falsa, idéntica a la real, para que le des tu contraseña."},
+    {"id": "tips", "est": 8, "text": "Así que: usa tus datos móviles o una VPN. Desactiva la conexión automática. Y mira bien la dirección antes de escribir nada."},
+    {"id": "outro", "est": 4.5, "text": "La próxima vez, pregúntate: ¿esta red es de verdad del aeropuerto?"}
   ]
 }
