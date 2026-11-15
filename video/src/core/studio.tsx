@@ -122,15 +122,18 @@ export const Studio: React.FC<{
   chroma?: number;
   bloom?: number;
   dust?: boolean;
+  width?: number;
+  height?: number;
+  noise?: number;
   children: React.ReactNode;
-}> = ({look, chroma = 0, bloom = 1.1, dust = true, children}) => {
+}> = ({look, chroma = 0, bloom = 1.1, dust = true, width = W, height = H, noise = 0.045, children}) => {
   const frame = useCurrentFrame();
   const t = frame / 30;
   const ca = 0.0006 + chroma * 0.012;
   return (
     <ThreeCanvas
-      width={W}
-      height={H}
+      width={width}
+      height={height}
       dpr={1}
       frameloop="never"
       gl={{antialias: false, alpha: false, powerPreference: 'high-performance', stencil: false}}
@@ -157,7 +160,7 @@ export const Studio: React.FC<{
         <ChromaticAberration offset={new THREE.Vector2(ca, ca * 0.7)} radialModulation={false} modulationOffset={0} />
         <ToneMapping mode={ToneMappingMode.NEUTRAL} />
         <Vignette darkness={0.6} offset={0.22} />
-        <Noise opacity={0.045} blendFunction={BlendFunction.OVERLAY} />
+        <Noise opacity={noise} blendFunction={BlendFunction.OVERLAY} />
       </EffectComposer>
       <Advance frame={frame} />
     </ThreeCanvas>

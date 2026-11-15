@@ -7,7 +7,9 @@ const extrude = (shape: THREE.Shape, depth: number, bevel = 0.04) =>
   new THREE.ExtrudeGeometry(shape, {depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 6, curveSegments: 48});
 
 /* A — "Bajo Llave": baldosa con cerradura luminosa */
-const Keyhole: React.FC = () => {
+export const BRAND = {name: 'Bajo Llave', accent: '#22e3a6', bg: '#04070d', glow: '#0b3a35'};
+
+export const KeyholeTile: React.FC<{rotation?: [number, number, number]; power?: number}> = ({rotation = [0.18, -0.38, 0.04], power = 3.2}) => {
   const geo = useMemo(() => {
     const s = new THREE.Shape();
     s.absarc(0, 0.32, 0.36, -Math.PI * 0.28, Math.PI * 1.28, false);
@@ -19,12 +21,12 @@ const Keyhole: React.FC = () => {
     return g;
   }, []);
   return (
-    <group rotation={[0.18, -0.38, 0.04]}>
+    <group rotation={rotation}>
       <RoundedBox args={[2.6, 2.6, 0.55]} radius={0.55} smoothness={10}>
         <meshPhysicalMaterial color="#0d1424" metalness={0.7} roughness={0.18} clearcoat={1} clearcoatRoughness={0.05} />
       </RoundedBox>
       <mesh geometry={geo} position={[0, 0.02, 0.3]}>
-        <meshStandardMaterial color="#000" emissive="#22e3a6" emissiveIntensity={3.2} toneMapped={false} />
+        <meshStandardMaterial color="#000" emissive="#22e3a6" emissiveIntensity={power} toneMapped={false} />
       </mesh>
     </group>
   );
@@ -82,6 +84,6 @@ const LOOK = {
 export const Logo: React.FC<{v: 'A' | 'B' | 'C'}> = ({v}) => (
   <Studio look={LOOK[v]} dust={false} bloom={1.3}>
     <Rig pos={[0, 0, 9.5]} look={[0, 0, 0]} />
-    {v === 'A' ? <Keyhole /> : v === 'B' ? <Zero /> : <Shield />}
+    {v === 'A' ? <KeyholeTile /> : v === 'B' ? <Zero /> : <Shield />}
   </Studio>
 );
