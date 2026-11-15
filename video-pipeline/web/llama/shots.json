@@ -1,0 +1,20 @@
+[
+ {"id":"d1_clock","scene":"dia1","from":0,"seed":31,"neg":"fire, flame, candle","prompt":"close-up of a retro alarm clock on a dark wooden desk at night, red glow, rain drops on the window behind, deep shadows, bokeh"},
+ {"id":"d1_desk","scene":"dia1","from":0.32,"seed":5,"neg":"fire, flame, candle, lamp","prompt":"empty dark wooden desk at night, warm orange glow in the center of the desk, alarm clock on the right, rainy window behind, cozy bedroom, deep shadows"},
+ {"id":"m_low","scene":"motivacion","from":0,"seed":44,"neg":"fire, flame, candle, lamp","prompt":"low angle view across a wooden desk glowing with warm golden light, cozy room lit warmly, shelves with books, floating dust particles, hopeful mood"},
+ {"id":"m_room","scene":"motivacion","from":0.55,"seed":12,"neg":"fire, flame, candle, lamp, bed","prompt":"wide shot of a cozy small study room filled with warm golden light coming from the desk, books, wooden furniture, plants, hopeful atmosphere"},
+ {"id":"l_window","scene":"lluvia","from":0,"seed":7,"prompt":"close-up of a window at night covered with rain drops, cold blue city lights bokeh outside, gloomy, melancholic"},
+ {"id":"l_cal","scene":"lluvia","from":0.42,"seed":19,"neg":"numbers, text","prompt":"a blank paper wall calendar hanging on a dark wall, cold blue light, gloomy, rain drop shadows on the wall"},
+ {"id":"l_desk","scene":"lluvia","from":0.7,"seed":23,"neg":"fire, flame, candle, lamp","prompt":"dark wooden desk at night in cold blue light from a rainy window, gloomy, empty space in the center of the desk, faint warm glow"},
+ {"id":"t_phone","scene":"tentacion","from":0,"seed":8,"neg":"fire, flame, candle, lamp, hands","prompt":"close-up of a smartphone lying on a dark wooden desk, glowing screen, cold blue light, dark room at night, empty space on the left of the desk"},
+ {"id":"t_close","scene":"tentacion","from":0.55,"seed":51,"neg":"fire, flame, candle, lamp, phone","prompt":"extreme close-up of a dark wooden desk surface lit by cold blue screen light from the right, dark background, moody, cinematic"},
+ {"id":"a_dark","scene":"apagandose","from":0,"seed":64,"neg":"fire, flame, candle, lamp","prompt":"a very dark empty desk at midnight, almost black room, faint cold blue light, deep shadows, lonely, a clock glowing faintly in the background"},
+ {"id":"dc_dark","scene":"decision","from":0,"seed":64,"neg":"fire, flame, candle, lamp","prompt":"a very dark empty desk at midnight, almost black room, faint cold blue light, deep shadows, lonely, a clock glowing faintly in the background"},
+ {"id":"mo_cal","scene":"montaje","from":0,"seed":71,"neg":"numbers, text","prompt":"close-up of a paper wall calendar with many days crossed out with red marker, warm morning light"},
+ {"id":"mo_clock","scene":"montaje","from":0.12,"seed":72,"prompt":"close-up of a retro alarm clock on a wooden nightstand at sunrise, warm golden light, early morning"},
+ {"id":"mo_book","scene":"montaje","from":0.24,"seed":73,"prompt":"an open book on a wooden desk lit by warm golden morning light, notebook and pen, cozy, focused"},
+ {"id":"mo_weights","scene":"montaje","from":0.36,"seed":74,"prompt":"a pair of dumbbells on the wooden floor of a small home gym at dawn, warm sunlight rays through a window"},
+ {"id":"mo_stairs","scene":"montaje","from":0.48,"seed":75,"neg":"fire, flame, candle, torch","prompt":"a long stone staircase rising upward into darkness, warm light glowing on the steps, epic, mysterious, cinematic"},
+ {"id":"c_peak","scene":"cima","from":0,"seed":81,"prompt":"epic mountain summit at sunrise above a sea of clouds, golden sunlight, dramatic sky, vast landscape, rocky peak in the center"},
+ {"id":"c_rock","scene":"cima","from":0.5,"seed":82,"prompt":"close-up of a rocky mountain summit at golden sunrise, sea of clouds below, sun glare behind the summit, epic"}
+]

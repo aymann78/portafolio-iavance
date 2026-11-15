@@ -22,14 +22,14 @@ const FS=SNOISE+`
 uniform float uT,uHeat,uBlue;varying vec3 vN;varying float vY;varying vec3 vP;
 void main(){vec3 N=normalize(vN);vec3 V=normalize(cameraPosition-vP);float f=clamp(abs(dot(N,V)),0.,1.);
  float n=snoise(vec3(vP.x*3.5,vP.y*3.-uT*2.2,vP.z*3.5))*.09;
- float h=pow(f,.85)*(1.-vY*.72)+n;h*=mix(.42,1.18,uHeat);
+ float h=pow(f,.85)*(1.-vY*.72)+n;h*=mix(.42,1.02,uHeat);
  vec3 red=vec3(.78,.06,.03),org=vec3(1.,.40,.06),yel=vec3(1.,.76,.18),wht=vec3(1.,.97,.86);float e=.03;
  vec3 c=mix(red*mix(.75,1.,f),org,smoothstep(.29-e,.29+e,h));c=mix(c,yel,smoothstep(.50-e,.50+e,h));c=mix(c,wht,smoothstep(.70-e,.70+e,h));
  c=mix(c,c*vec3(1.,.68,.55),vY*.35);
  vec3 L=normalize(vec3(-.6,.75,.45));vec3 H=normalize(L+V);c+=pow(max(dot(N,H),0.),36.)*.5*vec3(1.,.92,.78);
  c*=mix(.72,1.,smoothstep(0.,.35,f));
  c=mix(c,vec3(.30,.52,1.)*(.55+.7*h),uBlue*.7);
- gl_FragColor=vec4(c*1.2,1.);}`;
+ gl_FragColor=vec4(c*.98,1.);}`;
 
 function profile(R=.30,yc=.28,N=44){const pts=[];for(let i=0;i<=N;i++){const u=i/N;const y=u<.5?Math.pow(u*2,1.6)/2:u;
   const r=y<yc?R*Math.sqrt(Math.max(0,1-((yc-y)/yc)**2)):R*Math.pow(Math.max(0,1-(y-yc)/(1-yc)),.9);pts.push(new THREE.Vector2(Math.max(r,i==0||i==N?0:1e-3),y))}return pts}

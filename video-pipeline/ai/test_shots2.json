@@ -1,0 +1,5 @@
+[
+ {"id":"t2_flame","seed":11,"prompt":"{FLAME} hovering above a dark wooden desk next to a retro red digital alarm clock, dark bedroom at night, rainy window"},
+ {"id":"t2_plate_desk","seed":5,"neg":"fire, flame, candle, lamp","prompt":"empty dark wooden desk at night, retro red digital alarm clock on the right, rainy window behind, cozy dark bedroom, warm orange glow on the desk center, blue moonlight"},
+ {"id":"t2_plate_phone","seed":8,"neg":"fire, flame, candle, lamp, hands","prompt":"close-up of a smartphone lying on a dark wooden desk, glowing screen with notifications, cold blue light, dark room at night, warm orange glow from the left"}
+]

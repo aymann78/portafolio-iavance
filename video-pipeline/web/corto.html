@@ -1,0 +1,17 @@
+<!doctype html><meta charset=utf-8>
+<style>
+html,body{margin:0;background:#000;overflow:hidden;font-family:'DejaVu Sans',sans-serif;color:#fff}
+#stage,#hud{position:absolute;left:0;top:0;width:1280px;height:720px;overflow:hidden}
+#hud{pointer-events:none}
+.abs{position:absolute;white-space:nowrap}
+#band{position:absolute;left:0;bottom:0;width:1280px;height:190px;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,0))}
+#cap{position:absolute;left:110px;width:1060px;bottom:34px;text-align:center;font-weight:700;font-size:32px;line-height:41px;text-shadow:0 2px 6px #000,0 0 16px #000;opacity:0}
+.bt{position:absolute;left:0;width:1280px;text-align:center;font-weight:900;color:#fff;-webkit-text-stroke:12px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000,0 0 30px rgba(0,0,0,.6);letter-spacing:-1px;opacity:0}
+.bub{position:absolute;padding:10px 16px;border-radius:18px;background:rgba(20,28,60,.85);border:2px solid rgba(120,160,255,.7);font-weight:800;font-size:22px;box-shadow:0 0 30px rgba(90,140,255,.5);opacity:0}
+.bub b{display:inline-block;background:#ff3b3b;border-radius:12px;padding:0 8px;margin-left:8px}
+#fade{position:absolute;left:0;top:0;width:1280px;height:720px;background:#000;opacity:0}
+#flash{position:absolute;left:0;top:0;width:1280px;height:720px;background:#fff;opacity:0}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<body><div id=stage></div><div id=hud><div id=band></div><div id=ov></div><div id=cap></div><div id=flash></div><div id=fade></div></div>
+<script type="module" src="llama/corto.js"></script>
