@@ -1,0 +1,27 @@
+{
+  "name": "shorts-seguridad",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "node scripts/voice.mjs",
+    "render": "remotion render src/index.ts Short01 out/short01.mp4",
+    "still": "remotion still src/index.ts Short01 out/frame.png --frame=90"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.10",
+    "@remotion/cli": "4.0.250",
+    "@remotion/three": "4.0.250",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.250",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/three": "^0.169.0",
+    "typescript": "^5.4.5"
+  }
+}
