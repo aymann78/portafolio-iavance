@@ -7,7 +7,7 @@ Todo es código: cada número, cada tiempo y cada animación es exacto y se pued
 
 - 35 s, 1080×1920, 30 fps.
 - **Cíclico:** el último fotograma es igual que el primero, y la última frase
-  ("Enséñaselo a alguien y verás:") enlaza con la primera ("Te voy a adivinar la edad").
+  ("Pruébalo con alguien y verás:") enlaza con la primera ("Te adivino la edad…").
 - Todo el contenido está dentro de la zona segura de Shorts (`SAFE` en `src/theme.ts`).
 - Las 6 pantallas están comprobadas para todas las edades del 1 al 63.
 
@@ -24,7 +24,7 @@ Todo es código: cada número, cada tiempo y cada animación es exacto y se pued
 ```bash
 npm install
 npm run studio          # editor visual en el navegador
-npm run render:edad     # vídeo sin voz -> out/edad-sin-voz.mp4
+npm run render:edad     # vídeo sin voz -> renders/edad-sin-voz.mp4
 ```
 
 ### Voz (ElevenLabs)
