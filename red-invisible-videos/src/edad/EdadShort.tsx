@@ -2,13 +2,13 @@ import React from 'react';
 import {AbsoluteFill, Html5Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Captions} from '../components/Captions';
 import {ensureFonts} from '../components/Fonts';
-import {Flash, NumberField} from '../components/Fx';
+import {Flash, Grain, NumberField} from '../components/Fx';
 import {SpaceBackground} from '../components/SpaceBackground';
 import {DeckBeat, GreenTileBeat} from './HookBeats';
 import {BinaryScene} from './BinaryScene';
 import {CardScene} from './CardScene';
 import {HookScene} from './HookScene';
-import {CAPTIONS, s2f, T, VOICE_LINES} from './script';
+import {CAPTIONS, CARD_DUR, CARD_START, s2f, T, VOICE_LINES} from './script';
 import {SumScene} from './SumScene';
 
 ensureFonts();
@@ -21,8 +21,8 @@ const Sfx: React.FC<{at: number; src: string; volume?: number}> = ({at, src, vol
 
 export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 	const {durationInFrames} = useVideoConfig();
-	const cardFrames = s2f(T.cards.each);
 	const outroLen = T.outro.to - T.outro.from;
+	const cuts = [T.beats.deck, T.beats.tile, ...CARD_START, T.sum.from, T.binary.from, T.outro.from];
 
 	return (
 		<AbsoluteFill>
@@ -36,23 +36,23 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 			<Sequence from={s2f(T.beats.deck)} durationInFrames={s2f(T.beats.tile - T.beats.deck)} name="Gancho 2: 6 pantallas">
 				<DeckBeat durationInFrames={s2f(T.beats.tile - T.beats.deck)} />
 			</Sequence>
-			<Sequence from={s2f(T.beats.tile)} durationInFrames={s2f(T.hook.to - T.beats.tile)} name="Gancho 3: apúntalo">
+			<Sequence from={s2f(T.beats.tile)} durationInFrames={s2f(T.hook.to - T.beats.tile)} name="Gancho 3: súmalo">
 				<GreenTileBeat durationInFrames={s2f(T.hook.to - T.beats.tile)} />
 			</Sequence>
 
-			{/* 2. Las 6 pantallas */}
-			{Array.from({length: 6}, (_, i) => (
-				<Sequence key={i} from={s2f(T.cards.from) + i * cardFrames} durationInFrames={cardFrames} name={`Pantalla ${i + 1}`}>
-					<CardScene index={i} durationInFrames={cardFrames} />
+			{/* 2. Las 6 pantallas (la primera más larga) */}
+			{CARD_START.map((at, i) => (
+				<Sequence key={i} from={s2f(at)} durationInFrames={s2f(CARD_DUR[i])} name={`Pantalla ${i + 1}`}>
+					<CardScene index={i} durationInFrames={s2f(CARD_DUR[i])} />
 				</Sequence>
 			))}
 
-			{/* 3. La suma */}
-			<Sequence from={s2f(T.sum.from)} durationInFrames={s2f(T.sum.to - T.sum.from)} name="Suma">
-				<SumScene revealAt={27.5 - T.sum.from} durationInFrames={s2f(T.sum.to - T.sum.from)} />
+			{/* 3. Cuenta atrás y revelación */}
+			<Sequence from={s2f(T.sum.from)} durationInFrames={s2f(T.sum.to - T.sum.from)} name="Revelación">
+				<SumScene revealAt={T.sum.revealAt - T.sum.from} durationInFrames={s2f(T.sum.to - T.sum.from)} />
 			</Sequence>
 
-			{/* 4. El binario */}
+			{/* 4. El binario (corto: segundo "premio", el porqué) */}
 			<Sequence from={s2f(T.binary.from)} durationInFrames={s2f(T.binary.to - T.binary.from)} name="Binario">
 				<BinaryScene durationInFrames={s2f(T.binary.to - T.binary.from)} />
 			</Sequence>
@@ -63,39 +63,38 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 			</Sequence>
 
 			<Captions captions={CAPTIONS} />
-
-			{/* Destellos en cada corte */}
-			{[T.beats.deck, T.beats.tile, ...Array.from({length: 6}, (_, i) => T.cards.from + i * T.cards.each), T.sum.from, T.binary.from, T.outro.from].map(
-				(at) => (
-					<Flash key={at} at={s2f(at)} />
-				),
-			)}
+			{cuts.map((at) => (
+				<Flash key={at} at={s2f(at)} />
+			))}
+			<Grain />
 
 			{/* Efectos de sonido */}
-			<Sfx at={0.35} src="scan" volume={0.35} />
+			<Sfx at={0.35} src="scan" volume={0.3} />
 			<Sfx at={T.beats.deck} src="whoosh" volume={0.4} />
 			{Array.from({length: 6}, (_, i) => (
 				<Sfx key={`d${i}`} at={T.beats.deck + (2 + i * 3) / 30} src="tick" volume={0.35} />
 			))}
 			<Sfx at={T.beats.tile} src="slam" volume={0.6} />
 			<Sfx at={T.beats.tile + 18 / 30} src="pop" volume={0.5} />
-			{Array.from({length: 6}, (_, i) => (
-				<React.Fragment key={i}>
-					<Sfx at={T.cards.from + i * T.cards.each} src="whoosh" volume={0.35} />
-					<Sfx at={T.cards.from + i * T.cards.each + 0.25} src="tick" volume={0.4} />
+			{CARD_START.map((at, i) => (
+				<React.Fragment key={`c${i}`}>
+					<Sfx at={at} src="whoosh" volume={0.35} />
+					<Sfx at={at + 0.12} src="pop" volume={0.35} />
 				</React.Fragment>
 			))}
 			<Sfx at={T.sum.from} src="whoosh" volume={0.35} />
-			{[0, 1, 2].map((i) => (
-				<Sfx key={i} at={T.sum.from + (3 + i * 6) / 30} src="pop" volume={0.4} />
+			<Sfx at={T.sum.from + 0.1} src="scan" volume={0.25} />
+			{[0, 1, 2].map((k) => (
+				<Sfx key={`cd${k}`} at={T.sum.revealAt - 1.8 + k * 0.6} src="tick" volume={0.6} />
 			))}
-			<Sfx at={26.6} src="rise" volume={0.3} />
-			<Sfx at={27.5} src="ding" volume={0.55} />
-			<Sfx at={27.5} src="slam" volume={0.45} />
+			<Sfx at={T.sum.revealAt - 1.0} src="rise" volume={0.3} />
+			<Sfx at={T.sum.revealAt} src="ding" volume={0.55} />
+			<Sfx at={T.sum.revealAt} src="slam" volume={0.5} />
+			<Sfx at={T.sum.revealAt + 0.9} src="pop" volume={0.45} />
 			{[0, 1, 2, 3, 4, 5].map((i) => (
-				<Sfx key={i} at={T.binary.from + (8 + i * 6) / 30} src="tick" volume={(27 >> (5 - i)) & 1 ? 0.5 : 0.15} />
+				<Sfx key={`b${i}`} at={T.binary.from + (4 + i * 4) / 30} src="tick" volume={(27 >> (5 - i)) & 1 ? 0.5 : 0.15} />
 			))}
-			<Sfx at={T.binary.from + 48 / 30} src="pop" volume={0.5} />
+			<Sfx at={T.binary.from + 32 / 30} src="pop" volume={0.5} />
 			<Sfx at={T.outro.from} src="whoosh" volume={0.35} />
 
 			{/* Voz: una pista por frase, generadas con `npm run voice` en public/voice/edad/ */}
@@ -124,7 +123,7 @@ const NumberFieldTimed: React.FC<{loopFrames: number}> = ({loopFrames}) => {
 	const {fps} = useVideoConfig();
 	const t = frame / fps;
 	const k = [0, T.hook.to - 0.3, T.cards.from, T.sum.from - 0.3, T.sum.from, T.outro.from - 0.3, T.outro.from, T.outro.to];
-	const v = [0.45, 0.45, 0.1, 0.1, 0.22, 0.22, 0.45, 0.45];
+	const v = [0.32, 0.32, 0.08, 0.08, 0.18, 0.18, 0.32, 0.32];
 	return <NumberField loopFrames={loopFrames} opacity={interpolate(t, k, v, {extrapolateRight: 'clamp'})} />;
 };
 

@@ -119,3 +119,22 @@ export const Confetti: React.FC<{at: number; x?: number; y?: number; count?: num
 		</AbsoluteFill>
 	);
 };
+
+/**
+ * Grano de película muy sutil. Evita las bandas en los degradados oscuros
+ * cuando YouTube recomprime el vídeo, y da acabado "de cine".
+ */
+export const Grain: React.FC<{opacity?: number}> = ({opacity = 0.07}) => {
+	const frame = useCurrentFrame();
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', mixBlendMode: 'overlay', opacity}}>
+			<svg width={W} height={H}>
+				<filter id={`g${frame}`}>
+					<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves={2} seed={frame % 97} stitchTiles="stitch" />
+					<feColorMatrix type="saturate" values="0" />
+				</filter>
+				<rect width={W} height={H} filter={`url(#g${frame})`} />
+			</svg>
+		</AbsoluteFill>
+	);
+};

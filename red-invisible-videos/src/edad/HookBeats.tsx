@@ -116,7 +116,7 @@ export const DeckBeat: React.FC<{durationInFrames: number}> = ({durationInFrames
 	);
 };
 
-/** Corte 3 — "Si sales, apunta el número verde": zoom a la casilla verde, rodeada a mano. */
+/** Corte 3 — "Si sales, suma el número verde": zoom a la casilla verde, rodeada a mano. */
 export const GreenTileBeat: React.FC<{durationInFrames: number}> = ({durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
@@ -210,7 +210,7 @@ export const GreenTileBeat: React.FC<{durationInFrames: number}> = ({durationInF
 					zIndex: 4,
 				}}
 			>
-				¡APÚNTALO!
+				¡SÚMALO!
 			</div>
 		</AbsoluteFill>
 	);

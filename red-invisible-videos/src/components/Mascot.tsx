@@ -1,5 +1,6 @@
 import {Outlines} from '@react-three/drei';
 import React from 'react';
+import {Glow} from './Stage3D';
 
 /**
  * La mascota de Red Invisible: cabeza blanca sin cara, cuerpo azul,
@@ -109,5 +110,6 @@ export const Pedestal: React.FC<{position?: [number, number, number]; glow?: num
 			<ringGeometry args={[0.7, 0.8, 64]} />
 			<meshBasicMaterial color={color} transparent opacity={0.85 * glow} toneMapped={false} />
 		</mesh>
+		<Glow color={color} size={[2.6, 2.6]} position={[0, 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]} intensity={0.55 * glow} />
 	</group>
 );

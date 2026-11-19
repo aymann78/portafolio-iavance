@@ -83,3 +83,34 @@ export const textTexture = (text: string, {color, bg, border, w = 512, h = 704}:
 	cache.set(key, tex);
 	return tex;
 };
+
+let glowTex: THREE.CanvasTexture | null = null;
+const getGlowTex = () => {
+	if (glowTex) return glowTex;
+	const c = document.createElement('canvas');
+	c.width = c.height = 256;
+	const ctx = c.getContext('2d')!;
+	const g = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+	g.addColorStop(0, 'rgba(255,255,255,1)');
+	g.addColorStop(0.25, 'rgba(255,255,255,0.45)');
+	g.addColorStop(0.6, 'rgba(255,255,255,0.08)');
+	g.addColorStop(1, 'rgba(255,255,255,0)');
+	ctx.fillStyle = g;
+	ctx.fillRect(0, 0, 256, 256);
+	glowTex = new THREE.CanvasTexture(c);
+	return glowTex;
+};
+
+/** Halo de luz aditivo (efecto "bloom" sin postprocesado, compatible con transparencia). */
+export const Glow: React.FC<{color: string; size: [number, number]; position?: [number, number, number]; rotation?: [number, number, number]; intensity?: number}> = ({
+	color,
+	size,
+	position = [0, 0, 0],
+	rotation = [0, 0, 0],
+	intensity = 1,
+}) => (
+	<mesh position={position} rotation={rotation}>
+		<planeGeometry args={size} />
+		<meshBasicMaterial map={getGlowTex()} color={color} transparent opacity={intensity} blending={THREE.AdditiveBlending} depthWrite={false} toneMapped={false} />
+	</mesh>
+);

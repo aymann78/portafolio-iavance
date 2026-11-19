@@ -21,13 +21,13 @@ export const BinaryScene: React.FC<{durationInFrames: number}> = ({durationInFra
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const sumAt = 8 + 6 * 6 + 4;
+	const sumAt = 4 + 6 * 4 + 4;
 	const sumPop = spring({frame: frame - sumAt, fps, config: {damping: 10, stiffness: 200}});
-	const chipAt = sumAt + 22;
+	const chipAt = sumAt + 14;
 	const chipPop = spring({frame: frame - chipAt, fps, config: {damping: 12, stiffness: 200}});
 
 	return (
-		<AbsoluteFill style={{opacity: exit, transform: `${[0, 1, 2, 3, 4, 5].filter((i) => bits[i]).map((i) => shake(frame, 8 + i * 6, 7, 6)).find((t) => t !== 'translate(0px, 0px)') ?? ''} scale(${interpolate(enter, [0, 1], [1.08, 1])})`}}>
+		<AbsoluteFill style={{opacity: exit, transform: `${[0, 1, 2, 3, 4, 5].filter((i) => bits[i]).map((i) => shake(frame, 4 + i * 4, 7, 6)).find((t) => t !== 'translate(0px, 0px)') ?? ''} scale(${interpolate(enter, [0, 1], [1.08, 1])})`}}>
 			<div
 				style={{
 					position: 'absolute',
@@ -48,7 +48,7 @@ export const BinaryScene: React.FC<{durationInFrames: number}> = ({durationInFra
 
 			<div style={{position: 'absolute', top: 320, left: 85, width: 830, display: 'flex', justifyContent: 'space-between'}}>
 				{VALUES.map((v, i) => {
-					const litAt = 8 + i * 6;
+					const litAt = 4 + i * 4;
 					const lit = bits[i] === 1 && frame >= litAt;
 					const shown = spring({frame: frame - litAt, fps, config: {damping: 12, stiffness: 240}});
 					const flash = lit ? Math.max(0, 1 - (frame - litAt) / 10) : 0;

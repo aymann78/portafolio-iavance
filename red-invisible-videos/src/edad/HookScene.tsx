@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, random, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Mascot, Pedestal} from '../components/Mascot';
-import {Stage3D, textTexture, useFontsReady} from '../components/Stage3D';
+import {Glow, Stage3D, textTexture, useFontsReady} from '../components/Stage3D';
 import {C, FONT_TITLE} from '../theme';
 
 const FEET_Y = 0.78; // pies a ~1090 px: deja sitio a los subtítulos
@@ -64,6 +64,7 @@ export const HookScene: React.FC<{phase: number; scanFrom?: number; scanTo?: num
 					rotation={[0, -0.18, 0.04 * Math.sin((phase / 3.5) * TAU)]}
 					scale={enter * (scanning ? 1.04 : 1)}
 				>
+					<Glow color={scanning ? C.green : C.purple} size={[2.6, 3.0]} position={[0, 0, -0.05]} intensity={scanning ? 0.75 * flicker : 0.5} />
 					{tex ? (
 						<mesh>
 							<planeGeometry args={[1.1, 1.51]} />

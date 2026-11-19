@@ -1,12 +1,12 @@
 [
-	{"id": "hook", "at": 0.0, "slot": 4.6, "text": "Te voy a adivinar la edad. Solo mira seis pantallas. Si sales, apunta el número verde."},
-	{"id": "card1", "at": 4.6, "slot": 3.3, "text": "Pantalla uno… ¿sales?"},
-	{"id": "card2", "at": 7.9, "slot": 3.3, "text": "Dos."},
-	{"id": "card3", "at": 11.2, "slot": 3.3, "text": "Tres… busca bien."},
-	{"id": "card4", "at": 14.5, "slot": 3.3, "text": "Cuatro."},
-	{"id": "card5", "at": 17.8, "slot": 3.3, "text": "Cinco."},
-	{"id": "card6", "at": 21.1, "slot": 3.3, "text": "Y la última."},
-	{"id": "sum", "at": 24.4, "slot": 5.0, "text": "Ahora suma los números verdes que has apuntado… Esa es tu edad."},
-	{"id": "binary", "at": 29.4, "slot": 4.0, "text": "No es magia: es binario. Así cuenta tu ordenador."},
-	{"id": "outro", "at": 33.4, "slot": 1.6, "text": "Enséñaselo a alguien y verás:"}
+	{"id": "hook", "at": 0.0, "slot": 4.6, "text": "Te adivino la edad con seis pantallas. Si sales, suma el número verde."},
+	{"id": "card1", "at": 4.6, "slot": 4.0, "text": "Primera. Si sales, suma uno."},
+	{"id": "card2", "at": 8.6, "slot": 3.2, "text": "¿Sales? Suma dos."},
+	{"id": "card3", "at": 11.8, "slot": 3.2, "text": "Suma cuatro."},
+	{"id": "card4", "at": 15.0, "slot": 3.2, "text": "Ocho."},
+	{"id": "card5", "at": 18.2, "slot": 3.2, "text": "Dieciséis."},
+	{"id": "card6", "at": 21.4, "slot": 3.2, "text": "Y la última: treinta y dos."},
+	{"id": "sum", "at": 24.6, "slot": 4.5, "text": "¿Cuánto te da? Tres, dos, uno… Esa es tu edad."},
+	{"id": "binary", "at": 29.2, "slot": 3.1, "text": "No es magia: es binario. Así cuentan las máquinas."},
+	{"id": "outro", "at": 32.4, "slot": 2.5, "text": "Pruébalo con alguien y verás:"}
 ]
