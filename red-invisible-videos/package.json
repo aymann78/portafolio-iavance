@@ -1,0 +1,32 @@
+{
+  "name": "red-invisible-videos",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "node scripts/voice.mjs",
+    "render:edad": "remotion render src/index.ts EdadShort out/edad-sin-voz.mp4",
+    "render:edad:voz": "remotion render src/index.ts EdadShort out/edad.mp4 --props={\"voice\":true}",
+    "still": "remotion still src/index.ts EdadShort out/portada.png --frame=0"
+  },
+  "dependencies": {
+    "@fontsource/anton": "5.3.0",
+    "@fontsource/montserrat": "5.3.0",
+    "@react-three/drei": "10.7.6",
+    "@react-three/fiber": "9.3.0",
+    "@remotion/cli": "4.0.545",
+    "@remotion/fonts": "4.0.545",
+    "@remotion/google-fonts": "4.0.545",
+    "@remotion/three": "4.0.545",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.545",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/three": "0.187.0",
+    "typescript": "7.0.2"
+  }
+}
