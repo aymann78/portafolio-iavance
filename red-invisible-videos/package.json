@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "studio": "remotion studio",
-    "voice": "node scripts/voice.mjs",
+    "voice": "NODE_USE_ENV_PROXY=1 node scripts/voice.mjs",
     "render:edad": "remotion render src/index.ts EdadShort out/edad-sin-voz.mp4 && cp out/edad-sin-voz.mp4 renders/",
     "render:edad:voz": "remotion render src/index.ts EdadShort out/edad.mp4 --props={\"voice\":true} && bash scripts/master.sh out/edad.mp4 renders/edad.mp4",
     "still": "remotion still src/index.ts EdadShort out/portada.png --frame=0"

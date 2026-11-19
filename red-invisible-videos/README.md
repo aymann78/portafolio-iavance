@@ -13,11 +13,11 @@ Todo es código: cada número, cada tiempo y cada animación es exacto y se pued
 
 | Tiempo | Escena |
 |---|---|
-| 0–4,6 s | Gancho: "Te adivino la edad" + mascota + panel "?" → "1" |
-| 4,6–24,4 s | 6 pantallas de 32 números (3,3 s cada una) |
-| 24,4–29,4 s | La suma: "= TU EDAD" |
-| 29,4–33,4 s | Explicación: binario (ejemplo con 27 años) |
-| 33,4–35 s | Vuelta al plano inicial (bucle) |
+| 0–4,6 s | Gancho en 3 cortes: escaneo, abanico de 6 pantallas, "¡SÚMALO!" |
+| 4,6–24,6 s | 6 pantallas "¿Sale tu edad? +N" (la primera de 4 s; el resto, 3,2 s) |
+| 24,6–29,8 s | "TU SUMA" + cuenta atrás + "¡TU EDAD!" sincronizados con la voz |
+| 29,8–32,4 s | "No es magia: es código binario" (ejemplo con 27 años) |
+| 32,4–35 s | Vuelta al plano inicial (bucle) |
 
 ## Uso
 
@@ -27,15 +27,21 @@ npm run studio          # editor visual en el navegador
 npm run render:edad     # vídeo sin voz -> out/edad-sin-voz.mp4
 ```
 
-### Añadir la voz (ElevenLabs)
+### Voz (ElevenLabs)
 
 ```bash
-ELEVENLABS_API_KEY=... ELEVENLABS_VOICE_ID=... npm run voice
-npm run render:edad:voz # vídeo con voz -> out/edad.mp4
+npm run voice           # genera public/voice/edad/*.mp3 + src/edad/voice-timing.json
+npm run render:edad:voz # vídeo con voz y audio a -14 LUFS -> renders/edad.mp4
 ```
 
-`npm run voice` genera una pista por frase (`src/edad/voice.json`) y avisa si alguna
-no cabe en su hueco.
+- Voz por defecto: **Manu Arias - Español Viral** (español de España), modelo **Eleven v4**,
+  velocidad 1,06. Se cambia con `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL` y `ELEVENLABS_SPEED`.
+- En Claude Code la clave la inyecta el proxy (no hace falta ponerla). En tu ordenador:
+  `ELEVENLABS_API_KEY=... npm run voice`.
+- Con los tiempos reales de cada palabra, el vídeo sincroniza solo los subtítulos, los cortes del
+  gancho ("seis", "Si sales"), la cuenta atrás ("tres, dos, uno") y el golpe "¡Tu edad!".
+- `scripts/master.sh` deja el audio a -14 LUFS, el nivel al que normaliza YouTube.
+- El vídeo no lleva música: solo voz y efectos de sonido.
 
 ## Estructura
 

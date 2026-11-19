@@ -2,7 +2,8 @@
 /**
  * Genera la voz del Short con ElevenLabs, frase a frase.
  *
- *   ELEVENLABS_API_KEY=xxx ELEVENLABS_VOICE_ID=yyy npm run voice
+ *   npm run voice                       (voz y modelo por defecto)
+ *   ELEVENLABS_VOICE_ID=yyy npm run voice  (otra voz)
  *
  * Por cada frase de src/edad/voice.json guarda:
  *   public/voice/edad/<id>.mp3   el audio
@@ -11,19 +12,40 @@
  */
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 
-const KEY = process.env.ELEVENLABS_API_KEY;
-const VOICE = process.env.ELEVENLABS_VOICE_ID;
-const MODEL = process.env.ELEVENLABS_MODEL ?? 'eleven_multilingual_v2';
-if (!KEY || !VOICE) {
-	console.error('Faltan ELEVENLABS_API_KEY y/o ELEVENLABS_VOICE_ID.');
-	process.exit(1);
-}
+// En Claude Code la clave la inyecta el proxy: basta con un valor de relleno.
+const KEY = process.env.ELEVENLABS_API_KEY ?? 'proxy-injected';
+// Voz por defecto: "Manu Arias - Español Viral" (español de España). Elegida por
+// tener la entonación más variada (menos "voz de IA") entre las candidatas.
+const VOICE = process.env.ELEVENLABS_VOICE_ID ?? 'cfU714yVeokYQrpdyev5';
+// Eleven v4: en las pruebas, ~45 % más variación de tono que multilingual v2.
+const MODEL = process.env.ELEVENLABS_MODEL ?? 'eleven_v4';
+// Un poco más rápida que la natural: encaja con el ritmo de Shorts.
+const SPEED = Number(process.env.ELEVENLABS_SPEED ?? 1.06);
 
 const lines = JSON.parse(readFileSync(new URL('../src/edad/voice.json', import.meta.url)));
 const outDir = new URL('../public/voice/edad/', import.meta.url);
 mkdirSync(outDir, {recursive: true});
 
+/** Convierte la alineación por caracteres de ElevenLabs en palabras con inicio/fin absolutos. */
+function toWords(al, offset) {
+	const words = [];
+	let cur = null;
+	al.characters.forEach((ch, i) => {
+		if (/\s/.test(ch)) {
+			if (cur) words.push(cur);
+			cur = null;
+			return;
+		}
+		if (!cur) cur = {w: '', start: offset + al.character_start_times_seconds[i], end: 0};
+		cur.w += ch;
+		cur.end = offset + al.character_end_times_seconds[i];
+	});
+	if (cur) words.push(cur);
+	return words.map((x) => ({...x, start: +x.start.toFixed(3), end: +x.end.toFixed(3)}));
+}
+
 let previous;
+const timing = [];
 for (const line of lines) {
 	const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}/with-timestamps`, {
 		method: 'POST',
@@ -33,7 +55,7 @@ for (const line of lines) {
 			model_id: MODEL,
 			// misma voz y ritmo en todas las frases
 			previous_text: previous,
-			voice_settings: {stability: 0.45, similarity_boost: 0.8, style: 0.35, use_speaker_boost: true},
+			voice_settings: {stability: 0.45, similarity_boost: 0.8, style: 0.35, use_speaker_boost: true, speed: SPEED},
 		}),
 	});
 	if (!res.ok) {
@@ -48,5 +70,8 @@ for (const line of lines) {
 	const ok = dur <= line.slot;
 	console.log(`${ok ? '✓' : '⚠'} ${line.id.padEnd(7)} ${dur.toFixed(2)}s / hueco ${line.slot}s  ${ok ? '' : '<- NO CABE: acorta la frase o sube el hueco'}`);
 	previous = line.text;
+	timing.push({id: line.id, at: line.at, words: toWords(data.alignment, line.at)});
 }
+// Tiempos absolutos de cada palabra: los usa el vídeo para subtítulos y sincronía.
+writeFileSync(new URL('../src/edad/voice-timing.json', import.meta.url), JSON.stringify(timing, null, '\t') + '\n');
 console.log('\nListo. Renderiza con voz:  npm run render:edad:voz');

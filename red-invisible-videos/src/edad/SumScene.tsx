@@ -9,7 +9,7 @@ import {C, FONT_TITLE, FONT_UI} from '../theme';
  * "¿Cuánto te da? Tres, dos, uno… Esa es tu edad."
  * Marcador tipo tragaperras con la suma girando, cuenta atrás, y golpe final.
  */
-export const SumScene: React.FC<{revealAt: number; durationInFrames: number}> = ({revealAt, durationInFrames}) => {
+export const SumScene: React.FC<{revealAt: number; countdown: number[]; durationInFrames: number}> = ({revealAt, countdown, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = frame / fps;
@@ -19,18 +19,18 @@ export const SumScene: React.FC<{revealAt: number; durationInFrames: number}> = 
 	const enter = spring({frame, fps, config: {damping: 15, stiffness: 220}});
 	const exit = interpolate(frame, [durationInFrames - 6, durationInFrames], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
-	// cuenta atrás 3-2-1 repartida antes de la revelación
-	const cdStart = revealF - Math.round(1.8 * fps);
-	const cdStep = Math.round(0.6 * fps);
-	const cdIdx = Math.floor((frame - cdStart) / cdStep); // 0,1,2
-	const cdNum = frame >= cdStart && cdIdx < 3 ? 3 - cdIdx : null;
-	const cdPop = spring({frame: frame - (cdStart + Math.max(0, cdIdx) * cdStep), fps, config: {damping: 8, stiffness: 300}});
+	// cuenta atrás 3-2-1, cada número cuando la voz lo dice
+	const cdF = countdown.map((c) => Math.round(c * fps));
+	const cdStart = cdF[0];
+	const cdIdx = cdF.filter((f) => frame >= f).length - 1; // -1, 0, 1, 2
+	const cdNum = cdIdx >= 0 ? 3 - cdIdx : null;
+	const cdPop = spring({frame: frame - (cdIdx >= 0 ? cdF[cdIdx] : 0), fps, config: {damping: 8, stiffness: 300}});
 
 	// tragaperras: más rápida al principio, se frena al acercarse la revelación
 	const speed = frame < cdStart ? 2 : 2 + Math.floor((frame - cdStart) / 12);
 	const rolling = 1 + Math.floor(random(`roll${Math.floor(frame / speed)}`) * 63);
 
-	const chip = spring({frame: frame - revealF - Math.round(0.9 * fps), fps, config: {damping: 11, stiffness: 220}});
+	const chip = spring({frame: frame - revealF - Math.round(0.45 * fps), fps, config: {damping: 11, stiffness: 220}});
 	const celebrate = revealed ? reveal : 0;
 	const jump = revealed ? Math.abs(Math.sin(((frame - revealF) / fps) * Math.PI * 2.2)) * 0.25 * Math.max(0, 1 - (frame - revealF) / (fps * 1.6)) : 0;
 

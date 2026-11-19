@@ -22,11 +22,14 @@ export const Captions: React.FC<{captions: Caption[]; y?: number}> = ({captions,
 	const total = weights.reduce((a, b) => a + b, 0);
 	const speak = (cap.to - cap.from) * 0.85;
 	let acc = 0;
-	const starts = weights.map((w) => {
-		const s = cap.from + (acc / total) * speak;
-		acc += w;
-		return s;
-	});
+	const starts =
+		cap.words && cap.words.length === words.length
+			? cap.words
+			: weights.map((w) => {
+					const s = cap.from + (acc / total) * speak;
+					acc += w;
+					return s;
+				});
 
 	const capIn = spring({frame: frame - cap.from * fps, fps, config: {damping: 14, stiffness: 220}});
 

@@ -8,7 +8,7 @@ import {DeckBeat, GreenTileBeat} from './HookBeats';
 import {BinaryScene} from './BinaryScene';
 import {CardScene} from './CardScene';
 import {HookScene} from './HookScene';
-import {CAPTIONS, CARD_DUR, CARD_START, s2f, T, VOICE_LINES} from './script';
+import {CAPTIONS_SYNCED, CARD_DUR, CARD_START, s2f, T, VOICE_LINES} from './script';
 import {SumScene} from './SumScene';
 
 ensureFonts();
@@ -49,7 +49,7 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 
 			{/* 3. Cuenta atrás y revelación */}
 			<Sequence from={s2f(T.sum.from)} durationInFrames={s2f(T.sum.to - T.sum.from)} name="Revelación">
-				<SumScene revealAt={T.sum.revealAt - T.sum.from} durationInFrames={s2f(T.sum.to - T.sum.from)} />
+				<SumScene revealAt={T.sum.revealAt - T.sum.from} countdown={T.sum.countdown.map((c) => c - T.sum.from)} durationInFrames={s2f(T.sum.to - T.sum.from)} />
 			</Sequence>
 
 			{/* 4. El binario (corto: segundo "premio", el porqué) */}
@@ -62,7 +62,7 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 				<OutroLoop len={outroLen} />
 			</Sequence>
 
-			<Captions captions={CAPTIONS} />
+			<Captions captions={CAPTIONS_SYNCED} />
 			{cuts.map((at) => (
 				<Flash key={at} at={s2f(at)} />
 			))}
@@ -84,13 +84,13 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 			))}
 			<Sfx at={T.sum.from} src="whoosh" volume={0.35} />
 			<Sfx at={T.sum.from + 0.1} src="scan" volume={0.25} />
-			{[0, 1, 2].map((k) => (
-				<Sfx key={`cd${k}`} at={T.sum.revealAt - 1.8 + k * 0.6} src="tick" volume={0.6} />
+			{T.sum.countdown.map((at, k) => (
+				<Sfx key={`cd${k}`} at={at} src="tick" volume={0.6} />
 			))}
 			<Sfx at={T.sum.revealAt - 1.0} src="rise" volume={0.3} />
 			<Sfx at={T.sum.revealAt} src="ding" volume={0.55} />
 			<Sfx at={T.sum.revealAt} src="slam" volume={0.5} />
-			<Sfx at={T.sum.revealAt + 0.9} src="pop" volume={0.45} />
+			<Sfx at={T.sum.revealAt + 0.45} src="pop" volume={0.45} />
 			{[0, 1, 2, 3, 4, 5].map((i) => (
 				<Sfx key={`b${i}`} at={T.binary.from + (4 + i * 4) / 30} src="tick" volume={(27 >> (5 - i)) & 1 ? 0.5 : 0.15} />
 			))}

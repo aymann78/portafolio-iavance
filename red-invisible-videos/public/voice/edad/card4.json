@@ -1,0 +1,23 @@
+{
+  "characters": [
+    "O",
+    "c",
+    "h",
+    "o",
+    "."
+  ],
+  "character_start_times_seconds": [
+    0,
+    0.24,
+    0.32,
+    0.4,
+    0.48
+  ],
+  "character_end_times_seconds": [
+    0.24,
+    0.32,
+    0.4,
+    0.48,
+    0.8
+  ]
+}

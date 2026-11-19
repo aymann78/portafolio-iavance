@@ -1,0 +1,307 @@
+[
+	{
+		"id": "hook",
+		"at": 0,
+		"words": [
+			{
+				"w": "Te",
+				"start": 0,
+				"end": 0.08
+			},
+			{
+				"w": "adivino",
+				"start": 0.16,
+				"end": 0.48
+			},
+			{
+				"w": "la",
+				"start": 0.52,
+				"end": 0.56
+			},
+			{
+				"w": "edad",
+				"start": 0.64,
+				"end": 0.88
+			},
+			{
+				"w": "con",
+				"start": 0.96,
+				"end": 1.2
+			},
+			{
+				"w": "seis",
+				"start": 1.28,
+				"end": 1.52
+			},
+			{
+				"w": "pantallas.",
+				"start": 1.6,
+				"end": 2.48
+			},
+			{
+				"w": "Si",
+				"start": 2.64,
+				"end": 2.72
+			},
+			{
+				"w": "sales,",
+				"start": 2.8,
+				"end": 3.44
+			},
+			{
+				"w": "suma",
+				"start": 3.56,
+				"end": 3.68
+			},
+			{
+				"w": "el",
+				"start": 3.76,
+				"end": 3.84
+			},
+			{
+				"w": "verde.",
+				"start": 3.92,
+				"end": 4.48
+			}
+		]
+	},
+	{
+		"id": "card1",
+		"at": 4.6,
+		"words": [
+			{
+				"w": "Primera.",
+				"start": 4.6,
+				"end": 5.56
+			},
+			{
+				"w": "Si",
+				"start": 5.64,
+				"end": 5.72
+			},
+			{
+				"w": "sales,",
+				"start": 5.8,
+				"end": 6.44
+			},
+			{
+				"w": "suma",
+				"start": 6.6,
+				"end": 6.76
+			},
+			{
+				"w": "uno.",
+				"start": 6.92,
+				"end": 7.48
+			}
+		]
+	},
+	{
+		"id": "card2",
+		"at": 8.6,
+		"words": [
+			{
+				"w": "¿Sales?",
+				"start": 8.6,
+				"end": 9.56
+			},
+			{
+				"w": "Suma",
+				"start": 9.64,
+				"end": 9.88
+			},
+			{
+				"w": "dos.",
+				"start": 9.96,
+				"end": 10.68
+			}
+		]
+	},
+	{
+		"id": "card3",
+		"at": 11.8,
+		"words": [
+			{
+				"w": "Suma",
+				"start": 11.8,
+				"end": 12.12
+			},
+			{
+				"w": "cuatro.",
+				"start": 12.28,
+				"end": 12.92
+			}
+		]
+	},
+	{
+		"id": "card4",
+		"at": 15,
+		"words": [
+			{
+				"w": "Ocho.",
+				"start": 15,
+				"end": 15.8
+			}
+		]
+	},
+	{
+		"id": "card5",
+		"at": 18.2,
+		"words": [
+			{
+				"w": "Dieciséis.",
+				"start": 18.2,
+				"end": 19.32
+			}
+		]
+	},
+	{
+		"id": "card6",
+		"at": 21.4,
+		"words": [
+			{
+				"w": "Y",
+				"start": 21.4,
+				"end": 21.48
+			},
+			{
+				"w": "la",
+				"start": 21.56,
+				"end": 21.64
+			},
+			{
+				"w": "última:",
+				"start": 21.68,
+				"end": 22.52
+			},
+			{
+				"w": "treinta",
+				"start": 22.6,
+				"end": 22.92
+			},
+			{
+				"w": "y",
+				"start": 23,
+				"end": 23.08
+			},
+			{
+				"w": "dos.",
+				"start": 23.28,
+				"end": 23.8
+			}
+		]
+	},
+	{
+		"id": "sum",
+		"at": 24.6,
+		"words": [
+			{
+				"w": "¿Cuánto",
+				"start": 24.6,
+				"end": 24.92
+			},
+			{
+				"w": "te",
+				"start": 25,
+				"end": 25.08
+			},
+			{
+				"w": "da?",
+				"start": 25.2,
+				"end": 25.52
+			},
+			{
+				"w": "Tres,",
+				"start": 25.72,
+				"end": 26.6
+			},
+			{
+				"w": "dos,",
+				"start": 26.88,
+				"end": 27.48
+			},
+			{
+				"w": "uno…",
+				"start": 27.64,
+				"end": 28.36
+			},
+			{
+				"w": "¡Tu",
+				"start": 28.387,
+				"end": 28.44
+			},
+			{
+				"w": "edad!",
+				"start": 28.52,
+				"end": 29.24
+			}
+		]
+	},
+	{
+		"id": "binary",
+		"at": 29.8,
+		"words": [
+			{
+				"w": "No",
+				"start": 29.8,
+				"end": 29.96
+			},
+			{
+				"w": "es",
+				"start": 30.04,
+				"end": 30.12
+			},
+			{
+				"w": "magia:",
+				"start": 30.24,
+				"end": 30.84
+			},
+			{
+				"w": "es",
+				"start": 30.96,
+				"end": 31.08
+			},
+			{
+				"w": "código",
+				"start": 31.16,
+				"end": 31.56
+			},
+			{
+				"w": "binario.",
+				"start": 31.68,
+				"end": 32.36
+			}
+		]
+	},
+	{
+		"id": "outro",
+		"at": 32.4,
+		"words": [
+			{
+				"w": "Pruébalo",
+				"start": 32.4,
+				"end": 32.8
+			},
+			{
+				"w": "con",
+				"start": 32.88,
+				"end": 32.96
+			},
+			{
+				"w": "alguien",
+				"start": 33.04,
+				"end": 33.28
+			},
+			{
+				"w": "y",
+				"start": 33.44,
+				"end": 33.52
+			},
+			{
+				"w": "verás:",
+				"start": 33.6,
+				"end": 34.4
+			}
+		]
+	}
+]
