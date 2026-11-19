@@ -25,8 +25,8 @@ export const SumScene: React.FC<{revealAt: number; durationInFrames: number}> = 
 
 	const chips = [0, 1, 2].map((i) => {
 		const pop = spring({frame: frame - 3 - i * 6, fps, config: {damping: 12, stiffness: 220}});
-		// cambian de valor cada 5 fotogramas, desfasadas
-		const v = POW[(Math.floor((frame + i * 7) / 5) + i * 2) % POW.length];
+		// cambian de valor cada 5 fotogramas; desfase de 2 posiciones -> nunca repiten valor
+		const v = POW[(Math.floor(frame / 5) + i * 2) % POW.length];
 		return {pop, v};
 	});
 
