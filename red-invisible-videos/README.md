@@ -14,10 +14,10 @@ Todo es código: cada número, cada tiempo y cada animación es exacto y se pued
 | Tiempo | Escena |
 |---|---|
 | 0–4,6 s | Gancho en 3 cortes: escaneo, abanico de 6 pantallas, "¡SÚMALO!" |
-| 4,6–24,6 s | 6 pantallas "¿Sale tu edad? +N" (la primera de 4 s; el resto, 3,2 s) |
-| 24,6–29,8 s | "TU SUMA" + cuenta atrás + "¡TU EDAD!" sincronizados con la voz |
-| 29,8–32,4 s | "No es magia: es código binario" (ejemplo con 27 años) |
-| 32,4–35 s | Vuelta al plano inicial (bucle) |
+| 4,6–24,6 s | 6 pantallas "¿Sale tu edad? +N" con barra de tiempo y tic-tac (la primera de 4 s; el resto, 3,2 s) |
+| 24,6–31,7 s | "TU SUMA" + cuenta atrás + "¡TU EDAD!" + "¿Acerté? Pónmela en comentarios" |
+| 31,7–32,9 s | "Es binario" (ejemplo con 27 años) |
+| 32,9–35 s | Vuelta al plano inicial (bucle); la voz acaba en 34,9 s |
 
 ## Uso
 
@@ -31,6 +31,7 @@ npm run render:edad     # vídeo sin voz -> renders/edad-sin-voz.mp4
 
 ```bash
 npm run voice           # genera public/voice/edad/*.mp3 + src/edad/voice-timing.json
+ONLY=cta,outro npm run voice  # regenera solo esas frases
 npm run render:edad:voz # vídeo con voz y audio a -14 LUFS -> renders/edad.mp4
 ```
 

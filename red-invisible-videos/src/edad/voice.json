@@ -6,7 +6,8 @@
 	{"id": "card4", "at": 15.0, "slot": 3.2, "text": "Ocho."},
 	{"id": "card5", "at": 18.2, "slot": 3.2, "text": "Dieciséis."},
 	{"id": "card6", "at": 21.4, "slot": 3.2, "text": "Y la última: treinta y dos."},
-	{"id": "sum", "at": 24.6, "slot": 5.2, "text": "¿Cuánto te da? Tres, dos, uno… ¡Tu edad!"},
-	{"id": "binary", "at": 29.8, "slot": 2.6, "text": "No es magia: es código binario."},
-	{"id": "outro", "at": 32.4, "slot": 2.5, "text": "Pruébalo con alguien y verás:"}
+	{"id": "sum", "at": 24.6, "slot": 4.75, "text": "¿Cuánto te da? Tres, dos, uno… ¡Tu edad!"},
+	{"id": "cta", "at": 29.2, "slot": 2.5, "text": "¿Acerté? Pónmela en comentarios."},
+	{"id": "binary", "at": 31.72, "slot": 1.15, "text": "Es binario."},
+	{"id": "outro", "at": 32.9, "slot": 2.05, "text": "Pruébalo con alguien y verás:"}
 ]

@@ -18,9 +18,9 @@ export const T = {
 	hook: {from: 0, to: 4.6},
 	beats: {deck: 1.6, tile: 3.0}, // cortes dentro del gancho
 	cards: {from: 4.6, to: 24.6},
-	sum: {from: 24.6, to: 29.8, revealAt: 27.0, countdown: [25.2, 25.8, 26.4]},
-	binary: {from: 29.8, to: 32.4},
-	outro: {from: 32.4, to: 35.0},
+	sum: {from: 24.6, to: 31.7, revealAt: 27.0, countdown: [25.2, 25.8, 26.4], ctaAt: 29.2}, // incluye "¿Acerté? Pónmela en comentarios"
+	binary: {from: 31.7, to: 32.9},
+	outro: {from: 32.9, to: 35.0},
 };
 
 /** Duración de cada pantalla: la primera más larga (enseña la mecánica). */
@@ -54,7 +54,10 @@ export const VOICE_LINES: {id: string; at: number; slot: number; text: string}[]
 /** Tiempos reales de cada palabra (los escribe `npm run voice`). Vacío si aún no hay voz. */
 import voiceTiming from './voice-timing.json';
 type Word = {w: string; start: number; end: number};
-const TIMING: {id: string; at: number; words: Word[]}[] = voiceTiming;
+const TIMING: {id: string; words: Word[]}[] = (voiceTiming as {id: string; words: Word[]}[]).map((l) => {
+	const at = VOICE_LINES.find((v) => v.id === l.id)?.at ?? 0;
+	return {id: l.id, words: l.words.map((w) => ({...w, start: w.start + at, end: w.end + at}))};
+});
 export const HAS_TIMING = TIMING.length > 0;
 const wordAt = (id: string, re: RegExp) => TIMING.find((l) => l.id === id)?.words.find((w) => re.test(w.w))?.start;
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
@@ -69,6 +72,8 @@ if (HAS_TIMING) {
 	if (cd.every((x) => x !== undefined)) T.sum.countdown = cd as number[];
 	const tu = wordAt('sum', /^¡?tu$/i);
 	if (tu !== undefined) T.sum.revealAt = clamp(tu, T.sum.from + 1.5, T.sum.to - 0.8);
+	const cta = VOICE_LINES.find((l) => l.id === 'cta');
+	if (cta) T.sum.ctaAt = cta.at;
 }
 
 /** Subtítulos en pantalla (en las pantallas de números no hay: ya lo dice el panel). */
@@ -77,13 +82,13 @@ export const CAPTIONS: Caption[] = [
 	{from: 1.6, to: 2.95, text: 'con seis pantallas', highlight: ['seis']},
 	{from: 3.0, to: 4.5, text: 'Si sales, suma el verde', highlight: ['suma', 'verde']},
 	{from: 24.7, to: 26.0, text: '¿Cuánto te da?', highlight: ['cuánto']},
-	{from: 27.0, to: 29.1, text: 'Esa es tu edad', highlight: ['edad']},
-	{from: 29.3, to: 30.8, text: 'No es magia: es binario', highlight: ['binario']},
-	{from: 30.8, to: 32.3, text: 'Así cuentan las máquinas', highlight: ['máquinas']},
-	{from: 32.5, to: 35.0, text: 'Pruébalo con alguien y verás', highlight: ['alguien']},
+	{from: 28.3, to: 29.3, text: '¡Tu edad!', highlight: ['edad']},
+	{from: 29.2, to: 31.7, text: '¿Acerté? Pónmela en comentarios', highlight: ['acerté', 'comentarios']},
+	{from: 31.72, to: 32.9, text: 'Es binario', highlight: ['binario']},
+	{from: 32.9, to: 35.0, text: 'Pruébalo con alguien y verás', highlight: ['alguien']},
 ];
 
-const KEYWORDS = ['edad', 'seis', 'suma', 'verde', 'cuánto', 'tres', 'dos', 'uno', 'magia', 'binario', 'alguien'];
+const KEYWORDS = ['edad', 'seis', 'suma', 'verde', 'cuánto', 'tres', 'dos', 'uno', 'acerté', 'comentarios', 'magia', 'binario', 'alguien'];
 const clean = (w: string) => w.toLowerCase().replace(/[^a-záéíóúñü0-9]/gi, '');
 
 /**

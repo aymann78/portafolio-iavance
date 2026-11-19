@@ -92,6 +92,7 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 	const progress = interpolate(frame, [0, durationInFrames], [0, 1], {extrapolateRight: 'clamp'});
 
 	const keyGlow = 0.5 + 0.5 * Math.sin((frame / fps) * Math.PI * 2 * 1.4);
+	const urgent = frame > durationInFrames - fps;
 	const chipPop = spring({frame: frame - 3, fps, config: {damping: 9, stiffness: 260}});
 
 	return (
@@ -152,6 +153,19 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 						>
 							+{key}
 						</span>
+					</div>
+
+					{/* Barra de tiempo: se vacía; en el último segundo se vuelve rosa y late */}
+					<div style={{position: 'absolute', top: 424, left: 62, width: 876, height: 12, borderRadius: 6, background: '#ffffff18', overflow: 'hidden'}}>
+						<div
+							style={{
+								width: `${(1 - progress) * 100}%`,
+								height: '100%',
+								borderRadius: 6,
+								background: urgent ? C.pink : C.green,
+								boxShadow: `0 0 ${urgent ? 18 + 14 * Math.abs(Math.sin(frame * 0.6)) : 12}px ${urgent ? C.pink : C.green}`,
+							}}
+						/>
 					</div>
 
 					{/* Cuadrícula de 32 números */}

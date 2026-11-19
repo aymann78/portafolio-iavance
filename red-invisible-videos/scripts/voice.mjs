@@ -22,7 +22,15 @@ const MODEL = process.env.ELEVENLABS_MODEL ?? 'eleven_v4';
 // Un poco más rápida que la natural: encaja con el ritmo de Shorts.
 const SPEED = Number(process.env.ELEVENLABS_SPEED ?? 1.06);
 
-const lines = JSON.parse(readFileSync(new URL('../src/edad/voice.json', import.meta.url)));
+const allLines = JSON.parse(readFileSync(new URL('../src/edad/voice.json', import.meta.url)));
+// ONLY=cta,binary npm run voice  -> regenera solo esas frases (ahorra créditos)
+const ONLY = process.env.ONLY?.split(',').map((x) => x.trim());
+const lines = ONLY ? allLines.filter((l) => ONLY.includes(l.id)) : allLines;
+const timingUrl = new URL('../src/edad/voice-timing.json', import.meta.url);
+let oldTiming = [];
+try {
+	oldTiming = JSON.parse(readFileSync(timingUrl));
+} catch {}
 const outDir = new URL('../public/voice/edad/', import.meta.url);
 mkdirSync(outDir, {recursive: true});
 
@@ -44,7 +52,7 @@ function toWords(al, offset) {
 	return words.map((x) => ({...x, start: +x.start.toFixed(3), end: +x.end.toFixed(3)}));
 }
 
-let previous;
+let previous = ONLY ? allLines[allLines.findIndex((l) => l.id === lines[0]?.id) - 1]?.text : undefined;
 const timing = [];
 for (const line of lines) {
 	const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICE}/with-timestamps`, {
@@ -70,8 +78,10 @@ for (const line of lines) {
 	const ok = dur <= line.slot;
 	console.log(`${ok ? '✓' : '⚠'} ${line.id.padEnd(7)} ${dur.toFixed(2)}s / hueco ${line.slot}s  ${ok ? '' : '<- NO CABE: acorta la frase o sube el hueco'}`);
 	previous = line.text;
-	timing.push({id: line.id, at: line.at, words: toWords(data.alignment, line.at)});
+	timing.push({id: line.id, words: toWords(data.alignment, 0)});
 }
-// Tiempos absolutos de cada palabra: los usa el vídeo para subtítulos y sincronía.
-writeFileSync(new URL('../src/edad/voice-timing.json', import.meta.url), JSON.stringify(timing, null, '\t') + '\n');
+// Tiempos de cada palabra RELATIVOS al inicio de su frase (el vídeo les suma `at`
+// de voice.json): así se puede mover una frase sin volver a generarla.
+const merged = allLines.map((l) => timing.find((x) => x.id === l.id) ?? oldTiming.find((x) => x.id === l.id)).filter(Boolean);
+writeFileSync(timingUrl, JSON.stringify(merged, null, '\t') + '\n');
 console.log('\nListo. Renderiza con voz:  npm run render:edad:voz');

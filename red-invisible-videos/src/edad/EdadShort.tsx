@@ -49,7 +49,7 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 
 			{/* 3. Cuenta atrás y revelación */}
 			<Sequence from={s2f(T.sum.from)} durationInFrames={s2f(T.sum.to - T.sum.from)} name="Revelación">
-				<SumScene revealAt={T.sum.revealAt - T.sum.from} countdown={T.sum.countdown.map((c) => c - T.sum.from)} durationInFrames={s2f(T.sum.to - T.sum.from)} />
+				<SumScene revealAt={T.sum.revealAt - T.sum.from} countdown={T.sum.countdown.map((c) => c - T.sum.from)} ctaAt={T.sum.ctaAt - T.sum.from} durationInFrames={s2f(T.sum.to - T.sum.from)} />
 			</Sequence>
 
 			{/* 4. El binario (corto: segundo "premio", el porqué) */}
@@ -80,6 +80,10 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 				<React.Fragment key={`c${i}`}>
 					<Sfx at={at} src="whoosh" volume={0.35} />
 					<Sfx at={at + 0.12} src="pop" volume={0.35} />
+					{clockTicks(CARD_DUR[i]).map((dt, k) => (
+						<Sfx key={k} at={at + dt} src={k % 2 ? 'clock-tock' : 'clock-tick'} volume={dt > CARD_DUR[i] - 1 ? 0.42 : 0.28} />
+					))}
+					<Sfx at={at + CARD_DUR[i] - 0.18} src="ding" volume={0.12} />
 				</React.Fragment>
 			))}
 			<Sfx at={T.sum.from} src="whoosh" volume={0.35} />
@@ -90,11 +94,11 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 			<Sfx at={T.sum.revealAt - 1.0} src="rise" volume={0.3} />
 			<Sfx at={T.sum.revealAt} src="ding" volume={0.55} />
 			<Sfx at={T.sum.revealAt} src="slam" volume={0.5} />
-			<Sfx at={T.sum.revealAt + 0.45} src="pop" volume={0.45} />
+			<Sfx at={T.sum.ctaAt} src="pop" volume={0.5} />
 			{[0, 1, 2, 3, 4, 5].map((i) => (
-				<Sfx key={`b${i}`} at={T.binary.from + (4 + i * 4) / 30} src="tick" volume={(27 >> (5 - i)) & 1 ? 0.5 : 0.15} />
+				<Sfx key={`b${i}`} at={T.binary.from + (1 + i * 2) / 30} src="tick" volume={(27 >> (5 - i)) & 1 ? 0.5 : 0.15} />
 			))}
-			<Sfx at={T.binary.from + 32 / 30} src="pop" volume={0.5} />
+			<Sfx at={T.binary.from + 15 / 30} src="pop" volume={0.5} />
 			<Sfx at={T.outro.from} src="whoosh" volume={0.35} />
 
 			{/* Voz: una pista por frase, generadas con `npm run voice` en public/voice/edad/ */}
@@ -107,6 +111,14 @@ export const EdadShort: React.FC<{voice?: boolean}> = ({voice}) => {
 				: null}
 		</AbsoluteFill>
 	);
+};
+
+/** Tic-tac del reloj en cada pantalla: cada 0,5 s, y cada 0,25 s en el último segundo. */
+const clockTicks = (dur: number) => {
+	const out: number[] = [];
+	for (let t = 0.5; t < dur - 1; t += 0.5) out.push(t);
+	for (let t = Math.max(0.5, dur - 1); t < dur - 0.2; t += 0.25) out.push(t);
+	return out;
 };
 
 /** Corte 1 del gancho: escaneo + acercamiento de cámara. */
