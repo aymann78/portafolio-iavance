@@ -1,5 +1,5 @@
 import {ThreeCanvas} from '@remotion/three';
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {continueRender, delayRender} from 'remotion';
 import * as THREE from 'three';
 import {H, W} from '../theme';
@@ -45,36 +45,41 @@ export const useFontsReady = () => {
 	return ready;
 };
 
-/** Textura con texto grande centrado (para pantallas dentro de la escena 3D). */
-export const useTextTexture = (
-	text: string,
-	opts: {color: string; bg: string; border: string; font?: string; w?: number; h?: number; ready: boolean},
-) => {
-	const {color, bg, border, font = '400 520px Anton', w = 512, h = 704, ready} = opts;
-	return useMemo(() => {
-		const canvas = document.createElement('canvas');
-		canvas.width = w;
-		canvas.height = h;
-		const ctx = canvas.getContext('2d')!;
-		const r = 56;
-		ctx.fillStyle = bg;
-		ctx.beginPath();
-		ctx.roundRect(12, 12, w - 24, h - 24, r);
-		ctx.fill();
-		ctx.lineWidth = 16;
-		ctx.strokeStyle = border;
-		ctx.stroke();
-		ctx.fillStyle = color;
-		ctx.font = font;
-		ctx.textAlign = 'center';
-		ctx.textBaseline = 'middle';
-		ctx.shadowColor = color;
-		ctx.shadowBlur = 40;
-		ctx.fillText(text, w / 2, h / 2 + 20);
-		const tex = new THREE.CanvasTexture(canvas);
-		tex.colorSpace = THREE.SRGBColorSpace;
-		tex.anisotropy = 8;
-		return tex;
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [text, color, bg, border, font, w, h, ready]);
+type TexOpts = {color: string; bg: string; border: string; w?: number; h?: number};
+const cache = new Map<string, THREE.CanvasTexture>();
+
+/** Textura con texto grande centrado (para pantallas dentro de la escena 3D). Se cachea. */
+export const textTexture = (text: string, {color, bg, border, w = 512, h = 704}: TexOpts) => {
+	const key = [text, color, bg, border, w, h].join('|');
+	const hit = cache.get(key);
+	if (hit) return hit;
+	const canvas = document.createElement('canvas');
+	canvas.width = w;
+	canvas.height = h;
+	const ctx = canvas.getContext('2d')!;
+	ctx.fillStyle = bg;
+	ctx.beginPath();
+	ctx.roundRect(12, 12, w - 24, h - 24, 56);
+	ctx.fill();
+	ctx.lineWidth = 16;
+	ctx.strokeStyle = border;
+	ctx.stroke();
+	// el texto se encoge si no cabe (p. ej. números de dos cifras)
+	let size = 520;
+	ctx.font = `400 ${size}px Anton`;
+	const maxW = w * 0.78;
+	const mw = ctx.measureText(text).width;
+	if (mw > maxW) size = Math.floor((size * maxW) / mw);
+	ctx.font = `400 ${size}px Anton`;
+	ctx.fillStyle = color;
+	ctx.textAlign = 'center';
+	ctx.textBaseline = 'middle';
+	ctx.shadowColor = color;
+	ctx.shadowBlur = 40;
+	ctx.fillText(text, w / 2, h / 2 + size * 0.04);
+	const tex = new THREE.CanvasTexture(canvas);
+	tex.colorSpace = THREE.SRGBColorSpace;
+	tex.anisotropy = 8;
+	cache.set(key, tex);
+	return tex;
 };

@@ -29,14 +29,34 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 	const nums = CARDS[index];
 	const key = nums[0];
 
-	const enter = spring({frame, fps, config: {damping: 16, stiffness: 150}});
-	const exitP = interpolate(frame, [durationInFrames - 7, durationInFrames], [0, 1], {
+	// Entrada rápida desde una dirección distinta en cada pantalla, con desenfoque de movimiento
+	const enter = spring({frame, fps, config: {damping: 15, stiffness: 210}});
+	const exitP = interpolate(frame, [durationInFrames - 6, durationInFrames], [0, 1], {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 		easing: Easing.in(Easing.cubic),
 	});
-	const x = interpolate(enter, [0, 1], [900, 0]) + interpolate(exitP, [0, 1], [0, -1000]);
-	const rotY = interpolate(enter, [0, 1], [-28, 0]) + interpolate(exitP, [0, 1], [0, 22]);
+	const DIRS = [
+		[1, 0],
+		[-1, 0],
+		[0, 1],
+		[1, 0],
+		[-1, 0],
+		[0, -1],
+	];
+	const [dx, dy] = DIRS[index];
+	const [ex, ey] = DIRS[(index + 1) % 6];
+	const x = dx * interpolate(enter, [0, 1], [1000, 0]) - ex * interpolate(exitP, [0, 1], [0, 1100]);
+	const y = dy * interpolate(enter, [0, 1], [1500, 0]) - ey * interpolate(exitP, [0, 1], [0, 1600]);
+	const rotY = dx * interpolate(enter, [0, 1], [-30, 0]);
+	const rotX = dy * interpolate(enter, [0, 1], [25, 0]);
+	const blur = (1 - enter) * 18 + exitP * 18;
+	// zoom lento continuo ("cámara viva")
+	const zoom = interpolate(frame, [0, durationInFrames], [0.985, 1.035]);
+	// luz que barre la cuadrícula al entrar
+	const sweep = interpolate(frame, [6, 24], [-0.3, 1.3], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	// onda que recorre los números a mitad de pantalla
+	const WAVE_AT = Math.round(durationInFrames * 0.48);
 	const progress = interpolate(frame, [0, durationInFrames], [0, 1], {extrapolateRight: 'clamp'});
 
 	const keyGlow = 0.5 + 0.5 * Math.sin((frame / fps) * Math.PI * 2 * 1.4);
@@ -46,7 +66,7 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 		<AbsoluteFill>
 			<Progress index={index} p={progress} />
 			<AbsoluteFill style={{perspective: 1600}}>
-				<AbsoluteFill style={{transform: `translateX(${x}px) rotateY(${rotY}deg)`, opacity: 1 - exitP * 0.6}}>
+				<AbsoluteFill style={{transform: `translate(${x}px, ${y}px) rotateY(${rotY}deg) rotateX(${rotX}deg) scale(${zoom})`, filter: `blur(${blur}px)`, opacity: 1 - exitP * 0.4}}>
 					{/* Cabecera */}
 					<div
 						style={{
@@ -97,6 +117,10 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 						{nums.map((n, i) => {
 							const pop = spring({frame: frame - 4 - i * 0.55, fps, config: {damping: 13, stiffness: 260, mass: 0.5}});
 							const isKey = i === 0;
+							const r = Math.floor(i / 4);
+							const c = i % 4;
+							const w = frame - WAVE_AT - (r + c) * 1.6;
+							const wave = 0.09 * Math.exp(-(w * w) / 10);
 							return (
 								<div
 									key={n}
@@ -117,7 +141,8 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 										boxShadow: isKey
 											? `0 0 ${20 + 30 * keyGlow}px ${C.green}${Math.round(90 + 80 * keyGlow).toString(16)}`
 											: '0 6px 0 #0a0720',
-										transform: `scale(${interpolate(pop, [0, 1], [0.3, 1]) * (isKey ? 1 + 0.05 * keyGlow : 1)})`,
+										transform: `scale(${interpolate(pop, [0, 1], [0.3, 1]) * (isKey ? 1 + 0.05 * keyGlow : 1) + wave})`,
+										filter: `brightness(${1 + wave * 5})`,
 										opacity: interpolate(pop, [0, 0.4], [0, 1], {extrapolateRight: 'clamp'}),
 									}}
 								>
@@ -126,6 +151,22 @@ export const CardScene: React.FC<{index: number; durationInFrames: number}> = ({
 							);
 						})}
 					</div>
+
+					{/* barrido de luz */}
+					<div
+						style={{
+							position: 'absolute',
+							top: 430,
+							left: 60,
+							width: 880,
+							height: 860,
+							borderRadius: 24,
+							pointerEvents: 'none',
+							mixBlendMode: 'screen',
+							background: `linear-gradient(115deg, transparent ${sweep * 100 - 18}%, #ffffff30 ${sweep * 100 - 4}%, #b8ffdc66 ${sweep * 100}%, #ffffff30 ${sweep * 100 + 4}%, transparent ${sweep * 100 + 18}%)`,
+							opacity: sweep > -0.3 && sweep < 1.3 ? 1 : 0,
+						}}
+					/>
 
 					{/* Recordatorio de qué apuntar */}
 					<div

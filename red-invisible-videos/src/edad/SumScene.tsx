@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Mascot, Pedestal} from '../components/Mascot';
 import {Stage3D} from '../components/Stage3D';
+import {Confetti, shake} from '../components/Fx';
 import {C, FONT_TITLE, FONT_UI} from '../theme';
 
 const POW = [1, 2, 4, 8, 16, 32];
@@ -35,7 +36,7 @@ export const SumScene: React.FC<{revealAt: number; durationInFrames: number}> = 
 	const jump = revealed ? Math.abs(Math.sin(((frame - revealF) / fps) * Math.PI * 2.2)) * 0.25 * Math.max(0, 1 - (frame - revealF) / (fps * 1.6)) : 0;
 
 	return (
-		<AbsoluteFill style={{opacity: exit}}>
+		<AbsoluteFill style={{opacity: exit, transform: `${shake(frame, revealF, 26, 14)} scale(${1 + (revealed ? 0.04 * Math.max(0, 1 - (frame - revealF) / 12) : 0)})`}}>
 			<Stage3D>
 				<group scale={0.55} position={[0, 0.88, 0]}>
 					<Pedestal position={[0, 0, 0]} color={revealed ? '#6ef0aa' : '#7b4dff'} />
@@ -120,6 +121,7 @@ export const SumScene: React.FC<{revealAt: number; durationInFrames: number}> = 
 			>
 				{revealed ? '= tu edad' : '= ?'}
 			</div>
+			<Confetti at={revealF} y={680} />
 		</AbsoluteFill>
 	);
 };

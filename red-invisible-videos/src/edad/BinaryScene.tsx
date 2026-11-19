@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, FONT_TITLE, FONT_UI} from '../theme';
+import {shake} from '../components/Fx';
 import {EXAMPLE_AGE} from './script';
 
 const VALUES = [32, 16, 8, 4, 2, 1];
@@ -26,7 +27,7 @@ export const BinaryScene: React.FC<{durationInFrames: number}> = ({durationInFra
 	const chipPop = spring({frame: frame - chipAt, fps, config: {damping: 12, stiffness: 200}});
 
 	return (
-		<AbsoluteFill style={{opacity: exit, transform: `scale(${interpolate(enter, [0, 1], [1.08, 1])})`}}>
+		<AbsoluteFill style={{opacity: exit, transform: `${[0, 1, 2, 3, 4, 5].filter((i) => bits[i]).map((i) => shake(frame, 8 + i * 6, 7, 6)).find((t) => t !== 'translate(0px, 0px)') ?? ''} scale(${interpolate(enter, [0, 1], [1.08, 1])})`}}>
 			<div
 				style={{
 					position: 'absolute',

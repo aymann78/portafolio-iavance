@@ -13,6 +13,7 @@ export const FPS = 30;
 
 export const T = {
 	hook: {from: 0, to: 4.6},
+	beats: {deck: 1.6, tile: 3.0}, // cortes dentro del gancho
 	cards: {from: 4.6, each: 3.3}, // 6 pantallas -> termina en 24.4
 	sum: {from: 24.4, to: 29.4},
 	binary: {from: 29.4, to: 33.4},
