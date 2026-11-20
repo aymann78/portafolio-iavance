@@ -4,6 +4,7 @@ const OS = +(new URLSearchParams(location.search).get('s') || 1);
 const cv = document.createElement('canvas'); cv.width = W * OS; cv.height = H * OS; document.body.appendChild(cv);
 const g = cv.getContext('2d');
 const GOLD = '#FFC94A';
+let capBottom = 0;
 
 const TEXT = {
   en: {
@@ -42,7 +43,7 @@ const TEXT = {
       [12.45, 14.15, '…y se *descargaría en segundos.*'],
       [14.25, 16.6, 'Salvo que *ESTO* la frene. *5 veces por segundo.*'],
       [17.0, 18.75, 'Un diente se *bloquea* en un rubí…'],
-      [18.85, 20.15, '…el volante lo *suelta* de un golpe…'],
+      [18.85, 20.15, '…el volante lo *suelta* de golpe…'],
       [20.25, 22.6, '…y avanza *UN diente.* Tic.'],
       [23.0, 25.7, 'Este muelle es *más fino que un pelo.* Marca el ritmo.'],
       [26.0, 28.6, '*{COUNT}* tics al día.', { counter: true }],
@@ -99,6 +100,7 @@ function caption(t, cue, lang) {
   g.save(); g.globalAlpha = alpha; g.translate(W / 2, cy); g.scale(sc, sc);
   g.font = font; g.textBaseline = 'middle';
   const y0 = -((lines.length - 1) * lh) / 2;
+  capBottom = Math.max(capBottom, cy + (y0 + (lines.length - 1) * lh + fs * 0.62) * sc);
   lines.forEach((ln, i) => {
     const total = ln.reduce((s, tk) => s + g.measureText(tk.w + ' ').width, 0) - g.measureText(' ').width;
     let x = -total / 2;
@@ -140,7 +142,7 @@ function label(t, L, anchors, lang) {
     g.font = '600 30px Inter'; const sw = sub ? g.measureText(sub).width : 0;
     const bw = Math.max(tw, sw) + 44, bh = sub ? 108 : 70;
     let bx = dir[0] > 0 ? ex : ex - bw; let by = dir[1] > 0 ? ey : ey - bh;
-    bx = Math.max(30, Math.min(W - 30 - bw, bx)); by = Math.max(520, Math.min(H * 0.74 - bh, by));
+    bx = Math.max(30, Math.min(W - 30 - bw, bx)); by = Math.max(Math.max(520, capBottom + 28), Math.min(H * 0.74 - bh, by));
     g.shadowBlur = 20; g.fillStyle = 'rgba(8,10,14,0.72)';
     g.beginPath(); g.roundRect(bx, by, bw, bh, 16); g.fill();
     g.shadowBlur = 0; g.strokeStyle = 'rgba(255,201,74,0.9)'; g.lineWidth = 2.5; g.stroke();
@@ -154,7 +156,7 @@ function speedBadge(t, lang) {
   const r = TL.rate(t);
   let txt, show;
   if (t > 13.9 && t < 15.8) { txt = TEXT[lang].real + '  1×'; show = TL.smooth(13.9, 14.2, t) * (1 - TL.smooth(15.6, 15.8, t)); }
-  else if (r < 0.9 && t > 15.6 && t < 25) { txt = `${TEXT[lang].slow}  1/${Math.round(1 / r)}×`; show = TL.smooth(15.8, 16.1, t) * (1 - TL.smooth(24.2, 24.6, t)); }
+  else if (r < 0.9 && t > 15.6 && t < 25) { txt = `${TEXT[lang].slow}  1/${Math.max(2, Math.round(1 / r))}×`; show = TL.smooth(15.8, 16.1, t) * (1 - TL.smooth(24.2, 24.6, t)) * TL.smooth(1.6, 2.6, 1 / r); }
   else return;
   g.save(); g.globalAlpha = show;
   g.font = '800 38px Inter'; const tw = g.measureText(txt).width;
@@ -169,9 +171,10 @@ function speedBadge(t, lang) {
 
 window.drawOverlay = (t, anchors, lang) => {
   g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, cv.width, cv.height); g.setTransform(OS, 0, 0, OS, 0, 0);
+  capBottom = 0;
+  for (const c of TEXT[lang].caps) caption(t, c, lang);
   for (const L of TEXT[lang].labels) label(t, L, anchors, lang);
   speedBadge(t, lang);
-  for (const c of TEXT[lang].caps) caption(t, c, lang);
   return cv.toDataURL('image/png');
 };
 window.__ready = true;
