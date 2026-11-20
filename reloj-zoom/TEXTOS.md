@@ -6,6 +6,7 @@ Duración: 31 s · 9:16 · bucle perfecto (el último fotograma enlaza con el pr
 | Archivo | Uso |
 |---|---|
 | `RELOJ_ZOOM_4K_es.mp4` / `RELOJ_ZOOM_4K_en.mp4` | **Subir estos a YouTube** (2160×3840, HEVC). YouTube procesa en 4K y da más bitrate incluso a quien lo ve en 1080p. |
+| `RELOJ_ZOOM_4K_es_VOZ.mp4` / `RELOJ_ZOOM_1080p_es_VOZ.mp4` | Versión en español **con voz en off** (ElevenLabs, voz "Emilio"). La voz va sincronizada con los subtítulos y los efectos bajan un poco cuando habla. |
 | `RELOJ_ZOOM_1080p_es.mp4` / `_en.mp4` | TikTok / Instagram Reels / móvil. |
 | `portada.jpg` | Fotograma para miniatura. |
 | `fuente/` | Código 3D (three.js), timeline, overlay de textos, mezcla de audio y efectos. Para hacer el siguiente vídeo del nicho. |
